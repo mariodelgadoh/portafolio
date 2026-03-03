@@ -834,12 +834,25 @@ section {
 }
 
 /* ===== SERVICES SECTION ===== */
+/* ===== SERVICES SECTION ===== */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: 1fr; /* 1 columna en móvil */
     gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablet */
+    }
+}
+
+@media (min-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas en desktop */
+    }
 }
 
 .service-card {
@@ -1582,6 +1595,61 @@ section {
 .contact-item .fa-whatsapp {
     color: #25D366;
     background: transparent;
+}
+
+/* ===== CONTACT SECTION - CENTRADO EN MÓVIL ===== */
+@media (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr; /* Una columna en móvil */
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .contact-info, 
+    .contact-form-container {
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    .contact-info {
+        text-align: center;
+    }
+    
+    .contact-info p {
+        text-align: center;
+    }
+    
+    .contact-details {
+        align-items: center;
+    }
+    
+    .contact-item {
+        justify-content: center;
+        text-align: left;
+        width: auto;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-info, 
+    .contact-form-container {
+        padding: 25px 20px;
+    }
+    
+    .contact-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
+    
+    .contact-item i {
+        margin-bottom: 5px;
+    }
+    
+    .contact-item span {
+        text-align: center;
+    }
 }
 
 /* Formulario de contacto */
