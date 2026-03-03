@@ -158,8 +158,8 @@ const translations = {
         fitodex_busqueda: "Sistema de Búsqueda",
         fitodex_detalle_cultivo: "Detalles",
         fitodex_detalle_insecticida: "Ubicación",
-        fitodex_detalle_plaga: "Detalle de Plaga",
-        fitodex_admin: "Editar Usuario",
+        fitodex_detalle_plaga: "Editar Usuario",
+        fitodex_admin: "Panel de Usuarios",
         fitodex_estadisticas: "Iniciar Sesión",
         // TRADUCCIÓN PARA EL BOTÓN
         click_for_more: "CLIC PARA SABER MÁS"
