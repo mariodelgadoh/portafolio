@@ -419,44 +419,18 @@ window.addEventListener('scroll', () => {
 function downloadCV() {
     const currentLang = localStorage.getItem('language') || 'es';
     
-    // Rutas absolutas desde la raíz
+    // URL absoluta basada en el dominio actual
+    const baseUrl = window.location.origin;
     const cvUrl = currentLang === 'es' 
-        ? '/Mario-Delgado-CV.pdf' 
-        : '/Mario-Delgado-CV-ENGLISH.pdf';
+        ? `${baseUrl}/Mario-Delgado-CV.pdf`
+        : `${baseUrl}/Mario-Delgado-CV-ENGLISH.pdf`;
     
-    console.log('Intentando descargar:', cvUrl); // Para depuración
+    window.open(cvUrl, '_blank');
     
-    // Crear enlace y forzar descarga
-    const link = document.createElement('a');
-    link.href = cvUrl;
-    link.download = currentLang === 'es' 
-        ? 'Mario-Delgado-CV.pdf' 
-        : 'Mario-Delgado-CV-ENGLISH.pdf';
-    link.target = '_blank'; // Opcional: abrir en nueva pestaña
-    
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    
-    // Mostrar notificación
     const message = currentLang === 'es' 
         ? 'CV descargado exitosamente' 
         : 'CV downloaded successfully';
     showNotification(message);
-    
-    // Si hay error, el navegador lo mostrará
-    setTimeout(() => {
-        fetch(cvUrl, { method: 'HEAD' })
-            .then(response => {
-                if (!response.ok) {
-                    console.error('Archivo no encontrado:', cvUrl);
-                    showNotification('Error: No se encontró el archivo', 'error');
-                }
-            })
-            .catch(error => {
-                console.error('Error al verificar archivo:', error);
-            });
-    }, 1000);
 }
 
 function showNotification(message) {
