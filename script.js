@@ -423,7 +423,7 @@ function downloadCV() {
     const baseUrl = window.location.origin;
     const cvUrl = currentLang === 'es' 
         ? `${baseUrl}/Mario-Delgado-CV.pdf`
-        : `${baseUrl}/Mario-Delgado-CV-ENGLISH.pdf`;
+        : `${baseUrl}/Mario-Delgado-CV-English.pdf`;
     
     window.open(cvUrl, '_blank');
     
