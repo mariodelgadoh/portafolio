@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mario Jesús Delgado Hernández - Ingeniero en Sistemas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Efecto 3D Background - CON MOVIMIENTO -->
+    <div class="scene-3d">
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+    </div>
+
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Logo a la izquierda -->
+            <div class="logo">ING. DELGADO</div>
+            
+            <!-- Menú centrado -->
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="active" data-i18n="home">Inicio</a></li>
+                <li><a href="#about" data-i18n="about">Sobre Mí</a></li>
+                <li><a href="#services" data-i18n="services">Servicios</a></li>
+                <li><a href="#portfolio" data-i18n="portfolio">Portafolio</a></li>
+                <li><a href="#contact" data-i18n="contact">Contacto</a></li>
+            </ul>
+            
+            <!-- Controles a la derecha -->
+            <div class="nav-controls">
+                <button id="themeToggle" class="theme-btn" title="Cambiar tema">
+                    <i class="fas fa-moon"></i>
+                </button>
+                
+                <div class="language-selector">
+                    <button id="langToggle" class="lang-btn">
+                        <img src="https://flagcdn.com/w40/mx.png" alt="Español" class="flag-icon" id="currentFlag">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="lang-dropdown" id="langDropdown">
+                        <button class="lang-option" data-lang="es">
+                            <img src="https://flagcdn.com/w40/mx.png" alt="Español" class="flag-icon">
+                            Español
+                        </button>
+                        <button class="lang-option" data-lang="en">
+                            <img src="https://flagcdn.com/w40/us.png" alt="English" class="flag-icon">
+                            English
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Menu toggle (solo móvil) -->
+                <div class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section - CON TEXTO CENTRADO -->
+    <section id="home" class="home">
+        <div class="home-content">
+            <p class="greeting" data-i18n="hello">Hola, soy</p>
+            <h1 class="name">Mario Jesús Delgado Hernández</h1>
+            <h2 class="profession"><span data-i18n="and_im">Y soy</span> <span class="typing"></span></h2>
+            <p class="description" data-i18n="description">
+                Ingeniero en Sistemas Computacionales recién egresado por la Universidad de Guanajuato, con conocimientos en desarrollo de software, frontend, backend y aplicaciones móviles. Manejo de JavaScript, Vue.js, Node.js y Flutter, además de bases de datos relacionales. Interesado en crear soluciones tecnológicas funcionales y eficientes, con orientación a la innovación, la experiencia del usuario y el aprendizaje continuo.
+            </p>
+            <div class="home-buttons">
+                <button class="btn-download" onclick="downloadCV()" data-i18n="download_cv">Descargar CV</button>
+                <a href="#contact" class="btn-contact" data-i18n="contact_me">Contáctame</a>
+            </div>
+            
+            <!-- REDES SOCIALES COMPLETAS -->
+            <div class="social-links">
+                <a href="https://facebook.com/tu-perfil" target="_blank" title="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://instagram.com/tu-perfil" target="_blank" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://twitter.com/tu-perfil" target="_blank" title="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://github.com/tu-perfil" target="_blank" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/tu-perfil" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#contact" title="Correo Electrónico">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://wa.me/521234567890" target="_blank" title="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section - CON UNA SOLA IMAGEN GRANDE Y CENTRADA -->
+    <section id="about" class="about">
+        <h2 class="section-title" data-i18n="about_me">Sobre Mí</h2>
+        <div class="about-content">
+            <div class="about-grid">
+                <!-- COLUMNA DE IMAGEN ÚNICA GRANDE CENTRADA VERTICALMENTE -->
+                <div class="about-image-large">
+                    <div class="profile-image-card">
+                        <div class="profile-image-wrapper">
+                            <img src="assets/mario.jpg" alt="Mario Jesús Delgado Hernández">
+                        </div>
+                        <div class="profile-image-caption">
+                            <h4>Mario Jesús Delgado Hernández</h4>
+                            <p data-i18n="profile_title">Ingeniero en Sistemas Computacionales</p>
+                            <p class="profile-university"><a href="https://www.ugto.mx/" target="_blank" rel="noopener noreferrer" data-i18n="profile_university">Universidad de Guanajuato</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COLUMNA DE TEXTO -->
+                <div class="about-text">
+                    <h3 data-i18n="about_title">Ingeniero en Sistemas Computacionales</h3>
+                    <p data-i18n="about_text1">
+                        Recién egresado de Ingeniería en Sistemas Computacionales por la Universidad de Guanajuato, apasionado por el desarrollo de software y la creación de soluciones tecnológicas innovadoras. Cuento con conocimientos en desarrollo frontend, backend y aplicaciones móviles, buscando siempre aplicar las mejores prácticas y mantenerme actualizado con las últimas tecnologías.
+                    </p>
+                    <p data-i18n="about_text2">
+                        Mi enfoque se centra en crear aplicaciones funcionales y eficientes que resuelvan problemas reales, con especial atención a la experiencia del usuario y la calidad del código. Me caracterizo por ser una persona proactiva, con capacidad de trabajo en equipo y aprendizaje continuo.
+                    </p>
+                    
+                    <!-- Intereses Profesionales -->
+                    <div class="interests-section">
+                        <h4 data-i18n="professional_interests">Intereses Profesionales</h4>
+                        <div class="interests-grid">
+                            <div class="interest-item">
+                                <i class="fas fa-code"></i>
+                                <span data-i18n="interest1">Desarrollo de software y aplicaciones innovadoras</span>
+                            </div>
+                            <div class="interest-item">
+                                <i class="fas fa-paint-brush"></i>
+                                <span data-i18n="interest2">Diseño de interfaces atractivas y funcionales</span>
+                            </div>
+                            <div class="interest-item">
+                                <i class="fas fa-book"></i>
+                                <span data-i18n="interest3">Aprendizaje de nuevas herramientas y lenguajes</span>
+                            </div>
+                            <div class="interest-item">
+                                <i class="fas fa-users"></i>
+                                <span data-i18n="interest4">Colaboración en proyectos grupales</span>
+                            </div>
+                            <div class="interest-item">
+                                <i class="fas fa-lightbulb"></i>
+                                <span data-i18n="interest5">Uso de tecnología para resolver problemas</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Habilidades -->
+                    <div class="skills-section">
+                        <h4 data-i18n="skills_title">Habilidades</h4>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <i class="fas fa-laptop-code"></i>
+                                <span data-i18n="skill1">Desarrollo de software y aplicaciones</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-pencil-ruler"></i>
+                                <span data-i18n="skill2">Diseño de interfaces y experiencia de usuario</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-handshake"></i>
+                                <span data-i18n="skill3">Trabajo en equipo y colaboración</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-brain"></i>
+                                <span data-i18n="skill4">Pensamiento crítico y resolución de problemas</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-sync-alt"></i>
+                                <span data-i18n="skill5">Adaptabilidad y aprendizaje continuo</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tecnologías CON IMÁGENES -->
+                    <div class="tech-section">
+                        <h4 data-i18n="technologies">Tecnologías</h4>
+                        <div class="tech-images-grid">
+                            <!-- JavaScript -->
+                            <div class="tech-image-item" data-name="JavaScript">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+                                <span class="tech-tooltip">JavaScript</span>
+                            </div>
+                            
+                            <!-- Vue.js -->
+                            <div class="tech-image-item" data-name="Vue.js">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue.js">
+                                <span class="tech-tooltip">Vue.js</span>
+                            </div>
+                            
+                            <!-- Node.js -->
+                            <div class="tech-image-item" data-name="Node.js">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
+                                <span class="tech-tooltip">Node.js</span>
+                            </div>
+                            
+                            <!-- Flutter -->
+                            <div class="tech-image-item" data-name="Flutter">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter">
+                                <span class="tech-tooltip">Flutter</span>
+                            </div>
+                            
+                            <!-- HTML5 -->
+                            <div class="tech-image-item" data-name="HTML5">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+                                <span class="tech-tooltip">HTML5</span>
+                            </div>
+                            
+                            <!-- CSS3 -->
+                            <div class="tech-image-item" data-name="CSS3">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+                                <span class="tech-tooltip">CSS3</span>
+                            </div>
+                            
+                            <!-- C++ -->
+                            <div class="tech-image-item" data-name="C++">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++">
+                                <span class="tech-tooltip">C++</span>
+                            </div>
+                            
+                            <!-- Python -->
+                            <div class="tech-image-item" data-name="Python">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                                <span class="tech-tooltip">Python</span>
+                            </div>
+                            
+                            <!-- MySQL -->
+                            <div class="tech-image-item" data-name="MySQL">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
+                                <span class="tech-tooltip">MySQL</span>
+                            </div>
+                            
+                            <!-- PostgreSQL -->
+                            <div class="tech-image-item" data-name="PostgreSQL">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL">
+                                <span class="tech-tooltip">PostgreSQL</span>
+                            </div>
+                            
+                            <!-- MongoDB -->
+                            <div class="tech-image-item" data-name="MongoDB">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">
+                                <span class="tech-tooltip">MongoDB</span>
+                            </div>
+                            
+                            <!-- Git -->
+                            <div class="tech-image-item" data-name="Git">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+                                <span class="tech-tooltip">Git</span>
+                            </div>
+                            
+                            <!-- GitHub -->
+                            <div class="tech-image-item" data-name="GitHub">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+                                <span class="tech-tooltip">GitHub</span>
+                            </div>
+                            
+                            <!-- Android Studio -->
+                            <div class="tech-image-item" data-name="Android Studio">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg" alt="Android Studio">
+                                <span class="tech-tooltip">Android Studio</span>
+                            </div>
+                            
+                            <!-- Dart -->
+                            <div class="tech-image-item" data-name="Dart">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" alt="Dart">
+                                <span class="tech-tooltip">Dart</span>
+                            </div>
+
+                            <!-- Docker -->
+                            <div class="tech-image-item" data-name="Docker">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
+                                <span class="tech-tooltip">Docker</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2 class="section-title" data-i18n="my_services">Mis Servicios</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3 data-i18n="frontend_dev">Desarrollo Frontend</h3>
+                <p data-i18n="frontend_desc">Creación de interfaces web modernas, responsivas y atractivas utilizando Vue.js, JavaScript, HTML5 y CSS3.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-server"></i>
+                </div>
+                <h3 data-i18n="backend_dev">Desarrollo Backend</h3>
+                <p data-i18n="backend_desc">Construcción de APIs y servidores robustos con Node.js, Express y arquitecturas escalables.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-database"></i>
+                </div>
+                <h3 data-i18n="database_dev">Desarrollo de Bases de Datos</h3>
+                <p data-i18n="database_desc">Diseño, implementación y optimización de bases de datos relacionales (MySQL, PostgreSQL) y NoSQL (MongoDB).</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3 data-i18n="mobile_dev">Aplicaciones Móviles</h3>
+                <p data-i18n="mobile_desc">Desarrollo de apps multiplataforma con Flutter para iOS y Android con interfaces nativas.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-paint-brush"></i>
+                </div>
+                <h3 data-i18n="uxui_dev">Diseño UX/UI</h3>
+                <p data-i18n="uxui_desc">Diseño de interfaces atractivas y funcionales enfocadas en la experiencia de usuario y usabilidad.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                </div>
+                <h3 data-i18n="tutoring">Asesorías</h3>
+                <p data-i18n="tutoring_desc">Asesorías personalizadas en matemáticas y programación.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section - CON BOTÓN "CLIC PARA SABER MÁS" TRADUCIBLE -->
+    <section id="portfolio" class="portfolio">
+        <h2 class="section-title" data-i18n="my_portfolio">Mi Portafolio</h2>
+        <div class="portfolio-grid">
+            <!-- PROYECTO 1: ERP ETN -->
+            <div class="portfolio-item" onclick="openProjectModal('erp')">
+                <img src="assets/etn.jpg" alt="ERP ETN">
+                <div class="portfolio-overlay">
+                    <h3 data-i18n="erp_etn">ERP Enlaces Terrestres Nacionales (ETN)</h3>
+                    <button class="btn-more-info" onclick="openProjectModal('erp'); event.stopPropagation();">
+                        <i class="fas fa-info-circle"></i> <span data-i18n="click_for_more">CLIC PARA SABER MÁS</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- PROYECTO 2: FITODEX - ACTUALIZADO -->
+            <div class="portfolio-item" onclick="openProjectModal('fitodex')">
+                <img src="assets/fito.png" alt="FITODEX">
+                <div class="portfolio-overlay">
+                    <h3 data-i18n="fitodex">FITODEX - Plataforma Agrícola</h3>
+                    <button class="btn-more-info" onclick="openProjectModal('fitodex'); event.stopPropagation();">
+                        <i class="fas fa-info-circle"></i> <span data-i18n="click_for_more">CLIC PARA SABER MÁS</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- PROYECTO 3: App Flutter -->
+            <div class="portfolio-item">
+                <img src="https://via.placeholder.com/600x400/764ba2/ffffff?text=App+Flutter" alt="App Flutter">
+                <div class="portfolio-overlay">
+                    <h3 data-i18n="flutter_app">App Móvil Flutter</h3>
+                    <button class="btn-more-info">
+                        <i class="fas fa-info-circle"></i> <span data-i18n="click_for_more">CLIC PARA SABER MÁS</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- PROYECTO 4: API REST -->
+            <div class="portfolio-item">
+                <img src="https://via.placeholder.com/600x400/667eea/ffffff?text=API+REST" alt="API REST">
+                <div class="portfolio-overlay">
+                    <h3 data-i18n="api_rest">API REST</h3>
+                    <button class="btn-more-info">
+                        <i class="fas fa-info-circle"></i> <span data-i18n="click_for_more">CLIC PARA SABER MÁS</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- PROYECTO 5: UX/UI Design -->
+            <div class="portfolio-item">
+                <img src="https://via.placeholder.com/600x400/764ba2/ffffff?text=UX+UI+Design" alt="UX UI Design">
+                <div class="portfolio-overlay">
+                    <h3 data-i18n="uxui_project">Diseño UX/UI</h3>
+                    <button class="btn-more-info">
+                        <i class="fas fa-info-circle"></i> <span data-i18n="click_for_more">CLIC PARA SABER MÁS</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- PROYECTO 6: Diseño de BD -->
+            <div class="portfolio-item">
+                <img src="https://via.placeholder.com/600x400/667eea/ffffff?text=DB+Design" alt="Database Design">
+                <div class="portfolio-overlay">
+                    <h3 data-i18n="db_project">Diseño de BD</h3>
+                    <button class="btn-more-info">
+                        <i class="fas fa-info-circle"></i> <span data-i18n="click_for_more">CLIC PARA SABER MÁS</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal para Proyecto ERP -->
+    <div id="erpModal" class="project-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeProjectModal('erp')">&times;</span>
+            
+            <div class="modal-header">
+                <h2 data-i18n="erp_etn">ERP Enlaces Terrestres Nacionales (ETN)</h2>
+                <div class="modal-tech-tags">
+                    <span>Python</span>
+                    <span>Tkinter</span>
+                    <span>SQLite</span>
+                    <span>Matplotlib</span>
+                    <span>Hashlib</span>
+                </div>
+            </div>
+            
+            <div class="modal-body">
+                <div class="modal-description">
+                    <h3 data-i18n="project_description">Descripción del Proyecto</h3>
+                    <p data-i18n="erp_description">
+                        Sistema ERP desarrollado para la empresa de transporte Enlaces Terrestres Nacionales (ETN) que integra y gestiona eficientemente las operaciones internas a través de siete departamentos principales: Recursos Humanos, Finanzas, Inventarios, Compras, Proveedores, Ventas y Logística. El sistema cuenta con un usuario Admin con acceso total, así como usuarios generales y responsables para cada área.
+                    </p>
+                    
+                    <h3 data-i18n="key_features">Características Principales</h3>
+                    <ul class="features-list">
+                        <li><strong>Recursos Humanos:</strong> Contratación de empleados, gestión de pagos, control de personal activo/despedido y cambio de contraseñas.</li>
+                        <li><strong>Finanzas:</strong> Seguimiento de saldo, registro de transacciones y generación de informes financieros con gráficas.</li>
+                        <li><strong>Inventario:</strong> Control de productos disponibles y historial de salidas con filtros.</li>
+                        <li><strong>Compras y Proveedores:</strong> Registro de compras y gestión de proveedores asociados.</li>
+                        <li><strong>Ventas:</strong> Sistema de venta de boletos con control de 24 asientos por autobús.</li>
+                        <li><strong>Logística:</strong> Gestión de rutas y horarios.</li>
+                        <li><strong>Reportes Generales:</strong> Empleados por departamento, ventas totales y gastos totales.</li>
+                    </ul>
+                    
+                    <h3 data-i18n="technologies_used">Tecnologías Utilizadas</h3>
+                    <div class="modal-tech-icons">
+                        <div class="tech-icon-large">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                            <span>Python</span>
+                        </div>
+                        <div class="tech-icon-large">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="SQLite">
+                            <span>SQLite</span>
+                        </div>
+                        <div class="tech-icon-large">
+                            <i class="fas fa-chart-line" style="font-size: 3rem; color: var(--primary-color);"></i>
+                            <span>Matplotlib</span>
+                        </div>
+                        <div class="tech-icon-large">
+                            <i class="fas fa-lock" style="font-size: 3rem; color: var(--primary-color);"></i>
+                            <span>Hashlib</span>
+                        </div>
+                        <div class="tech-icon-large">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+                            <span>Git</span>
+                        </div>
+                        <div class="tech-icon-large">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+                            <span>GitHub</span>
+                        </div>
+                    </div>
+                    
+                    <h3 data-i18n="github_repo">Repositorio GitHub</h3>
+                    <a href="https://github.com/mariodelgadoh/erp-etn-mario-delgado.git" target="_blank" class="github-link">
+                        <i class="fab fa-github"></i> github.com/mariodelgadoh/erp-etn-mario-delgado
+                    </a>
+                </div>
+                
+                <div class="modal-gallery">
+                    <h3 data-i18n="project_gallery">Galería del Proyecto</h3>
+                    <div class="gallery-list" id="erpGalleryList">
+                        <!-- Login -->
+                        <div class="gallery-list-item" onclick="openImageViewer('assets/erp-login.png', 'gallery_login', 'erp')">
+                            <img src="assets/erp-login.png" alt="Login">
+                            <span class="gallery-item-tooltip" data-i18n="gallery_login">Pantalla de Login</span>
+                        </div>
+                        
+                        <!-- Admin -->
+                        <div class="gallery-list-item" onclick="openImageViewer('assets/admin.png', 'gallery_admin', 'erp')">
+                            <img src="assets/admin.png" alt="Admin">
+                            <span class="gallery-item-tooltip" data-i18n="gallery_admin">Pantalla de Admin</span>
+                        </div>
+                        
+                        <!-- RH Contratar -->
+                        <div class="gallery-list-item" onclick="openImageViewer('assets/rh.png', 'gallery_rrhh', 'erp')">
+                            <img src="assets/rh.png" alt="RH Contratar">
+                            <span class="gallery-item-tooltip" data-i18n="gallery_rrhh">RH - Contratación</span>
+                        </div>
+                        
+                        <!-- Finanzas Gráficas -->
+                        <div class="gallery-list-item" onclick="openImageViewer('assets/finanzas.png', 'gallery_finanzas', 'erp')">
+                            <img src="assets/finanzas.png" alt="Finanzas">
+                            <span class="gallery-item-tooltip" data-i18n="gallery_finanzas">Finanzas - Gráficas</span>
+                        </div>
+                        
+                        <!-- Inventario General -->
+                        <div class="gallery-list-item" onclick="openImageViewer('assets/inventario.png', 'gallery_inventario', 'erp')">
+                            <img src="assets/inventario.png" alt="Inventario">
+                            <span class="gallery-item-tooltip" data-i18n="gallery_inventario">Inventario General</span>
+                        </div>
+                        
+                        <!-- Compras Formulario -->
+                        <div class="gallery-list-item" onclick="openImageViewer('assets/compras.png', 'gallery_compras', 'erp')">
+                            <img src="assets/compras.png" alt="Compras">
+                            <span class="gallery-item-tooltip" data-i18n="gallery_compras">Compras - Formulario</span>
+                        </div>
+                        
+                        <!-- Proveedores Lista -->
+                        <div class="gallery-list-item" onclick="openImageViewer('assets/proveedores.png', 'gallery_proveedores', 'erp')">
+                            <img src="assets/proveedores.png" alt="Proveedores">
+                            <span class="gallery-item-tooltip" data-i18n="gallery_proveedores">Lista de Proveedores</span>
+                        </div>
+                        
+                        <!-- Ventas Boletos -->
+                        <div class="gallery-list-item" onclick="openImageViewer('assets/venta.png', 'gallery_ventas', 'erp')">
+                            <img src="assets/venta.png" alt="Ventas">
+                            <span class="gallery-item-tooltip" data-i18n="gallery_ventas">Ventas de Boletos</span>
+                        </div>
+                        
+                        <!-- Logística Rutas -->
+                        <div class="gallery-list-item" onclick="openImageViewer('assets/logistica.png', 'gallery_logistica', 'erp')">
+                            <img src="assets/logistica.png" alt="Logística">
+                            <span class="gallery-item-tooltip" data-i18n="gallery_logistica">Logística - Rutas</span>
+                        </div>
+                        
+                        <!-- Reportes -->
+                        <div class="gallery-list-item" onclick="openImageViewer('assets/reporte.png', 'gallery_reportes', 'erp')">
+                            <img src="assets/reporte.png" alt="Reportes">
+                            <span class="gallery-item-tooltip" data-i18n="gallery_reportes">Módulo de Reportes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Proyecto FITODEX - CON DESCRIPCIÓN AMPLIADA -->
+    <div id="fitodexModal" class="project-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeProjectModal('fitodex')">&times;</span>
+            
+            <div class="modal-header">
+                <h2 data-i18n="fitodex">FITODEX - Plataforma Agrícola</h2>
+                <div class="modal-tech-tags">
+                    <span>Vue.js</span>
+                    <span>JavaScript</span>
+                    <span>Node.js</span>
+                    <span>MongoDB</span>
+                    <span>Docker</span>
+                    <span>HTML/CSS</span>
+                    <span>GitHub</span>
+                </div>
+            </div>
+            
+            <div class="modal-body">
+                <div class="modal-description">
+                    <h3 data-i18n="project_description">Descripción del Proyecto</h3>
+                    <p data-i18n="fitodex_description">
+                        Conoce más sobre Fitodex, nuestra misión y visión. Somos una empresa agrícola dedicada a la producción y venta de cultivos, insecticidas y otros productos relacionados. Nuestra misión es ofrecer soluciones efectivas y sostenibles para el manejo de plagas y la mejora de los cultivos, garantizando la calidad y eficacia de nuestros productos. Nuestra visión es ser líderes en el sector agrícola, proporcionando innovaciones que promuevan prácticas agrícolas responsables y sostenibles, contribuyendo al crecimiento y éxito de nuestros clientes.
+                    </p>
+                    
+                    <p data-i18n="fitodex_description2">
+                        Fitodex ha sido desarrollada para facilitar el acceso a información técnica sobre pesticidas y fertilizantes, dirigida a productores agrícolas, técnicos y profesionales del sector agropecuario. Su función principal es permitir una búsqueda ágil y precisa de productos mediante el nombre comercial o el ingrediente activo, brindando apoyo en la toma de decisiones relacionadas con el manejo fitosanitario de los cultivos.
+                    </p>
+                    
+                    <h3 data-i18n="technologies_used">Tecnologías Utilizadas</h3>
+                    <div class="modal-tech-icons">
+                        <div class="tech-icon-large">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue.js">
+                            <span>Vue.js</span>
+                        </div>
+                        <div class="tech-icon-large">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="tech-icon-large">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
+                            <span>Node.js</span>
+                        </div>
+                        <div class="tech-icon-large">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">
+                            <span>MongoDB</span>
+                        </div>
+                        <div class="tech-icon-large">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
+                            <span>Docker</span>
+                        </div>
+                        <div class="tech-icon-large">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+                            <span>HTML5</span>
+                        </div>
+                        <div class="tech-icon-large">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+                            <span>CSS3</span>
+                        </div>
+                        <div class="tech-icon-large">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+                            <span>GitHub</span>
+                        </div>
+                    </div>
+
+                    <h3 data-i18n="web_link">Sitio Web</h3>
+                    <a href="https://frontend-fitodex.fly.dev/" target="_blank" class="github-link">
+                        <i class="fas fa-globe"></i> frontend-fitodex.fly.dev
+                    </a>
+                    
+                    <h3 data-i18n="github_repos">Repositorios GitHub</h3>
+                    
+                    <h4>Backend</h4>
+                    <a href="https://github.com/p5Patricio/backend-fitodex.git" target="_blank" class="github-link">
+                        <i class="fab fa-github"></i> github.com/p5Patricio/backend-fitodex
+                    </a>
+                    
+                    <h4>Frontend</h4>
+                    <a href="https://github.com/mariodelgadoh/frontend-fitodex.git" target="_blank" class="github-link">
+                        <i class="fab fa-github"></i> github.com/mariodelgadoh/frontend-fitodex
+                    </a>
+                </div>
+                
+                <div class="modal-gallery">
+                    <h3 data-i18n="project_gallery">Galería del Proyecto</h3>
+                    <div class="gallery-list" id="fitodexGalleryList">
+                        <!-- Inicio -->
+                        <div class="gallery-list-item" onclick="openImageViewer('assets/fitodex/inicio.png', 'fitodex_inicio', 'fitodex')">
+                            <img src="assets/inicio.png" alt="Inicio">
+                            <span class="gallery-item-tooltip" data-i18n="fitodex_inicio">Página de Inicio</span>
+                        </div>
+                        
+                        <!-- Cultivos -->
+                        <div class="gallery-list-item" onclick="openImageViewer('assets/fitodex/cultivos.png', 'fitodex_cultivos', 'fitodex')">
+                            <img src="assets/cultivos.png" alt="Cultivos">
+                            <span class="gallery-item-tooltip" data-i18n="fitodex_cultivos">Base de Cultivos</span>
+                        </div>
+                        
+                        <!-- Insecticidas -->
+                        <div class="gallery-list-item" onclick="openImageViewer('assets/fitodex/insecticidas.png', 'fitodex_insecticidas', 'fitodex')">
+                            <img src="assets/insecticidas.png" alt="Insecticidas">
+                            <span class="gallery-item-tooltip" data-i18n="fitodex_insecticidas">Base de Insecticidas</span>
+                        </div>
+                        
+                        <!-- Plagas -->
+                        <div class="gallery-list-item" onclick="openImageViewer('assets/fitodex/plagas.png', 'fitodex_plagas', 'fitodex')">
+                            <img src="assets/ug.png" alt="Plagas">
+                            <span class="gallery-item-tooltip" data-i18n="fitodex_plagas">Base de Plagas</span>
+                        </div>
+                        
+                        <!-- Búsqueda -->
+                        <div class="gallery-list-item" onclick="openImageViewer('assets/fitodex/busqueda.png', 'fitodex_busqueda', 'fitodex')">
+                            <img src="assets/busqueda.png" alt="Búsqueda">
+                            <span class="gallery-item-tooltip" data-i18n="fitodex_busqueda">Sistema de Búsqueda</span>
+                        </div>
+                        
+                        <!-- Detalles -->
+                        <div class="gallery-list-item" onclick="openImageViewer('assets/fitodex/detalle-cultivo.png', 'fitodex_detalle_cultivo', 'fitodex')">
+                            <img src="assets/detalles.png" alt="Detalle Cultivo">
+                            <span class="gallery-item-tooltip" data-i18n="fitodex_detalle_cultivo">Detalle de Cultivo</span>
+                        </div>
+                        
+                        <!-- Detalle Insecticida -->
+                        <div class="gallery-list-item" onclick="openImageViewer('assets/fitodex/detalle-insecticida.png', 'fitodex_detalle_insecticida', 'fitodex')">
+                            <img src="assets/ubicacion.png" alt="Detalle Insecticida">
+                            <span class="gallery-item-tooltip" data-i18n="fitodex_detalle_insecticida">Detalle de Insecticida</span>
+                        </div>
+                        
+                        <!-- Editar Usuario -->
+                        <div class="gallery-list-item" onclick="openImageViewer('assets/fitodex/detalle-plaga.png', 'fitodex_detalle_plaga', 'fitodex')">
+                            <img src="assets/editar.png" alt="Detalle Plaga">
+                            <span class="gallery-item-tooltip" data-i18n="fitodex_detalle_plaga">Detalle de Plaga</span>
+                        </div>
+                        
+                        <!-- usuario -->
+                        <div class="gallery-list-item" onclick="openImageViewer('assets/fitodex/admin.png', 'fitodex_admin', 'fitodex')">
+                            <img src="assets/usuarios.png" alt="Administración">
+                            <span class="gallery-item-tooltip" data-i18n="fitodex_admin">Panel de Administración</span>
+                        </div>
+                        
+                        <!-- login -->
+                        <div class="gallery-list-item" onclick="openImageViewer('assets/fitodex/estadisticas.png', 'fitodex_estadisticas', 'fitodex')">
+                            <img src="assets/login.png" alt="Estadísticas">
+                            <span class="gallery-item-tooltip" data-i18n="fitodex_estadisticas">Login</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Visor de Imágenes -->
+    <div id="imageViewerModal" class="image-viewer-modal">
+        <div class="image-viewer-content">
+            <span class="close-image-viewer" onclick="closeImageViewer()">&times;</span>
+            <div class="image-viewer-container">
+                <img id="viewerImage" src="" alt="Imagen ampliada">
+                <p id="viewerCaption" class="viewer-caption"></p>
+            </div>
+            <div class="image-viewer-nav">
+                <button class="viewer-nav-btn" id="prevImageBtn" onclick="navigateImage(-1)">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <span id="imageCounter" class="image-counter">1/10</span>
+                <button class="viewer-nav-btn" id="nextImageBtn" onclick="navigateImage(1)">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2 class="section-title" data-i18n="get_in_touch">Contacto</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3 data-i18n="work_together">Trabajemos juntos</h3>
+                <p data-i18n="contact_desc">¿Tienes un proyecto en mente? Estoy interesado en nuevas oportunidades y colaboraciones.</p>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>mj.delgadohernandez@ugto.mx</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+52 123 456 7890</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>México</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form-container">
+                <form id="contactForm" class="contact-form" action="https://formsubmit.co/49eae735beb5145fc6f8bd87547daa3c" method="POST">
+                    <input type="hidden" name="_subject" value="¡Nuevo mensaje desde tu Portfolio!">
+                    <input type="hidden" name="_template" value="box">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_autoresponse" value="Gracias por contactarme. He recibido tu mensaje y te responderé a la brevedad posible. Saludos, Mario Jesús Delgado Hernández">
+                    
+                    <div class="form-group">
+                        <input type="text" id="name" name="nombre" data-i18n-placeholder="name_placeholder" placeholder="Tu nombre completo" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" data-i18n-placeholder="email_placeholder" placeholder="Tu correo electrónico" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="asunto" data-i18n-placeholder="subject_placeholder" placeholder="Asunto" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="mensaje" rows="5" data-i18n-placeholder="message_placeholder" placeholder="Tu mensaje" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit" id="submitBtn">
+                        <span data-i18n="send_message">Enviar Mensaje</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+                <div id="formMessage" class="form-message"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Mario Jesús Delgado Hernández. <span data-i18n="all_rights">Todos los derechos reservados.</span></p>
+        <div class="footer-social">
+            <a href="https://facebook.com/tu-perfil" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com/tu-perfil" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/tu-perfil" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://github.com/tu-perfil" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/tu-perfil" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#contact"><i class="fas fa-envelope"></i></a>
+            <a href="https://wa.me/521234567890" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
