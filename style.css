@@ -11,6 +11,8 @@
     --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
+
+
 /* ===== MODO OSCURO ===== */
 .dark-theme {
     --primary-color: #818cf8;
@@ -2375,5 +2377,98 @@ section {
     to {
         opacity: 1;
         transform: scale(1);
+    }
+}
+
+
+/* ===== LIMITAR ANCHO AL 100% DE LA PANTALLA ===== */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+section {
+    max-width: 100vw !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    box-sizing: border-box !important;
+}
+
+.home-content,
+.about-content,
+.services-grid,
+.portfolio-grid,
+.contact-container,
+.modal-gallery,
+.tech-images-grid {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box !important;
+}
+
+.service-card,
+.portfolio-item,
+.contact-info,
+.contact-form-container,
+.gallery-list-item,
+.tech-image-item {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+/* Ajustar contenedores internos */
+.nav-container,
+.home-content,
+.about-content,
+.services-grid,
+.portfolio-grid,
+.contact-container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+}
+
+/* Eliminar cualquier max-width restrictivo */
+@media (min-width: 768px) {
+    .service-card,
+    .portfolio-item,
+    .contact-info,
+    .contact-form-container {
+        max-width: 100% !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    .service-card,
+    .portfolio-item,
+    .contact-info,
+    .contact-form-container {
+        max-width: 100% !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .service-card,
+    .portfolio-item,
+    .contact-info,
+    .contact-form-container {
+        max-width: 100% !important;
+    }
+}
+
+@media (min-width: 1400px) {
+    .service-card,
+    .portfolio-item,
+    .contact-info,
+    .contact-form-container {
+        max-width: 100% !important;
     }
 }
