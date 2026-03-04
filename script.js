@@ -101,7 +101,7 @@ const translations = {
         my_portfolio: "Mi Portafolio",
         erp_etn: "ERP Enlaces Terrestres Nacionales (ETN)",
         fitodex: "FITODEX - Plataforma Agrícola",
-        flutter_app: "App Móvil Flutter",
+        flutter_app: "App Móvil Fitodex",
         api_rest: "API REST",
         uxui_project: "Diseño UX/UI",
         db_project: "Diseño de BD",
@@ -154,7 +154,20 @@ const translations = {
         success_message: "¡Mensaje enviado con éxito! Te contactaré pronto.",
         error_message: "Error al enviar el mensaje. Por favor intenta de nuevo.",
         connection_error: "Error de conexión. Por favor verifica tu internet e intenta de nuevo.",
-        email_sent: "Correo enviado correctamente"
+        email_sent: "Correo enviado correctamente",
+        app_fitodex_description: "Conoce más sobre Fitodex, nuestra misión y visión. Somos una empresa agrícola dedicada a la producción y venta de cultivos, insecticidas y otros productos relacionados. Nuestra misión es ofrecer soluciones efectivas y sostenibles para el manejo de plagas y la mejora de los cultivos, garantizando la calidad y eficacia de nuestros productos. Nuestra visión es ser líderes en el sector agrícola, proporcionando innovaciones que promuevan prácticas agrícolas responsables y sostenibles, contribuyendo al crecimiento y éxito de nuestros clientes.",
+        app_fitodex_description2: "Aplicación móvil desarrollada para facilitar el acceso a información técnica sobre pesticidas y fertilizantes, dirigida a productores agrícolas, técnicos y profesionales del sector agropecuario. Su función principal es permitir una búsqueda ágil y precisa de productos mediante el nombre comercial o el ingrediente activo, brindando apoyo en la toma de decisiones relacionadas con el manejo fitosanitario de los cultivos.",
+        app_inicio: "Inicializando APP",
+        app_login: "Inicio",
+        app_registro: "Insecticide Screen",
+        app_home: "Pantalla Principal",
+        app_busqueda: "Sistema de Búsqueda",
+        app_resultados: "Resultados de Búsqueda",
+        app_detalles: "Detalles del Producto",
+        app_perfil: "Perfil de Usuario",
+        app_configuracion: "Configuración",
+        app_acerca: "Acerca de"
+
     },
     en: {
         home: "Home",
@@ -200,7 +213,7 @@ const translations = {
         my_portfolio: "My Portfolio",
         erp_etn: "ERP Enlaces Terrestres Nacionales (ETN)",
         fitodex: "FITODEX - Agricultural Platform",
-        flutter_app: "Flutter Mobile App",
+        flutter_app: "Fitodex Mobile App",
         api_rest: "REST API",
         uxui_project: "UX/UI Design",
         db_project: "Database Design",
@@ -253,7 +266,19 @@ const translations = {
         success_message: "Message sent successfully! I'll contact you soon.",
         error_message: "Error sending message. Please try again.",
         connection_error: "Connection error. Please check your internet and try again.",
-        email_sent: "Email sent successfully"
+        email_sent: "Email sent successfully",
+        app_fitodex_description: "Learn more about Fitodex, our mission and vision. We are an agricultural company dedicated to the production and sale of crops, insecticides and other related products. Our mission is to offer effective and sustainable solutions for pest management and crop improvement, guaranteeing the quality and effectiveness of our products. Our vision is to be leaders in the agricultural sector, providing innovations that promote responsible and sustainable agricultural practices, contributing to the growth and success of our clients.",
+        app_fitodex_description2: "Mobile application developed to facilitate access to technical information on pesticides and fertilizers, aimed at agricultural producers, technicians and professionals in the agricultural sector. Its main function is to allow agile and precise product search by trade name or active ingredient, providing support in decision-making related to crop phytosanitary management.",
+        app_inicio: "Initializing APP",
+        app_login: "Home",
+        app_registro: "Insecticide Screen",
+        app_home: "Home Screen",
+        app_busqueda: "Search System",
+        app_resultados: "Search Results",
+        app_detalles: "Product Details",
+        app_perfil: "User Profile",
+        app_configuracion: "Settings",
+        app_acerca: "About"
     }
 };
 
@@ -299,6 +324,7 @@ langOptions.forEach(option => {
         
         updateModalTexts('erp', lang);
         updateModalTexts('fitodex', lang);
+        updateModalTexts('flutter', lang);
         updateViewerCaption(lang);
     });
 });
@@ -538,23 +564,6 @@ function showFormMessage(text, type) {
         formMessage.textContent = '';
         formMessage.className = 'form-message';
     }, 5000);
-}
-
-function showNotification(message) {
-    let notification = document.querySelector('.download-notification');
-    
-    if (!notification) {
-        notification = document.createElement('div');
-        notification.className = 'download-notification';
-        document.body.appendChild(notification);
-    }
-    
-    notification.textContent = message;
-    notification.classList.add('show');
-    
-    setTimeout(() => {
-        notification.classList.remove('show');
-    }, 3000);
 }
 
 // ===== FUNCIONES PARA MODALES DE PROYECTOS =====
