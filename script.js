@@ -103,6 +103,7 @@ const translations = {
         fitodex: "FITODEX - Plataforma Agrícola",
         flutter_app: "App Móvil Fitodex",
         orbitas_app: "Simulador de Órbitas Planetarias",
+        digitos_app: "Reconocimiento de Dígitos Manuscritos",
         api_rest: "API REST",
         uxui_project: "Diseño UX/UI",
         db_project: "Diseño de BD",
@@ -121,6 +122,9 @@ const translations = {
         project_description: "Descripción del Proyecto",
         key_features: "Características Principales",
         technologies_used: "Tecnologías Utilizadas",
+        system_requirements: "Requisitos del Sistema",
+        installation: "Instalación",
+        execution: "Ejecución",
         github_repo: "Repositorio GitHub",
         github_repos: "Repositorios GitHub",
         web_link: "Sitio Web",
@@ -189,7 +193,27 @@ const translations = {
         orbitas_feature4: "Cálculo del Error Cuadrático Medio:",
         orbitas_feature4_desc: "Compara las posiciones predichas por el modelo con datos observacionales reales para cuantificar la precisión de la simulación.",
         orbitas_feature5: "Ecuación de Kepler:",
-        orbitas_feature5_desc: "Implementa la ecuación M = E - e·sin(E) para relacionar la anomalía excéntrica con la anomalía media."
+        orbitas_feature5_desc: "Implementa la ecuación M = E - e·sin(E) para relacionar la anomalía excéntrica con la anomalía media.",
+        digitos_description: "Sistema de reconocimiento de dígitos manuscritos que combina el dataset MNIST con muestras propias del usuario para crear un modelo personalizado de alta precisión utilizando Random Forest. Desarrollado por Equipo PI para la materia de Inteligencia Artificial.",
+        digitos_main: "Pantalla principal",
+        digitos_dibujo: "Dibujando dígitos",
+        digitos_guardar: "Guardando muestras",
+        digitos_etiqueta: "Etiquetado de dígitos",
+        digitos_entrenamiento: "Entrenamiento del modelo",
+        digitos_reconocimiento: "Reconocimiento de dígitos",
+        digitos_resultados: "Resultados con niveles de confianza",
+        digitos_metricas: "Métricas detalladas del modelo",
+        digitos_carpetas: "Resultados de digitos del 0 al 4",
+        digitos_correccion: "Resultados de digitos del 5 al 9",
+        digitos_feature1: "Preprocesamiento avanzado:",
+        digitos_feature1_desc: "Procesamiento de imágenes similar al usado en MNIST con conversión a escala de grises, inversión de colores, recorte automático y redimensionamiento a 28x28 píxeles.",
+        digitos_feature2: "Entrenamiento personalizado:",
+        digitos_feature2_desc: "Permite capturar muestras propias dibujadas con el mouse para crear un modelo adaptado al estilo de escritura del usuario.",
+        digitos_feature3: "Interfaz gráfica intuitiva:",
+        digitos_feature3_desc: "Dispone de 5 cuadros independientes para dibujar dígitos con botones para guardar muestras, limpiar y reconocer.",
+        digitos_feature5: "Métricas detalladas:",
+        digitos_feature5_desc: "Genera reportes completos con precisión general, matriz de confusión, métricas F1-score y análisis de confusiones entre dígitos.",
+        libraries: "Bibliotecas: "
     },
     en: {
         home: "Home",
@@ -237,6 +261,7 @@ const translations = {
         fitodex: "FITODEX - Agricultural Platform",
         flutter_app: "Fitodex Mobile App",
         orbitas_app: "Planetary Orbits Simulator",
+        digitos_app: "Handwritten Digit Recognition",
         api_rest: "REST API",
         uxui_project: "UX/UI Design",
         db_project: "Database Design",
@@ -255,6 +280,9 @@ const translations = {
         project_description: "Project Description",
         key_features: "Key Features",
         technologies_used: "Technologies Used",
+        system_requirements: "System Requirements",
+        installation: "Installation",
+        execution: "Execution",
         github_repo: "GitHub Repository",
         github_repos: "GitHub Repositories",
         web_link: "Website",
@@ -323,7 +351,27 @@ const translations = {
         orbitas_feature4: "Mean Squared Error calculation:",
         orbitas_feature4_desc: "Compares the positions predicted by the model with real observational data to quantify the accuracy of the simulation.",
         orbitas_feature5: "Kepler's equation:",
-        orbitas_feature5_desc: "Implements the equation M = E - e·sin(E) to relate eccentric anomaly to mean anomaly."
+        orbitas_feature5_desc: "Implements the equation M = E - e·sin(E) to relate eccentric anomaly to mean anomaly.",
+        digitos_description: "Handwritten digit recognition system that combines the MNIST dataset with the user's own samples to create a high-precision personalized model using Random Forest. Developed by Team PI for the Artificial Intelligence course.",
+        digitos_main: "Main Screen",
+        digitos_dibujo: "Drawing digits",
+        digitos_guardar: "Saving samples",
+        digitos_etiqueta: "Digit labeling",
+        digitos_entrenamiento: "Model training",
+        digitos_reconocimiento: "Digit recognition",
+        digitos_resultados: "Results with confidence levels",
+        digitos_metricas: "Detailed model metrics",
+        digitos_carpetas: "Results for digits from 0 to 4",
+        digitos_correccion: "Results for digits from 5 to 9",
+        digitos_feature1: "Advanced preprocessing:",
+        digitos_feature1_desc: "Image processing similar to MNIST with grayscale conversion, color inversion, automatic cropping, and resizing to 28x28 pixels.",
+        digitos_feature2: "Personalized training:",
+        digitos_feature2_desc: "Allows capturing custom samples drawn with the mouse to create a model adapted to the user's writing style.",
+        digitos_feature3: "Intuitive graphical interface:",
+        digitos_feature3_desc: "Features 5 independent drawing boxes with buttons to save samples, clear, and recognize.",
+        digitos_feature5: "Detailed metrics:",
+        digitos_feature5_desc: "Generates complete reports with overall accuracy, confusion matrix, F1-score metrics, and analysis of digit confusions.",
+        libraries: "Libraries: ",
     }
 };
 
@@ -371,6 +419,7 @@ langOptions.forEach(option => {
         updateModalTexts('fitodex', lang);
         updateModalTexts('flutter', lang);
         updateModalTexts('orbitas', lang);
+        updateModalTexts('digitos', lang);
         updateViewerCaption(lang);
     });
 });
@@ -488,6 +537,7 @@ function downloadCV() {
     
     const fileName = cvFiles[currentLang];
     
+    // Crear enlace para descargar
     const link = document.createElement('a');
     link.href = fileName;
     link.download = fileName;
@@ -497,9 +547,12 @@ function downloadCV() {
     link.click();
     document.body.removeChild(link);
     
+    // También abrir el PDF en una nueva pestaña
+    window.open(fileName, '_blank');
+    
     const message = currentLang === 'es' 
-        ? 'CV descargado exitosamente' 
-        : 'CV downloaded successfully';
+        ? 'CV descargado y abierto exitosamente' 
+        : 'CV downloaded and opened successfully';
     showNotification(message);
 }
 

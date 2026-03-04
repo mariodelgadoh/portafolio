@@ -369,12 +369,12 @@
                 </div>
             </div>
             
-            <!-- PROYECTO 5: UX/UI Design -->
-            <div class="portfolio-item" onclick="openProjectModal('uxui')">
-                <img src="https://via.placeholder.com/600x400/764ba2/ffffff?text=UX+UI+Design" alt="UX UI Design">
+            <!-- PROYECTO 5: Reconocimiento de Dígitos Manuscritos -->
+            <div class="portfolio-item" onclick="openProjectModal('digitos')">
+                <img src="assets/digitos.jpg" alt="Reconocimiento de Dígitos Manuscritos">
                 <div class="portfolio-overlay">
-                    <h3 data-i18n="uxui_project">Diseño UX/UI</h3>
-                    <button class="btn-more-info" onclick="openProjectModal('uxui'); event.stopPropagation();">
+                    <h3 data-i18n="digitos_app">Reconocimiento de Dígitos Manuscritos</h3>
+                    <button class="btn-more-info" onclick="openProjectModal('digitos'); event.stopPropagation();">
                         <i class="fas fa-info-circle"></i> <span data-i18n="click_for_more">CLIC PARA SABER MÁS</span>
                     </button>
                 </div>
@@ -888,6 +888,139 @@
                         <div class="gallery-list-item" onclick="openImageViewer('assets/orbitas-visualizacion.jpg', 'orbitas_visualizacion', 'orbitas')">
                             <img src="assets/orbitas-visualizacion.png" alt="Visualización órbitas">
                             <span class="gallery-item-tooltip" data-i18n="orbitas_visualizacion">Visualización de órbitas planetarias</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Proyecto Reconocimiento de Dígitos Manuscritos -->
+    <div id="digitosModal" class="project-modal">
+        <button class="close-modal" onclick="closeProjectModal('digitos')" aria-label="Cerrar"></button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 data-i18n="digitos_app">Reconocimiento de Dígitos Manuscritos</h2>
+                <div class="modal-tech-tags">
+                    <span>Python</span>
+                    <span>Scikit-learn</span>
+                    <span>Random Forest</span>
+                    <span>Tkinter</span>
+                    <span>NumPy</span>
+                    <span>Pillow</span>
+                    <span>Scipy</span>
+                </div>
+            </div>
+            
+            <div class="modal-body">
+                <div class="modal-description">
+                    <h3 data-i18n="project_description">Descripción del Proyecto</h3>
+                    <p data-i18n="digitos_description">
+                        Sistema de reconocimiento de dígitos manuscritos que combina el dataset MNIST con muestras propias del usuario para crear un modelo personalizado de alta precisión utilizando Random Forest. Desarrollado por Equipo PI para la materia de Inteligencia Artificial.
+                    </p>
+                    
+                    <h3 data-i18n="key_features">Características Principales</h3>
+                    <ul class="features-list">
+                        <li><span data-i18n="digitos_feature1">Preprocesamiento avanzado:</span> <span data-i18n="digitos_feature1_desc">Procesamiento de imágenes similar al usado en MNIST con conversión a escala de grises, inversión de colores, recorte automático y redimensionamiento a 28x28 píxeles.</span></li>
+                        <li><span data-i18n="digitos_feature2">Entrenamiento personalizado:</span> <span data-i18n="digitos_feature2_desc">Permite capturar muestras propias dibujadas con el mouse para crear un modelo adaptado al estilo de escritura del usuario.</span></li>
+                        <li><span data-i18n="digitos_feature3">Interfaz gráfica intuitiva:</span> <span data-i18n="digitos_feature3_desc">Dispone de 5 cuadros independientes para dibujar dígitos con botones para guardar muestras, limpiar y reconocer.</span></li>
+                        <li><span data-i18n="digitos_feature5">Métricas detalladas:</span> <span data-i18n="digitos_feature5_desc">Genera reportes completos con precisión general, matriz de confusión, métricas F1-score y análisis de confusiones entre dígitos.</span></li>
+                    </ul>
+                    
+                    <h3 data-i18n="technologies_used">Tecnologías Utilizadas</h3>
+                    <div class="modal-tech-icons">
+                        <div class="tech-icon-large">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                            <span>Python</span>
+                        </div>
+                        <div class="tech-icon-large">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy">
+                            <span>NumPy</span>
+                        </div>
+                        <div class="tech-icon-large">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" alt="Scikit-learn">
+                            <span>Scikit-learn</span>
+                        </div>
+                        <div class="tech-icon-large">
+                            <i class="fas fa-project-diagram" style="font-size: 3rem; color: var(--primary-color);"></i>
+                            <span>Random Forest</span>
+                        </div>
+                        <div class="tech-icon-large">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+                            <span>GitHub</span>
+                        </div>
+                    </div>
+
+                    <h3 data-i18n="system_requirements">Requisitos del Sistema</h3>
+                    <ul class="features-list">
+                        <li><strong>Python:</strong> 3.8+</li>
+                        <li><strong data-i18n="libraries">Bibliotecas:</strong> tkinter, numpy, Pillow, scikit-learn, scipy</li>
+                    </ul>
+
+                    <h3 data-i18n="installation">Instalación</h3>
+                    <pre><code>pip install numpy Pillow scikit-learn scipy</code></pre>
+
+                    <h3 data-i18n="execution">Ejecución</h3>
+                    <pre><code>python proyecto-equipo.py</code></pre>
+
+                    <h3 data-i18n="github_repo">Repositorio GitHub</h3>
+                    <a href="https://github.com/mariodelgadoh/digitos-manuscritos.git" target="_blank" class="github-link">
+                        <i class="fab fa-github"></i> github.com/mariodelgadoh/digitos-manuscritos
+                    </a>
+                </div>
+                
+                <div class="modal-gallery">
+                    <h3 data-i18n="project_gallery">Galería del Proyecto</h3>
+                    <div class="gallery-list" id="digitosGalleryList">
+                        <!-- Imagen 1: Pantalla principal -->
+                        <div class="gallery-list-item" onclick="openImageViewer('assets/digitos-main.jpg', 'digitos_main', 'digitos')">
+                            <img src="assets/digitos-main.png" alt="Pantalla principal">
+                            <span class="gallery-item-tooltip" data-i18n="digitos_main">Pantalla principal</span>
+                        </div>
+                        <!-- Imagen 2: Dibujando dígitos -->
+                        <div class="gallery-list-item" onclick="openImageViewer('assets/digitos-dibujo.jpg', 'digitos_dibujo', 'digitos')">
+                            <img src="assets/digitos-dibujo.png" alt="Dibujando dígitos">
+                            <span class="gallery-item-tooltip" data-i18n="digitos_dibujo">Dibujando dígitos</span>
+                        </div>
+                        <!-- Imagen 3: Guardando muestras -->
+                        <div class="gallery-list-item" onclick="openImageViewer('assets/digitos-guardar.jpg', 'digitos_guardar', 'digitos')">
+                            <img src="assets/digitos-guardar.png" alt="Guardando muestras">
+                            <span class="gallery-item-tooltip" data-i18n="digitos_guardar">Guardando muestras</span>
+                        </div>
+                        <!-- Imagen 4: Etiquetado de dígitos -->
+                        <div class="gallery-list-item" onclick="openImageViewer('assets/digitos-etiqueta.jpg', 'digitos_etiqueta', 'digitos')">
+                            <img src="assets/digitos-etiqueta.png" alt="Etiquetado de dígitos">
+                            <span class="gallery-item-tooltip" data-i18n="digitos_etiqueta">Etiquetado de dígitos</span>
+                        </div>
+                        <!-- Imagen 5: Entrenamiento del modelo -->
+                        <div class="gallery-list-item" onclick="openImageViewer('assets/digitos-entrenamiento.jpg', 'digitos_entrenamiento', 'digitos')">
+                            <img src="assets/digitos-entrenamiento.png" alt="Entrenamiento">
+                            <span class="gallery-item-tooltip" data-i18n="digitos_entrenamiento">Entrenamiento del modelo</span>
+                        </div>
+                        <!-- Imagen 6: Reconocimiento -->
+                        <div class="gallery-list-item" onclick="openImageViewer('assets/digitos-reconocimiento.jpg', 'digitos_reconocimiento', 'digitos')">
+                            <img src="assets/digitos-reconocimiento.png" alt="Reconocimiento">
+                            <span class="gallery-item-tooltip" data-i18n="digitos_reconocimiento">Reconocimiento de dígitos</span>
+                        </div>
+                        <!-- Imagen 7: Resultados con confianza -->
+                        <div class="gallery-list-item" onclick="openImageViewer('assets/digitos-resultados.jpg', 'digitos_resultados', 'digitos')">
+                            <img src="assets/digitos-resultados.png" alt="Resultados">
+                            <span class="gallery-item-tooltip" data-i18n="digitos_resultados">Resultados con niveles de confianza</span>
+                        </div>
+                        <!-- Imagen 8: Métricas del modelo -->
+                        <div class="gallery-list-item" onclick="openImageViewer('assets/digitos-metricas.jpg', 'digitos_metricas', 'digitos')">
+                            <img src="assets/digitos-metricas.png" alt="Métricas">
+                            <span class="gallery-item-tooltip" data-i18n="digitos_metricas">Métricas detalladas del modelo</span>
+                        </div>
+                        <!-- Imagen 9: Estructura de carpetas -->
+                        <div class="gallery-list-item" onclick="openImageViewer('assets/digitos-carpetas.jpg', 'digitos_carpetas', 'digitos')">
+                            <img src="assets/digitos-0-4.png" alt="Estructura de carpetas">
+                            <span class="gallery-item-tooltip" data-i18n="digitos_carpetas">Resultados de digitos del 0 al 4</span>
+                        </div>
+                        <!-- Imagen 10: Corrección con IA -->
+                        <div class="gallery-list-item" onclick="openImageViewer('assets/digitos-correccion.jpg', 'digitos_correccion', 'digitos')">
+                            <img src="assets/digitos-5-9.png" alt="Corrección con IA">
+                            <span class="gallery-item-tooltip" data-i18n="digitos_correccion">Resultados de digitos del 5 al 9</span>
                         </div>
                     </div>
                 </div>
