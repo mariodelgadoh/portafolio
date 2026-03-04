@@ -102,6 +102,7 @@ const translations = {
         erp_etn: "ERP Enlaces Terrestres Nacionales (ETN)",
         fitodex: "FITODEX - Plataforma Agrícola",
         flutter_app: "App Móvil Fitodex",
+        orbitas_app: "Simulador de Órbitas Planetarias",
         api_rest: "API REST",
         uxui_project: "Diseño UX/UI",
         db_project: "Diseño de BD",
@@ -118,13 +119,13 @@ const translations = {
         profile_title: "Ingeniero en Sistemas Computacionales",
         profile_university: "Universidad de Guanajuato",
         project_description: "Descripción del Proyecto",
-        erp_description: "Sistema ERP desarrollado para la empresa de transporte Enlaces Terrestres Nacionales (ETN) que integra y gestiona eficientemente las operaciones internas a través de siete departamentos principales: Recursos Humanos, Finanzas, Inventarios, Compras, Proveedores, Ventas y Logística. El sistema cuenta con un usuario Admin con acceso total, así como usuarios generales y responsables para cada área.",
         key_features: "Características Principales",
         technologies_used: "Tecnologías Utilizadas",
         github_repo: "Repositorio GitHub",
         github_repos: "Repositorios GitHub",
         web_link: "Sitio Web",
         project_gallery: "Galería del Proyecto",
+        erp_description: "Sistema ERP desarrollado para la empresa de transporte Enlaces Terrestres Nacionales (ETN) que integra y gestiona eficientemente las operaciones internas a través de siete departamentos principales: Recursos Humanos, Finanzas, Inventarios, Compras, Proveedores, Ventas y Logística. El sistema cuenta con un usuario Admin con acceso total, así como usuarios generales y responsables para cada área.",
         fitodex_description: "Conoce más sobre Fitodex, nuestra misión y visión. Somos una empresa agrícola dedicada a la producción y venta de cultivos, insecticidas y otros productos relacionados. Nuestra misión es ofrecer soluciones efectivas y sostenibles para el manejo de plagas y la mejora de los cultivos, garantizando la calidad y eficacia de nuestros productos. Nuestra visión es ser líderes en el sector agrícola, proporcionando innovaciones que promuevan prácticas agrícolas responsables y sostenibles, contribuyendo al crecimiento y éxito de nuestros clientes.",
         fitodex_description2: "Fitodex ha sido desarrollada para facilitar el acceso a información técnica sobre pesticidas y fertilizantes, dirigida a productores agrícolas, técnicos y profesionales del sector agropecuario. Su función principal es permitir una búsqueda ágil y precisa de productos mediante el nombre comercial o el ingrediente activo, brindando apoyo en la toma de decisiones relacionadas con el manejo fitosanitario de los cultivos.",
         gallery_login: "Pantalla de Login",
@@ -166,8 +167,29 @@ const translations = {
         app_detalles: "Avisos de Privacidad",
         app_perfil: "Universidad de Guanajuato",
         app_configuracion: "Ubicación",
-        app_acerca: "Equipo"
-
+        app_acerca: "Equipo",
+        orbitas_description: "Programa de Simulación de Órbitas Planetarias y Cálculo del Error Cuadrático Medio. En el ámbito de la astronomía y la exploración espacial, la comprensión precisa de las órbitas planetarias es crucial para diversas aplicaciones, que van desde la investigación científica hasta el diseño de misiones espaciales. Este proyecto se enfoca en el desarrollo de un programa, accesible a través de una página web, que permite simular las órbitas planetarias dentro del sistema solar. La evaluación de la exactitud de las simulaciones se realiza mediante el uso del error cuadrático medio (ECM). El programa emplea métodos numéricos avanzados, como el método de Newton-Raphson, para el cálculo de la anomalía excéntrica y la minimización del error cuadrático.",
+        orbitas_inicio: "Pantalla de inicio",
+        orbitas_info: "Información sobre Error Cuadrático",
+        orbitas_operaciones: "Ingreso de datos",
+        orbitas_resultados: "Resultados de cálculos",
+        orbitas_anomalia: "Información Anomalía Media",
+        orbitas_excentricidad: "Información Excentricidad",
+        orbitas_sistemasolar: "Información general del sistema solar",
+        orbitas_planetas: "Información detallada de planetas",
+        orbitas_tabla: "Tabla de datos orbitales",
+        orbitas_visualizacion: "Visualización de órbitas planetarias",
+        numerical_methods: "Métodos Numéricos",
+        orbitas_feature1: "Simulación de órbitas planetarias:",
+        orbitas_feature1_desc: "Utiliza parámetros orbitales y principios físicos fundamentales para modelar el movimiento de los planetas en el espacio.",
+        orbitas_feature2: "Cálculo de posiciones:",
+        orbitas_feature2_desc: "Calcula las posiciones de los planetas en función del tiempo, empleando el método de Newton-Raphson para garantizar la precisión de las órbitas simuladas.",
+        orbitas_feature3: "Representación visual:",
+        orbitas_feature3_desc: "Proporciona una representación visual precisa de las órbitas de los planetas alrededor del Sol.",
+        orbitas_feature4: "Cálculo del Error Cuadrático Medio:",
+        orbitas_feature4_desc: "Compara las posiciones predichas por el modelo con datos observacionales reales para cuantificar la precisión de la simulación.",
+        orbitas_feature5: "Ecuación de Kepler:",
+        orbitas_feature5_desc: "Implementa la ecuación M = E - e·sin(E) para relacionar la anomalía excéntrica con la anomalía media."
     },
     en: {
         home: "Home",
@@ -214,6 +236,7 @@ const translations = {
         erp_etn: "ERP Enlaces Terrestres Nacionales (ETN)",
         fitodex: "FITODEX - Agricultural Platform",
         flutter_app: "Fitodex Mobile App",
+        orbitas_app: "Planetary Orbits Simulator",
         api_rest: "REST API",
         uxui_project: "UX/UI Design",
         db_project: "Database Design",
@@ -230,13 +253,13 @@ const translations = {
         profile_title: "Computer Systems Engineer",
         profile_university: "University of Guanajuato",
         project_description: "Project Description",
-        erp_description: "ERP system developed for the transportation company Enlaces Terrestres Nacionales (ETN) that integrates and efficiently manages internal operations through seven main departments: Human Resources, Finance, Inventory, Purchasing, Suppliers, Sales, and Logistics. The system has an Admin user with full access, as well as general users and managers for each area.",
         key_features: "Key Features",
         technologies_used: "Technologies Used",
         github_repo: "GitHub Repository",
         github_repos: "GitHub Repositories",
         web_link: "Website",
         project_gallery: "Project Gallery",
+        erp_description: "ERP system developed for the transportation company Enlaces Terrestres Nacionales (ETN) that integrates and efficiently manages internal operations through seven main departments: Human Resources, Finance, Inventory, Purchasing, Suppliers, Sales, and Logistics. The system has an Admin user with full access, as well as general users and managers for each area.",
         fitodex_description: "Learn more about Fitodex, our mission and vision. We are an agricultural company dedicated to the production and sale of crops, insecticides and other related products. Our mission is to offer effective and sustainable solutions for pest management and crop improvement, guaranteeing the quality and effectiveness of our products. Our vision is to be leaders in the agricultural sector, providing innovations that promote responsible and sustainable agricultural practices, contributing to the growth and success of our clients.",
         fitodex_description2: "Fitodex has been developed to facilitate access to technical information on pesticides and fertilizers, aimed at agricultural producers, technicians and professionals in the agricultural sector. Its main function is to allow agile and precise product search by trade name or active ingredient, providing support in decision-making related to crop phytosanitary management.",
         gallery_login: "Login Screen",
@@ -278,7 +301,29 @@ const translations = {
         app_detalles: "Privacy Notices",
         app_perfil: "University of Guanajuato",
         app_configuracion: "Location",
-        app_acerca: "Team"
+        app_acerca: "Team",
+        orbitas_description: "Planetary Orbits Simulation Program and Mean Squared Error Calculation. In the field of astronomy and space exploration, precise understanding of planetary orbits is crucial for various applications, ranging from scientific research to space mission design. This project focuses on developing a program, accessible through a web page, that allows simulating planetary orbits within the solar system. The accuracy of the simulations is evaluated using the mean squared error (MSE). The program employs advanced numerical methods, such as the Newton-Raphson method, for calculating eccentric anomaly and minimizing quadratic error.",
+        orbitas_inicio: "Home Screen",
+        orbitas_info: "Information about Mean Squared Error",
+        orbitas_operaciones: "Data Entry",
+        orbitas_resultados: "Calculation Results",
+        orbitas_anomalia: "Mean Anomaly Information",
+        orbitas_excentricidad: "Eccentricity Information",
+        orbitas_sistemasolar: "Solar System General Information",
+        orbitas_planetas: "Detailed Planet Information",
+        orbitas_tabla: "Orbital Data Table",
+        orbitas_visualizacion: "Planetary Orbits Visualization",
+        numerical_methods: "Numerical Methods",
+        orbitas_feature1: "Planetary orbit simulation:",
+        orbitas_feature1_desc: "Uses orbital parameters and fundamental physical principles to model the movement of planets in space.",
+        orbitas_feature2: "Position calculation:",
+        orbitas_feature2_desc: "Calculates the positions of planets as a function of time, using the Newton-Raphson method to ensure the accuracy of simulated orbits.",
+        orbitas_feature3: "Visual representation:",
+        orbitas_feature3_desc: "Provides an accurate visual representation of the orbits of planets around the Sun.",
+        orbitas_feature4: "Mean Squared Error calculation:",
+        orbitas_feature4_desc: "Compares the positions predicted by the model with real observational data to quantify the accuracy of the simulation.",
+        orbitas_feature5: "Kepler's equation:",
+        orbitas_feature5_desc: "Implements the equation M = E - e·sin(E) to relate eccentric anomaly to mean anomaly."
     }
 };
 
@@ -325,6 +370,7 @@ langOptions.forEach(option => {
         updateModalTexts('erp', lang);
         updateModalTexts('fitodex', lang);
         updateModalTexts('flutter', lang);
+        updateModalTexts('orbitas', lang);
         updateViewerCaption(lang);
     });
 });

@@ -358,12 +358,12 @@
                 </div>
             </div>
             
-            <!-- PROYECTO 4: API REST -->
-            <div class="portfolio-item" onclick="openProjectModal('api')">
-                <img src="https://via.placeholder.com/600x400/667eea/ffffff?text=API+REST" alt="API REST">
+            <!-- PROYECTO 4: Simulador de Órbitas Planetarias -->
+            <div class="portfolio-item" onclick="openProjectModal('orbitas')">
+                <img src="assets/sistemasolar.jpg" alt="Simulador de Órbitas Planetarias">
                 <div class="portfolio-overlay">
-                    <h3 data-i18n="api_rest">API REST</h3>
-                    <button class="btn-more-info" onclick="openProjectModal('api'); event.stopPropagation();">
+                    <h3 data-i18n="orbitas_app">Simulador de Órbitas Planetarias</h3>
+                    <button class="btn-more-info" onclick="openProjectModal('orbitas'); event.stopPropagation();">
                         <i class="fas fa-info-circle"></i> <span data-i18n="click_for_more">CLIC PARA SABER MÁS</span>
                     </button>
                 </div>
@@ -640,135 +640,260 @@
         </div>
     </div>
 
-<!-- Modal para Proyecto App Móvil Fitodex -->
-<div id="flutterModal" class="project-modal">
-    <button class="close-modal" onclick="closeProjectModal('flutter')" aria-label="Cerrar"></button>
-    <div class="modal-content">
-        <div class="modal-header">
-            <h2 data-i18n="flutter_app">App Móvil Fitodex</h2>
-            <div class="modal-tech-tags">
-                <span>Dart</span>
-                <span>Flutter</span>
-                <span>C++</span>
-                <span>CMake</span>
-                <span>Swift</span>
-                <span>C</span>
-                <span>HTML</span>
-                <span>Android Studio</span>
-            </div>
-        </div>
-        
-        <div class="modal-body">
-            <div class="modal-description">
-                <h3 data-i18n="project_description">Descripción del Proyecto</h3>
-                <p data-i18n="app_fitodex_description">
-                    Conoce más sobre Fitodex, nuestra misión y visión. Somos una empresa agrícola dedicada a la producción y venta de cultivos, insecticidas y otros productos relacionados. Nuestra misión es ofrecer soluciones efectivas y sostenibles para el manejo de plagas y la mejora de los cultivos, garantizando la calidad y eficacia de nuestros productos. Nuestra visión es ser líderes en el sector agrícola, proporcionando innovaciones que promuevan prácticas agrícolas responsables y sostenibles, contribuyendo al crecimiento y éxito de nuestros clientes.
-                </p>
-                
-                <p data-i18n="app_fitodex_description2">
-                    Aplicación móvil desarrollada para facilitar el acceso a información técnica sobre pesticidas y fertilizantes, dirigida a productores agrícolas, técnicos y profesionales del sector agropecuario. Su función principal es permitir una búsqueda ágil y precisa de productos mediante el nombre comercial o el ingrediente activo, brindando apoyo en la toma de decisiones relacionadas con el manejo fitosanitario de los cultivos.
-                </p>
-                
-                <h3 data-i18n="technologies_used">Tecnologías Utilizadas</h3>
-                <div class="modal-tech-icons">
-                    <div class="tech-icon-large">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" alt="Dart">
-                        <span>Dart</span>
-                    </div>
-                    <div class="tech-icon-large">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter">
-                        <span>Flutter</span>
-                    </div>
-                    <div class="tech-icon-large">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++">
-                        <span>C++</span>
-                    </div>
-                    <div class="tech-icon-large">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cmake/cmake-original.svg" alt="CMake">
-                        <span>CMake</span>
-                    </div>
-                    <div class="tech-icon-large">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" alt="Swift">
-                        <span>Swift</span>
-                    </div>
-                    <div class="tech-icon-large">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C">
-                        <span>C</span>
-                    </div>
-                    <div class="tech-icon-large">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
-                        <span>HTML</span>
-                    </div>
-                    <div class="tech-icon-large">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg" alt="Android Studio">
-                        <span>Android Studio</span>
-                    </div>
+    <!-- Modal para Proyecto App Móvil Fitodex -->
+    <div id="flutterModal" class="project-modal">
+        <button class="close-modal" onclick="closeProjectModal('flutter')" aria-label="Cerrar"></button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 data-i18n="flutter_app">App Móvil Fitodex</h2>
+                <div class="modal-tech-tags">
+                    <span>Dart</span>
+                    <span>Flutter</span>
+                    <span>C++</span>
+                    <span>CMake</span>
+                    <span>Swift</span>
+                    <span>C</span>
+                    <span>HTML</span>
+                    <span>Android Studio</span>
                 </div>
-
-                <h3 data-i18n="github_repo">Repositorio GitHub</h3>
-                <a href="https://github.com/mariodelgadoh/app-fitodex.git" target="_blank" class="github-link">
-                    <i class="fab fa-github"></i> github.com/mariodelgadoh/app-fitodex
-                </a>
             </div>
             
-            <div class="modal-gallery">
-                <h3 data-i18n="project_gallery">Galería del Proyecto</h3>
-                <div class="gallery-list" id="flutterGalleryList">
-                    <!-- Imagen 1 -->
-                    <div class="gallery-list-item" onclick="openImageViewer('assets/app-inicio.jpg', 'app_inicio', 'flutter')">
-                        <img src="assets/inicioapp.jpg" alt="Inicio App">
-                        <span class="gallery-item-tooltip" data-i18n="app_inicio">Inicializando APP</span>
+            <div class="modal-body">
+                <div class="modal-description">
+                    <h3 data-i18n="project_description">Descripción del Proyecto</h3>
+                    <p data-i18n="app_fitodex_description">
+                        Conoce más sobre Fitodex, nuestra misión y visión. Somos una empresa agrícola dedicada a la producción y venta de cultivos, insecticidas y otros productos relacionados. Nuestra misión es ofrecer soluciones efectivas y sostenibles para el manejo de plagas y la mejora de los cultivos, garantizando la calidad y eficacia de nuestros productos. Nuestra visión es ser líderes en el sector agrícola, proporcionando innovaciones que promuevan prácticas agrícolas responsables y sostenibles, contribuyendo al crecimiento y éxito de nuestros clientes.
+                    </p>
+                    
+                    <p data-i18n="app_fitodex_description2">
+                        Aplicación móvil desarrollada para facilitar el acceso a información técnica sobre pesticidas y fertilizantes, dirigida a productores agrícolas, técnicos y profesionales del sector agropecuario. Su función principal es permitir una búsqueda ágil y precisa de productos mediante el nombre comercial o el ingrediente activo, brindando apoyo en la toma de decisiones relacionadas con el manejo fitosanitario de los cultivos.
+                    </p>
+                    
+                    <h3 data-i18n="technologies_used">Tecnologías Utilizadas</h3>
+                    <div class="modal-tech-icons">
+                        <div class="tech-icon-large">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" alt="Dart">
+                            <span>Dart</span>
+                        </div>
+                        <div class="tech-icon-large">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter">
+                            <span>Flutter</span>
+                        </div>
+                        <div class="tech-icon-large">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++">
+                            <span>C++</span>
+                        </div>
+                        <div class="tech-icon-large">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cmake/cmake-original.svg" alt="CMake">
+                            <span>CMake</span>
+                        </div>
+                        <div class="tech-icon-large">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" alt="Swift">
+                            <span>Swift</span>
+                        </div>
+                        <div class="tech-icon-large">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C">
+                            <span>C</span>
+                        </div>
+                        <div class="tech-icon-large">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
+                            <span>HTML</span>
+                        </div>
+                        <div class="tech-icon-large">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg" alt="Android Studio">
+                            <span>Android Studio</span>
+                        </div>
                     </div>
-                    <!-- Imagen 2 -->
-                    <div class="gallery-list-item" onclick="openImageViewer('assets/app-login.jpg', 'app_login', 'flutter')">
-                        <img src="assets/home.jpg" alt="Login">
-                        <span class="gallery-item-tooltip" data-i18n="app_login">Inicio</span>
-                    </div>
-                    <!-- Imagen 3 -->
-                    <div class="gallery-list-item" onclick="openImageViewer('assets/app-registro.jpg', 'app_registro', 'flutter')">
-                        <img src="assets/appinsecticidas.jpg" alt="Registro">
-                        <span class="gallery-item-tooltip" data-i18n="app_registro">Pantalla de Insecticidas</span>
-                    </div>
-                    <!-- Imagen 4 -->
-                    <div class="gallery-list-item" onclick="openImageViewer('assets/app-home.jpg', 'app_home', 'flutter')">
-                        <img src="assets/busquedaapp.jpg" alt="Home">
-                        <span class="gallery-item-tooltip" data-i18n="app_home">Pantalla de Búsqueda</span>
-                    </div>
-                    <!-- Imagen 5 -->
-                    <div class="gallery-list-item" onclick="openImageViewer('assets/app-busqueda.jpg', 'app_busqueda', 'flutter')">
-                        <img src="assets/aclientes.jpg" alt="Búsqueda">
-                        <span class="gallery-item-tooltip" data-i18n="app_busqueda">Atención a Clientes</span>
-                    </div>
-                    <!-- Imagen 6 -->
-                    <div class="gallery-list-item" onclick="openImageViewer('assets/app-resultados.jpg', 'app_resultados', 'flutter')">
-                        <img src="assets/nosotrosapp.jpg" alt="Resultados">
-                        <span class="gallery-item-tooltip" data-i18n="app_resultados">Nosotros</span>
-                    </div>
-                    <!-- Imagen 7 -->
-                    <div class="gallery-list-item" onclick="openImageViewer('assets/app-detalles.jpg', 'app_detalles', 'flutter')">
-                        <img src="assets/avisosapp.jpg" alt="Detalles">
-                        <span class="gallery-item-tooltip" data-i18n="app_detalles">Avisos de Privacidad</span>
-                    </div>
-                    <!-- Imagen 8 -->
-                    <div class="gallery-list-item" onclick="openImageViewer('assets/app-perfil.jpg', 'app_perfil', 'flutter')">
-                        <img src="assets/ugapp.jpg" alt="Perfil">
-                        <span class="gallery-item-tooltip" data-i18n="app_perfil">Universidad de Guanajuato</span>
-                    </div>
-                    <!-- Imagen 9 -->
-                    <div class="gallery-list-item" onclick="openImageViewer('assets/app-configuracion.jpg', 'app_configuracion', 'flutter')">
-                        <img src="assets/ubicacionapp.jpg" alt="Configuración">
-                        <span class="gallery-item-tooltip" data-i18n="app_configuracion">Ubicación</span>
-                    </div>
-                    <!-- Imagen 10 -->
-                    <div class="gallery-list-item" onclick="openImageViewer('assets/app-acerca.jpg', 'app_acerca', 'flutter')">
-                        <img src="assets/equipoapp.jpg" alt="Acerca de">
-                        <span class="gallery-item-tooltip" data-i18n="app_acerca">Equipo</span>
+
+                    <h3 data-i18n="github_repo">Repositorio GitHub</h3>
+                    <a href="https://github.com/mariodelgadoh/app-fitodex.git" target="_blank" class="github-link">
+                        <i class="fab fa-github"></i> github.com/mariodelgadoh/app-fitodex
+                    </a>
+                </div>
+                
+                <div class="modal-gallery">
+                    <h3 data-i18n="project_gallery">Galería del Proyecto</h3>
+                    <div class="gallery-list" id="flutterGalleryList">
+                        <!-- Imagen 1 -->
+                        <div class="gallery-list-item" onclick="openImageViewer('assets/app-inicio.jpg', 'app_inicio', 'flutter')">
+                            <img src="assets/inicioapp.jpg" alt="Inicio App">
+                            <span class="gallery-item-tooltip" data-i18n="app_inicio">Inicializando APP</span>
+                        </div>
+                        <!-- Imagen 2 -->
+                        <div class="gallery-list-item" onclick="openImageViewer('assets/app-login.jpg', 'app_login', 'flutter')">
+                            <img src="assets/home.jpg" alt="Login">
+                            <span class="gallery-item-tooltip" data-i18n="app_login">Inicio</span>
+                        </div>
+                        <!-- Imagen 3 -->
+                        <div class="gallery-list-item" onclick="openImageViewer('assets/app-registro.jpg', 'app_registro', 'flutter')">
+                            <img src="assets/appinsecticidas.jpg" alt="Registro">
+                            <span class="gallery-item-tooltip" data-i18n="app_registro">Pantalla de Insecticidas</span>
+                        </div>
+                        <!-- Imagen 4 -->
+                        <div class="gallery-list-item" onclick="openImageViewer('assets/app-home.jpg', 'app_home', 'flutter')">
+                            <img src="assets/busquedaapp.jpg" alt="Home">
+                            <span class="gallery-item-tooltip" data-i18n="app_home">Pantalla de Búsqueda</span>
+                        </div>
+                        <!-- Imagen 5 -->
+                        <div class="gallery-list-item" onclick="openImageViewer('assets/app-busqueda.jpg', 'app_busqueda', 'flutter')">
+                            <img src="assets/aclientes.jpg" alt="Búsqueda">
+                            <span class="gallery-item-tooltip" data-i18n="app_busqueda">Atención a Clientes</span>
+                        </div>
+                        <!-- Imagen 6 -->
+                        <div class="gallery-list-item" onclick="openImageViewer('assets/app-resultados.jpg', 'app_resultados', 'flutter')">
+                            <img src="assets/nosotrosapp.jpg" alt="Resultados">
+                            <span class="gallery-item-tooltip" data-i18n="app_resultados">Nosotros</span>
+                        </div>
+                        <!-- Imagen 7 -->
+                        <div class="gallery-list-item" onclick="openImageViewer('assets/app-detalles.jpg', 'app_detalles', 'flutter')">
+                            <img src="assets/avisosapp.jpg" alt="Detalles">
+                            <span class="gallery-item-tooltip" data-i18n="app_detalles">Avisos de Privacidad</span>
+                        </div>
+                        <!-- Imagen 8 -->
+                        <div class="gallery-list-item" onclick="openImageViewer('assets/app-perfil.jpg', 'app_perfil', 'flutter')">
+                            <img src="assets/ugapp.jpg" alt="Perfil">
+                            <span class="gallery-item-tooltip" data-i18n="app_perfil">Universidad de Guanajuato</span>
+                        </div>
+                        <!-- Imagen 9 -->
+                        <div class="gallery-list-item" onclick="openImageViewer('assets/app-configuracion.jpg', 'app_configuracion', 'flutter')">
+                            <img src="assets/ubicacionapp.jpg" alt="Configuración">
+                            <span class="gallery-item-tooltip" data-i18n="app_configuracion">Ubicación</span>
+                        </div>
+                        <!-- Imagen 10 -->
+                        <div class="gallery-list-item" onclick="openImageViewer('assets/app-acerca.jpg', 'app_acerca', 'flutter')">
+                            <img src="assets/equipoapp.jpg" alt="Acerca de">
+                            <span class="gallery-item-tooltip" data-i18n="app_acerca">Equipo</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+
+    <!-- Modal para Proyecto Simulador de Órbitas Planetarias -->
+    <div id="orbitasModal" class="project-modal">
+        <button class="close-modal" onclick="closeProjectModal('orbitas')" aria-label="Cerrar"></button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 data-i18n="orbitas_app">Simulador de Órbitas Planetarias</h2>
+                <div class="modal-tech-tags">
+                    <span>JavaScript</span>
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>Métodos Numéricos</span>
+                    <span>Newton-Raphson</span>
+                    <span>GitHub</span>
+                </div>
+            </div>
+            
+            <div class="modal-body">
+                <div class="modal-description">
+                    <h3 data-i18n="project_description">Descripción del Proyecto</h3>
+                    <p data-i18n="orbitas_description">
+                        Programa de Simulación de Órbitas Planetarias y Cálculo del Error Cuadrático Medio. En el ámbito de la astronomía y la exploración espacial, la comprensión precisa de las órbitas planetarias es crucial para diversas aplicaciones, que van desde la investigación científica hasta el diseño de misiones espaciales. Este proyecto se enfoca en el desarrollo de un programa, accesible a través de una página web, que permite simular las órbitas planetarias dentro del sistema solar. La evaluación de la exactitud de las simulaciones se realiza mediante el uso del error cuadrático medio (ECM). El programa emplea métodos numéricos avanzados, como el método de Newton-Raphson, para el cálculo de la anomalía excéntrica y la minimización del error cuadrático.
+                    </p>
+                    
+                    <h3 data-i18n="key_features">Características Principales</h3>
+                    <ul class="features-list">
+                        <li><span data-i18n="orbitas_feature1">Simulación de órbitas planetarias:</span> <span data-i18n="orbitas_feature1_desc">Utiliza parámetros orbitales y principios físicos fundamentales para modelar el movimiento de los planetas en el espacio.</span></li>
+                        <li><span data-i18n="orbitas_feature2">Cálculo de posiciones:</span> <span data-i18n="orbitas_feature2_desc">Calcula las posiciones de los planetas en función del tiempo, empleando el método de Newton-Raphson para garantizar la precisión de las órbitas simuladas.</span></li>
+                        <li><span data-i18n="orbitas_feature3">Representación visual:</span> <span data-i18n="orbitas_feature3_desc">Proporciona una representación visual precisa de las órbitas de los planetas alrededor del Sol.</span></li>
+                        <li><span data-i18n="orbitas_feature4">Cálculo del Error Cuadrático Medio:</span> <span data-i18n="orbitas_feature4_desc">Compara las posiciones predichas por el modelo con datos observacionales reales para cuantificar la precisión de la simulación.</span></li>
+                        <li><span data-i18n="orbitas_feature5">Ecuación de Kepler:</span> <span data-i18n="orbitas_feature5_desc">Implementa la ecuación M = E - e·sin(E) para relacionar la anomalía excéntrica con la anomalía media.</span></li>
+                    </ul>
+                    
+                    <h3 data-i18n="technologies_used">Tecnologías Utilizadas</h3>
+                    <div class="modal-tech-icons">
+                        <div class="tech-icon-large">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="tech-icon-large">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+                            <span>HTML5</span>
+                        </div>
+                        <div class="tech-icon-large">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+                            <span>CSS3</span>
+                        </div>
+                        <div class="tech-icon-large">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+                            <span>GitHub</span>
+                        </div>
+                        <div class="tech-icon-large">
+                            <i class="fas fa-calculator" style="font-size: 3rem; color: var(--primary-color);"></i>
+                            <span data-i18n="numerical_methods">Métodos Numéricos</span>
+                        </div>
+                        <div class="tech-icon-large">
+                            <i class="fas fa-chart-line" style="font-size: 3rem; color: var(--primary-color);"></i>
+                            <span>Newton-Raphson</span>
+                        </div>
+                    </div>
+
+                    <h3 data-i18n="github_repo">Repositorio GitHub</h3>
+                    <a href="https://github.com/mariodelgadoh/orbitasplanetarias.git" target="_blank" class="github-link">
+                        <i class="fab fa-github"></i> github.com/mariodelgadoh/orbitasplanetarias
+                    </a>
+                </div>
+                
+                <div class="modal-gallery">
+                    <h3 data-i18n="project_gallery">Galería del Proyecto</h3>
+                    <div class="gallery-list" id="orbitasGalleryList">
+                        <!-- Imagen 1: Pantalla de inicio -->
+                        <div class="gallery-list-item" onclick="openImageViewer('assets/orbitas-inicio.jpg', 'orbitas_inicio', 'orbitas')">
+                            <img src="assets/orbitas-inicio.png" alt="Pantalla de inicio">
+                            <span class="gallery-item-tooltip" data-i18n="orbitas_inicio">Pantalla de inicio</span>
+                        </div>
+                        <!-- Imagen 2: Información útil -->
+                        <div class="gallery-list-item" onclick="openImageViewer('assets/orbitas-info.jpg', 'orbitas_info', 'orbitas')">
+                            <img src="assets/orbitas-info.png" alt="Información útil">
+                            <span class="gallery-item-tooltip" data-i18n="orbitas_info">Información sobre Error Cuadrático</span>
+                        </div>
+                        <!-- Imagen 3: Operaciones - ingreso de datos -->
+                        <div class="gallery-list-item" onclick="openImageViewer('assets/orbitas-operaciones.jpg', 'orbitas_operaciones', 'orbitas')">
+                            <img src="assets/orbitas-operaciones.png" alt="Operaciones">
+                            <span class="gallery-item-tooltip" data-i18n="orbitas_operaciones">Ingreso de datos</span>
+                        </div>
+                        <!-- Imagen 4: Resultados de cálculos -->
+                        <div class="gallery-list-item" onclick="openImageViewer('assets/orbitas-resultados.jpg', 'orbitas_resultados', 'orbitas')">
+                            <img src="assets/orbitas-resultados.png" alt="Resultados">
+                            <span class="gallery-item-tooltip" data-i18n="orbitas_resultados">Resultados de cálculos</span>
+                        </div>
+                        <!-- Imagen 5: Información Anomalía Media -->
+                        <div class="gallery-list-item" onclick="openImageViewer('assets/orbitas-anomalia.jpg', 'orbitas_anomalia', 'orbitas')">
+                            <img src="assets/orbitas-anomalia.png" alt="Anomalía Media">
+                            <span class="gallery-item-tooltip" data-i18n="orbitas_anomalia">Información Anomalía Media</span>
+                        </div>
+                        <!-- Imagen 6: Información Excentricidad -->
+                        <div class="gallery-list-item" onclick="openImageViewer('assets/orbitas-excentricidad.jpg', 'orbitas_excentricidad', 'orbitas')">
+                            <img src="assets/orbitas-excentricidad.png" alt="Excentricidad">
+                            <span class="gallery-item-tooltip" data-i18n="orbitas_excentricidad">Información Excentricidad</span>
+                        </div>
+                        <!-- Imagen 7: Sistema Solar información general -->
+                        <div class="gallery-list-item" onclick="openImageViewer('assets/orbitas-sistemasolar.jpg', 'orbitas_sistemasolar', 'orbitas')">
+                            <img src="assets/orbitas-sistemasolar.png" alt="Sistema Solar">
+                            <span class="gallery-item-tooltip" data-i18n="orbitas_sistemasolar">Información general del sistema solar</span>
+                        </div>
+                        <!-- Imagen 8: Información detallada planetas -->
+                        <div class="gallery-list-item" onclick="openImageViewer('assets/orbitas-planetas.jpg', 'orbitas_planetas', 'orbitas')">
+                            <img src="assets/orbitas-planetas.png" alt="Información planetas">
+                            <span class="gallery-item-tooltip" data-i18n="orbitas_planetas">Información detallada de planetas</span>
+                        </div>
+                        <!-- Imagen 9: Datos orbitales tabla -->
+                        <div class="gallery-list-item" onclick="openImageViewer('assets/orbitas-tabla.jpg', 'orbitas_tabla', 'orbitas')">
+                            <img src="assets/orbitas-tabla.png" alt="Tabla datos orbitales">
+                            <span class="gallery-item-tooltip" data-i18n="orbitas_tabla">Tabla de datos orbitales</span>
+                        </div>
+                        <!-- Imagen 10: Visualización de órbitas -->
+                        <div class="gallery-list-item" onclick="openImageViewer('assets/orbitas-visualizacion.jpg', 'orbitas_visualizacion', 'orbitas')">
+                            <img src="assets/orbitas-visualizacion.png" alt="Visualización órbitas">
+                            <span class="gallery-item-tooltip" data-i18n="orbitas_visualizacion">Visualización de órbitas planetarias</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Modal para Visor de Imágenes -->
     <div id="imageViewerModal" class="image-viewer-modal">
