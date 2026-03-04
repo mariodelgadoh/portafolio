@@ -160,13 +160,13 @@ const translations = {
         app_inicio: "Inicializando APP",
         app_login: "Inicio",
         app_registro: "Insecticide Screen",
-        app_home: "Pantalla Principal",
-        app_busqueda: "Sistema de Búsqueda",
-        app_resultados: "Resultados de Búsqueda",
-        app_detalles: "Detalles del Producto",
-        app_perfil: "Perfil de Usuario",
-        app_configuracion: "Configuración",
-        app_acerca: "Acerca de"
+        app_home: "Pantalla de Búsqueda",
+        app_busqueda: "Atención a Clientes",
+        app_resultados: "Nosotros",
+        app_detalles: "Avisos de Privacidad",
+        app_perfil: "Universidad de Guanajuato",
+        app_configuracion: "Ubicación",
+        app_acerca: "Equipo"
 
     },
     en: {
@@ -272,13 +272,13 @@ const translations = {
         app_inicio: "Initializing APP",
         app_login: "Home",
         app_registro: "Insecticide Screen",
-        app_home: "Home Screen",
-        app_busqueda: "Search System",
-        app_resultados: "Search Results",
-        app_detalles: "Product Details",
-        app_perfil: "User Profile",
-        app_configuracion: "Settings",
-        app_acerca: "About"
+        app_home: "Search Screen",
+        app_busqueda: "Customer Service",
+        app_resultados: "We Fitodex",
+        app_detalles: "Privacy Notices",
+        app_perfil: "University of Guanajuato",
+        app_configuracion: "Location",
+        app_acerca: "Team"
     }
 };
 
