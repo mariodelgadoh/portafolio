@@ -1323,26 +1323,10 @@ section {
     /* SIN overflow-y aquí */
 }
 
-.project-modal .modal-content::-webkit-scrollbar {
-    width: 8px;
-}
-
-.project-modal .modal-content::-webkit-scrollbar-track {
-    background: var(--scrollbar-track);
-    border-radius: 10px;
-}
-
-.project-modal .modal-content::-webkit-scrollbar-thumb {
-    background: var(--gradient);
-    border-radius: 10px;
-    border: 2px solid var(--scrollbar-track);
-}
-
 .modal-header {
     margin-bottom: 30px;
     padding-bottom: 20px;
     border-bottom: 2px solid var(--border-color);
-    flex-shrink: 0; /* Evita que se encoja */
 }
 
 .modal-header h2 {
@@ -1378,7 +1362,7 @@ section {
     display: grid;
     grid-template-columns: 1fr;
     gap: 30px;
-    /* SIN overflow - todo el scroll está en el modal padre */
+    /* SIN overflow */
 }
 
 @media (min-width: 992px) {
@@ -1413,8 +1397,6 @@ section {
 .features-list {
     list-style: none;
     padding: 0;
-    max-width: 100%;
-    overflow-wrap: break-word;
 }
 
 .features-list li {
@@ -1424,7 +1406,6 @@ section {
     line-height: 1.6;
     font-size: 1rem;
     border-bottom: 1px solid var(--border-color);
-    margin-bottom: 5px;
 }
 
 .features-list li:last-child {
@@ -1516,7 +1497,7 @@ section {
     font-size: 1.5rem;
 }
 
-/* ===== GALERÍA CON SCROLL PROPIO ===== */
+/* ===== GALERÍA SIN SCROLL PROPIO ===== */
 .modal-gallery {
     background: var(--bg-color);
     border-radius: 20px;
@@ -1524,7 +1505,6 @@ section {
     border: 1px solid var(--border-color);
     margin-top: 20px;
     width: 100%;
-    /* SIN overflow - todo el scroll está en el modal padre */
 }
 
 .modal-gallery h3 {
@@ -1532,7 +1512,6 @@ section {
     color: var(--primary-color);
     margin-bottom: 20px;
     text-align: center;
-    flex-shrink: 0;
 }
 
 @media (min-width: 768px) {
@@ -1550,33 +1529,15 @@ section {
     border-radius: 15px;
     border: 1px solid var(--border-color);
     scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
     width: 100%;
-    max-height: 500px;
-    overflow-y: auto; /* SOLO la galería tiene su propio scroll interno */
+    /* SIN max-height y SIN overflow-y - todo el scroll está en el modal padre */
 }
 
 @media (min-width: 768px) {
     .gallery-list {
-        max-height: 600px;
         gap: 25px;
         padding: 20px;
     }
-}
-
-.gallery-list::-webkit-scrollbar {
-    width: 8px;
-}
-
-.gallery-list::-webkit-scrollbar-track {
-    background: var(--scrollbar-track);
-    border-radius: 10px;
-}
-
-.gallery-list::-webkit-scrollbar-thumb {
-    background: var(--gradient);
-    border-radius: 10px;
-    border: 2px solid var(--scrollbar-track);
 }
 
 .gallery-list-item {
@@ -2072,7 +2033,6 @@ section {
     .gallery-list {
         gap: 15px;
         padding: 10px;
-        max-height: 400px;
     }
     
     .gallery-list-item {
