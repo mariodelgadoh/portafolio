@@ -11,6 +11,10 @@
     --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     --modal-overlay: rgba(0, 0, 0, 0.95);
     --tooltip-bg: linear-gradient(135deg, #667eea, #764ba2);
+    --scrollbar-thumb: linear-gradient(180deg, #667eea, #764ba2);
+    --scrollbar-track: #f0f0f0;
+    --close-btn-bg: rgba(255, 255, 255, 0.15);
+    --close-btn-hover: rgba(255, 255, 255, 0.25);
 }
 
 /* ===== MODO OSCURO ===== */
@@ -24,6 +28,226 @@
     --navbar-bg: rgba(17, 24, 39, 0.95);
     --shadow-color: rgba(0, 0, 0, 0.5);
     --modal-overlay: rgba(0, 0, 0, 0.98);
+    --scrollbar-track: #2d3748;
+    --close-btn-bg: rgba(255, 255, 255, 0.1);
+    --close-btn-hover: rgba(255, 255, 255, 0.2);
+}
+
+/* ===== DISEÑO DE DESLIZADORES (SCROLLBARS) ===== */
+/* Para navegadores WebKit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gradient);
+    border-radius: 10px;
+    border: 3px solid var(--scrollbar-track);
+    transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    transform: scale(1.1);
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+/* Scrollbar para Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) var(--scrollbar-track);
+}
+
+/* Scrollbars específicos para modales y galerías */
+.project-modal .modal-content::-webkit-scrollbar,
+.gallery-list::-webkit-scrollbar,
+.modal-description::-webkit-scrollbar {
+    width: 8px;
+}
+
+.project-modal .modal-content::-webkit-scrollbar-thumb,
+.gallery-list::-webkit-scrollbar-thumb,
+.modal-description::-webkit-scrollbar-thumb {
+    background: var(--gradient);
+    border: 2px solid var(--scrollbar-track);
+}
+
+/* ===== BOTÓN DE CERRAR MEJORADO ===== */
+.close-modal {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: var(--close-btn-bg);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 35px;
+    font-weight: 300;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: 10010;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.close-modal::before,
+.close-modal::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background: white;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.close-modal::before {
+    transform: rotate(45deg);
+}
+
+.close-modal::after {
+    transform: rotate(-45deg);
+}
+
+.close-modal span {
+    display: none; /* Ocultamos el texto "×" */
+}
+
+.close-modal:hover {
+    background: var(--gradient);
+    transform: rotate(180deg) scale(1.1);
+    border-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.5);
+}
+
+.close-modal:hover::before,
+.close-modal:hover::after {
+    background: white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.close-modal:active {
+    transform: rotate(180deg) scale(0.95);
+}
+
+/* Botón de cerrar para el visor de imágenes */
+.close-image-viewer {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    background: var(--close-btn-bg);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 30px;
+    font-weight: 300;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: 10;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.close-image-viewer::before,
+.close-image-viewer::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    background: white;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.close-image-viewer::before {
+    transform: rotate(45deg);
+}
+
+.close-image-viewer::after {
+    transform: rotate(-45deg);
+}
+
+.close-image-viewer span {
+    display: none;
+}
+
+.close-image-viewer:hover {
+    background: var(--gradient);
+    transform: rotate(180deg) scale(1.1);
+    border-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.5);
+}
+
+/* Responsive para botones de cerrar */
+@media (max-width: 768px) {
+    .close-modal {
+        top: 15px;
+        right: 15px;
+        width: 50px;
+        height: 50px;
+        font-size: 30px;
+    }
+    
+    .close-modal::before,
+    .close-modal::after {
+        width: 25px;
+    }
+    
+    .close-image-viewer {
+        top: -40px;
+        width: 45px;
+        height: 45px;
+    }
+    
+    .close-image-viewer::before,
+    .close-image-viewer::after {
+        width: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .close-modal {
+        width: 45px;
+        height: 45px;
+        top: 10px;
+        right: 10px;
+    }
+    
+    .close-modal::before,
+    .close-modal::after {
+        width: 22px;
+    }
+    
+    .close-image-viewer {
+        top: -35px;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .close-image-viewer::before,
+    .close-image-viewer::after {
+        width: 20px;
+    }
 }
 
 /* ===== ESTILOS GENERALES ===== */
@@ -978,42 +1202,20 @@ section {
     animation: slideUp 0.3s ease;
 }
 
-.close-modal {
-    position: fixed;
-    top: 30px;
-    right: 30px;
-    color: white;
-    font-size: 50px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    z-index: 10010;
-    line-height: 1;
-    background: rgba(0,0,0,0.5);
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid rgba(255,255,255,0.3);
+/* Scrollbar personalizada para el modal */
+.project-modal .modal-content::-webkit-scrollbar {
+    width: 8px;
 }
 
-.close-modal:hover {
-    color: var(--primary-color);
-    transform: scale(1.1) rotate(90deg);
-    background: rgba(0,0,0,0.8);
-    border-color: var(--primary-color);
+.project-modal .modal-content::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+    border-radius: 10px;
 }
 
-@media (max-width: 768px) {
-    .close-modal {
-        top: 15px;
-        right: 15px;
-        font-size: 40px;
-        width: 50px;
-        height: 50px;
-    }
+.project-modal .modal-content::-webkit-scrollbar-thumb {
+    background: var(--gradient);
+    border-radius: 10px;
+    border: 2px solid var(--scrollbar-track);
 }
 
 .modal-header {
@@ -1213,7 +1415,6 @@ section {
     border: 1px solid var(--border-color);
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
     width: 100%;
 }
 
@@ -1227,18 +1428,17 @@ section {
 
 .gallery-list::-webkit-scrollbar {
     width: 8px;
-    background: var(--border-color);
-    border-radius: 4px;
 }
 
 .gallery-list::-webkit-scrollbar-track {
-    background: var(--border-color);
-    border-radius: 4px;
+    background: var(--scrollbar-track);
+    border-radius: 10px;
 }
 
 .gallery-list::-webkit-scrollbar-thumb {
     background: var(--gradient);
-    border-radius: 4px;
+    border-radius: 10px;
+    border: 2px solid var(--scrollbar-track);
 }
 
 .gallery-list-item {
@@ -1333,42 +1533,6 @@ section {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-.close-image-viewer {
-    position: absolute;
-    top: -40px;
-    right: 0;
-    color: white;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    z-index: 10;
-    line-height: 1;
-    background: rgba(0,0,0,0.5);
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid rgba(255,255,255,0.3);
-}
-
-@media (min-width: 768px) {
-    .close-image-viewer {
-        top: -50px;
-        font-size: 50px;
-        width: 60px;
-        height: 60px;
-    }
-}
-
-.close-image-viewer:hover {
-    color: var(--primary-color);
-    transform: scale(1.2) rotate(90deg);
-    border-color: var(--primary-color);
 }
 
 .image-viewer-container {
@@ -2048,33 +2212,6 @@ section {
     .btn-submit {
         padding: 10px 15px;
     }
-    
-    .close-modal {
-        top: 10px;
-        right: 10px;
-        font-size: 35px;
-        width: 45px;
-        height: 45px;
-    }
-    
-    .close-image-viewer {
-        top: -30px;
-        font-size: 30px;
-        width: 40px;
-        height: 40px;
-    }
-    
-    .viewer-nav-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 1.1rem;
-    }
-    
-    .image-counter {
-        font-size: 0.9rem;
-        padding: 6px 12px;
-        min-width: 60px;
-    }
 }
 
 /* Ajustes para pantallas muy pequeñas */
@@ -2122,4 +2259,27 @@ section {
         height: 100px;
         padding: 20px;
     }
+}
+
+
+/* ===== CORRECCIÓN ADICIONAL PARA BOTONES DE CERRAR ===== */
+.close-modal,
+.close-image-viewer {
+    font-size: 0 !important; /* Oculta cualquier texto */
+    text-indent: -9999px; /* Alternativa para ocultar texto */
+    overflow: hidden;
+}
+
+.close-modal::before,
+.close-modal::after,
+.close-image-viewer::before,
+.close-image-viewer::after {
+    content: '' !important; /* Aseguramos que los pseudo-elementos se muestren */
+    display: block;
+}
+
+/* Aseguramos que no haya herencia de estilos no deseados */
+.close-modal span,
+.close-image-viewer span {
+    display: none !important;
 }
