@@ -104,6 +104,7 @@ const translations = {
         flutter_app: "App Móvil Fitodex",
         orbitas_app: "Simulador de Órbitas Planetarias",
         digitos_app: "Reconocimiento de Dígitos Manuscritos",
+        music_app: "MusicArtists",
         api_rest: "API REST",
         uxui_project: "Diseño UX/UI",
         db_project: "Diseño de BD",
@@ -213,7 +214,28 @@ const translations = {
         digitos_feature3_desc: "Dispone de 5 cuadros independientes para dibujar dígitos con botones para guardar muestras, limpiar y reconocer.",
         digitos_feature5: "Métricas detalladas:",
         digitos_feature5_desc: "Genera reportes completos con precisión general, matriz de confusión, métricas F1-score y análisis de confusiones entre dígitos.",
-        libraries: "Bibliotecas: "
+        libraries: "Bibliotecas",
+        music_description: "MusicArtists es una plataforma web completa para la gestión y reproducción de música, diseñada para conectar a los usuarios con sus artistas, álbumes y canciones favoritas. Se trata de un proyecto full-stack que combina un frontend interactivo desarrollado con Vue.js 3 y un backend robusto construido con Node.js, Express y MongoDB como base de datos NoSQL.",
+        music_feature1: "Reproductor persistente por usuario:",
+        music_feature1_desc: "Cada usuario tiene su propia cola de reproducción y estado de reproducción individual que se guarda al cerrar sesión.",
+        music_feature2: "Panel de administración completo:",
+        music_feature2_desc: "Dashboard con estadísticas en tiempo real y operaciones CRUD sobre artistas, álbumes, canciones y usuarios.",
+        music_feature3: "Sistema de autenticación:",
+        music_feature3_desc: "Implementa JWT, contraseñas hasheadas con bcrypt y validación de roles para proteger rutas administrativas.",
+        music_feature4: "Manejo inteligente de imágenes:",
+        music_feature4_desc: "Las canciones heredan automáticamente la portada del álbum, mientras que los sencillos mantienen su propia imagen personalizada.",
+        music_feature5: "Diseño responsive:",
+        music_feature5_desc: "Interfaz completamente adaptable a móviles, tablets y desktop con transiciones suaves y feedback visual inmediato.",
+        music_main: "Pantalla principal",
+        music_player: "Reproductor de música",
+        music_artists: "Lista de artistas",
+        music_albums: "Vista de álbumes",
+        music_admin: "Panel de administración",
+        music_stats: "Dashboard con estadísticas",
+        music_crud: "Gestión de contenido",
+        music_login: "Pantalla de inicio de sesión",
+        music_playlists: "Listas de reproducción",
+        music_responsive: "Diseño responsive móvil"
     },
     en: {
         home: "Home",
@@ -262,6 +284,7 @@ const translations = {
         flutter_app: "Fitodex Mobile App",
         orbitas_app: "Planetary Orbits Simulator",
         digitos_app: "Handwritten Digit Recognition",
+        music_app: "MusicArtists",
         api_rest: "REST API",
         uxui_project: "UX/UI Design",
         db_project: "Database Design",
@@ -371,7 +394,28 @@ const translations = {
         digitos_feature3_desc: "Features 5 independent drawing boxes with buttons to save samples, clear, and recognize.",
         digitos_feature5: "Detailed metrics:",
         digitos_feature5_desc: "Generates complete reports with overall accuracy, confusion matrix, F1-score metrics, and analysis of digit confusions.",
-        libraries: "Libraries: ",
+        libraries: "Libraries",
+        music_description: "MusicArtists is a complete web platform for music management and playback, designed to connect users with their favorite artists, albums, and songs. It is a full-stack project that combines an interactive frontend developed with Vue.js 3 and a robust backend built with Node.js, Express, and MongoDB as a NoSQL database.",
+        music_feature1: "Persistent player per user:",
+        music_feature1_desc: "Each user has their own playback queue and individual playback state that is saved when logging out.",
+        music_feature2: "Complete admin panel:",
+        music_feature2_desc: "Dashboard with real-time statistics and CRUD operations on artists, albums, songs, and users.",
+        music_feature3: "Authentication system:",
+        music_feature3_desc: "Implements JWT, bcrypt-hashed passwords, and role validation to protect administrative routes.",
+        music_feature4: "Intelligent image management:",
+        music_feature4_desc: "Songs automatically inherit the album cover, while singles maintain their own custom image.",
+        music_feature5: "Responsive design:",
+        music_feature5_desc: "Fully adaptable interface for mobile, tablet, and desktop with smooth transitions and immediate visual feedback.",
+        music_main: "Main screen",
+        music_player: "Music player",
+        music_artists: "Artists list",
+        music_albums: "Albums view",
+        music_admin: "Admin panel",
+        music_stats: "Dashboard with statistics",
+        music_crud: "Content management",
+        music_login: "Login screen",
+        music_playlists: "Playlists",
+        music_responsive: "Mobile responsive design"
     }
 };
 
@@ -420,6 +464,7 @@ langOptions.forEach(option => {
         updateModalTexts('flutter', lang);
         updateModalTexts('orbitas', lang);
         updateModalTexts('digitos', lang);
+        updateModalTexts('music', lang);
         updateViewerCaption(lang);
     });
 });
@@ -537,7 +582,6 @@ function downloadCV() {
     
     const fileName = cvFiles[currentLang];
     
-    // Crear enlace para descargar
     const link = document.createElement('a');
     link.href = fileName;
     link.download = fileName;
@@ -547,12 +591,9 @@ function downloadCV() {
     link.click();
     document.body.removeChild(link);
     
-    // También abrir el PDF en una nueva pestaña
-    window.open(fileName, '_blank');
-    
     const message = currentLang === 'es' 
-        ? 'CV descargado y abierto exitosamente' 
-        : 'CV downloaded and opened successfully';
+        ? 'CV descargado exitosamente' 
+        : 'CV downloaded successfully';
     showNotification(message);
 }
 
