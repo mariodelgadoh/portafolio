@@ -148,7 +148,6 @@ const translations = {
         fitodex_admin: "Panel de Usuarios",
         fitodex_estadisticas: "Iniciar Sesión",
         click_for_more: "CLIC PARA SABER MÁS",
-        // Mensajes del formulario
         fill_all_fields: "Por favor completa todos los campos",
         invalid_email: "Por favor ingresa un correo electrónico válido",
         sending: "Enviando...",
@@ -248,7 +247,6 @@ const translations = {
         fitodex_admin: "User Panel",
         fitodex_estadisticas: "Log In",
         click_for_more: "CLICK FOR MORE INFO",
-        // Form messages
         fill_all_fields: "Please fill in all fields",
         invalid_email: "Please enter a valid email address",
         sending: "Sending...",
@@ -327,6 +325,14 @@ function updateLanguage(lang) {
         }
     });
     
+    const submitBtn = document.getElementById('submitBtn');
+    if (submitBtn) {
+        const sendMessageSpan = submitBtn.querySelector('span');
+        if (sendMessageSpan && translations[lang].send_message) {
+            sendMessageSpan.textContent = translations[lang].send_message;
+        }
+    }
+    
     document.documentElement.lang = lang;
 }
 
@@ -399,37 +405,34 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// ===== DOWNLOAD CV FUNCTION =====
+// Función mejorada para descargar CV
 function downloadCV() {
     const currentLang = localStorage.getItem('language') || 'es';
-    const baseUrl = window.location.origin;
-    const cvUrl = currentLang === 'es' 
-        ? `${baseUrl}/Mario-Delgado-CV.pdf`
-        : `${baseUrl}/Mario-Delgado-CV-English.pdf`;
     
-    window.open(cvUrl, '_blank');
+    // Nombres de los archivos
+    const cvFiles = {
+        es: 'Mario-Delgado-CV.pdf',
+        en: 'Mario-Delgado-CV-English.pdf'
+    };
     
+    const fileName = cvFiles[currentLang];
+    
+    // Crear un enlace temporal
+    const link = document.createElement('a');
+    link.href = fileName;
+    link.download = fileName; // ¡Esto fuerza la descarga!
+    link.target = '_blank'; // Backup por si acaso
+    
+    // Agregar al DOM, hacer clic y remover
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    // Mostrar notificación
     const message = currentLang === 'es' 
         ? 'CV descargado exitosamente' 
         : 'CV downloaded successfully';
     showNotification(message);
-}
-
-function showNotification(message) {
-    let notification = document.querySelector('.download-notification');
-    
-    if (!notification) {
-        notification = document.createElement('div');
-        notification.className = 'download-notification';
-        document.body.appendChild(notification);
-    }
-    
-    notification.textContent = message;
-    notification.classList.add('show');
-    
-    setTimeout(() => {
-        notification.classList.remove('show');
-    }, 3000);
 }
 
 // ===== CONTACT FORM HANDLING =====
@@ -447,6 +450,8 @@ submitBtn.addEventListener('mouseleave', () => {
 });
 
 if (contactForm) {
+    contactForm.setAttribute('novalidate', '');
+    
     contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         
@@ -458,12 +463,12 @@ if (contactForm) {
         const message = document.getElementById('message').value.trim();
         
         if (!name || !email || !subject || !message) {
-            showFormMessage(translations[currentLang].fill_all_fields, 'error', currentLang);
+            showFormMessage(translations[currentLang].fill_all_fields, 'error');
             return;
         }
         
         if (!isValidEmail(email)) {
-            showFormMessage(translations[currentLang].invalid_email, 'error', currentLang);
+            showFormMessage(translations[currentLang].invalid_email, 'error');
             return;
         }
         
@@ -483,7 +488,7 @@ if (contactForm) {
             const result = await response.json();
             
             if (response.ok && result.success) {
-                showFormMessage(translations[currentLang].success_message, 'success', currentLang);
+                showFormMessage(translations[currentLang].success_message, 'success');
                 contactForm.reset();
                 showNotification(translations[currentLang].email_sent);
                 
@@ -492,16 +497,17 @@ if (contactForm) {
                     paperPlaneIcon.className = 'fas fa-paper-plane';
                 }, 1000);
             } else {
-                showFormMessage(translations[currentLang].error_message, 'error', currentLang);
+                showFormMessage(translations[currentLang].error_message, 'error');
                 paperPlaneIcon.className = 'fas fa-paper-plane';
             }
         } catch (error) {
             console.error('Error:', error);
-            showFormMessage(translations[currentLang].connection_error, 'error', currentLang);
+            showFormMessage(translations[currentLang].connection_error, 'error');
             paperPlaneIcon.className = 'fas fa-paper-plane';
         } finally {
             submitBtn.disabled = false;
-            submitBtn.innerHTML = `<span data-i18n="send_message">${translations[currentLang].send_message}</span> `;
+            const sendMessageText = translations[currentLang].send_message || 'Send Message';
+            submitBtn.innerHTML = `<span>${sendMessageText}</span> `;
             submitBtn.appendChild(paperPlaneIcon);
         }
     });
@@ -512,7 +518,7 @@ function isValidEmail(email) {
     return re.test(email);
 }
 
-function showFormMessage(text, type, lang) {
+function showFormMessage(text, type) {
     formMessage.textContent = text;
     formMessage.className = `form-message ${type}`;
     

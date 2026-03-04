@@ -13,8 +13,6 @@
     --tooltip-bg: linear-gradient(135deg, #667eea, #764ba2);
     --scrollbar-thumb: linear-gradient(180deg, #667eea, #764ba2);
     --scrollbar-track: #f0f0f0;
-    --close-btn-bg: rgba(255, 255, 255, 0.15);
-    --close-btn-hover: rgba(255, 255, 255, 0.25);
 }
 
 /* ===== MODO OSCURO ===== */
@@ -29,12 +27,9 @@
     --shadow-color: rgba(0, 0, 0, 0.5);
     --modal-overlay: rgba(0, 0, 0, 0.98);
     --scrollbar-track: #2d3748;
-    --close-btn-bg: rgba(255, 255, 255, 0.1);
-    --close-btn-hover: rgba(255, 255, 255, 0.2);
 }
 
 /* ===== DISEÑO DE DESLIZADORES (SCROLLBARS) ===== */
-/* Para navegadores WebKit (Chrome, Safari, Edge) */
 ::-webkit-scrollbar {
     width: 12px;
     height: 12px;
@@ -54,200 +49,79 @@
 
 ::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
-    transform: scale(1.1);
 }
 
-::-webkit-scrollbar-corner {
-    background: transparent;
-}
-
-/* Scrollbar para Firefox */
 * {
     scrollbar-width: thin;
     scrollbar-color: var(--primary-color) var(--scrollbar-track);
 }
 
-/* Scrollbars específicos para modales y galerías */
 .project-modal .modal-content::-webkit-scrollbar,
-.gallery-list::-webkit-scrollbar,
-.modal-description::-webkit-scrollbar {
+.gallery-list::-webkit-scrollbar {
     width: 8px;
 }
 
-.project-modal .modal-content::-webkit-scrollbar-thumb,
-.gallery-list::-webkit-scrollbar-thumb,
-.modal-description::-webkit-scrollbar-thumb {
-    background: var(--gradient);
-    border: 2px solid var(--scrollbar-track);
-}
-
-/* ===== BOTÓN DE CERRAR MEJORADO ===== */
+/* ===== BOTONES DE CERRAR ===== */
 .close-modal {
-    position: fixed;
-    top: 30px;
-    right: 30px;
-    width: 60px;
-    height: 60px;
-    background: var(--close-btn-bg);
-    backdrop-filter: blur(10px);
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    width: 40px;
+    height: 40px;
+    background: var(--gradient);
     border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: 50%;
+    color: white;
+    font-size: 28px;
+    font-weight: 300;
+    line-height: 1;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10010;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    font-size: 35px;
-    font-weight: 300;
-    cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    z-index: 10010;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-.close-modal::before,
-.close-modal::after {
-    content: '';
-    position: absolute;
-    width: 30px;
-    height: 3px;
-    background: white;
-    border-radius: 3px;
-    transition: all 0.3s ease;
-}
-
-.close-modal::before {
-    transform: rotate(45deg);
-}
-
-.close-modal::after {
-    transform: rotate(-45deg);
-}
-
-.close-modal span {
-    display: none; /* Ocultamos el texto "×" */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .close-modal:hover {
+    transform: scale(1.1) rotate(90deg);
     background: var(--gradient);
-    transform: rotate(180deg) scale(1.1);
-    border-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.5);
-}
-
-.close-modal:hover::before,
-.close-modal:hover::after {
-    background: white;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    border-color: white;
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.5);
 }
 
 .close-modal:active {
-    transform: rotate(180deg) scale(0.95);
+    transform: scale(0.95) rotate(90deg);
 }
 
-/* Botón de cerrar para el visor de imágenes */
 .close-image-viewer {
     position: absolute;
-    top: -50px;
-    right: 0;
-    width: 50px;
-    height: 50px;
-    background: var(--close-btn-bg);
-    backdrop-filter: blur(10px);
+    top: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    background: var(--gradient);
     border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     color: white;
     font-size: 30px;
     font-weight: 300;
+    line-height: 1;
     cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    z-index: 10;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-.close-image-viewer::before,
-.close-image-viewer::after {
-    content: '';
-    position: absolute;
-    width: 25px;
-    height: 3px;
-    background: white;
-    border-radius: 3px;
     transition: all 0.3s ease;
-}
-
-.close-image-viewer::before {
-    transform: rotate(45deg);
-}
-
-.close-image-viewer::after {
-    transform: rotate(-45deg);
-}
-
-.close-image-viewer span {
-    display: none;
+    z-index: 11010;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 .close-image-viewer:hover {
+    transform: scale(1.1) rotate(90deg);
     background: var(--gradient);
-    transform: rotate(180deg) scale(1.1);
-    border-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.5);
-}
-
-/* Responsive para botones de cerrar */
-@media (max-width: 768px) {
-    .close-modal {
-        top: 15px;
-        right: 15px;
-        width: 50px;
-        height: 50px;
-        font-size: 30px;
-    }
-    
-    .close-modal::before,
-    .close-modal::after {
-        width: 25px;
-    }
-    
-    .close-image-viewer {
-        top: -40px;
-        width: 45px;
-        height: 45px;
-    }
-    
-    .close-image-viewer::before,
-    .close-image-viewer::after {
-        width: 22px;
-    }
-}
-
-@media (max-width: 480px) {
-    .close-modal {
-        width: 45px;
-        height: 45px;
-        top: 10px;
-        right: 10px;
-    }
-    
-    .close-modal::before,
-    .close-modal::after {
-        width: 22px;
-    }
-    
-    .close-image-viewer {
-        top: -35px;
-        width: 40px;
-        height: 40px;
-    }
-    
-    .close-image-viewer::before,
-    .close-image-viewer::after {
-        width: 20px;
-    }
+    border-color: white;
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.7);
 }
 
 /* ===== ESTILOS GENERALES ===== */
@@ -346,7 +220,6 @@ section {
     top: 50%;
 }
 
-/* Posiciones de los cubos */
 .cube:nth-child(1) { top: 10%; left: 5%; width: 100px; height: 100px; animation: rotate3D 15s infinite linear, float1 8s infinite ease-in-out; }
 .cube:nth-child(2) { top: 60%; left: 80%; width: 120px; height: 120px; animation: rotate3D 18s infinite linear, float2 10s infinite ease-in-out; }
 .cube:nth-child(3) { top: 70%; left: 20%; width: 70px; height: 70px; animation: rotate3D 22s infinite linear, float3 12s infinite ease-in-out; }
@@ -1118,7 +991,6 @@ section {
     }
 }
 
-/* ===== BOTÓN CLIC PARA SABER MÁS ===== */
 .btn-more-info {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
@@ -1200,22 +1072,6 @@ section {
     border: 1px solid var(--border-color);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
     animation: slideUp 0.3s ease;
-}
-
-/* Scrollbar personalizada para el modal */
-.project-modal .modal-content::-webkit-scrollbar {
-    width: 8px;
-}
-
-.project-modal .modal-content::-webkit-scrollbar-track {
-    background: var(--scrollbar-track);
-    border-radius: 10px;
-}
-
-.project-modal .modal-content::-webkit-scrollbar-thumb {
-    background: var(--gradient);
-    border-radius: 10px;
-    border: 2px solid var(--scrollbar-track);
 }
 
 .modal-header {
@@ -1386,7 +1242,7 @@ section {
     font-size: 1.5rem;
 }
 
-/* ===== GALERÍA EN UNA SOLA COLUMNA ===== */
+/* ===== GALERÍA ===== */
 .modal-gallery {
     background: var(--bg-color);
     border-radius: 20px;
@@ -1865,7 +1721,6 @@ section {
     opacity: 1;
 }
 
-/* ===== FORM MESSAGES ===== */
 .form-message {
     margin-top: 15px;
     padding: 10px;
@@ -1935,40 +1790,7 @@ section {
     }
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
-@media (max-width: 992px) {
-    .about-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-    
-    .about-image-large {
-        max-width: 350px;
-    }
-    
-    .profile-image-wrapper {
-        height: 350px;
-    }
-    
-    .modal-body {
-        grid-template-columns: 1fr;
-    }
-    
-    .modal-header h2 {
-        font-size: 2rem;
-    }
-    
-    .tech-images-grid {
-        gap: 35px 25px;
-    }
-    
-    .tech-image-item {
-        width: 85px;
-        height: 85px;
-        padding: 16px;
-    }
-}
-
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
     .nav-menu {
         position: fixed;
@@ -1999,6 +1821,27 @@ section {
         display: none;
     }
     
+    .close-modal {
+        top: 15px;
+        right: 15px;
+        width: 35px;
+        height: 35px;
+        font-size: 24px;
+    }
+    
+    .close-image-viewer {
+        top: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        font-size: 26px;
+    }
+    
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
     .profile-image-wrapper {
         height: 300px;
     }
@@ -2009,43 +1852,6 @@ section {
     
     .portfolio-overlay h3 {
         font-size: 1.3rem;
-    }
-    
-    .portfolio-overlay {
-        padding: 20px;
-    }
-    
-    .btn-more-info {
-        padding: 8px 16px;
-        font-size: 0.85rem;
-    }
-    
-    .modal-content {
-        padding: 20px;
-    }
-    
-    .modal-header h2 {
-        font-size: 1.6rem;
-    }
-    
-    .modal-tech-tags span {
-        padding: 5px 12px;
-        font-size: 0.85rem;
-    }
-    
-    .gallery-list {
-        gap: 15px;
-        padding: 10px;
-        max-height: 400px;
-    }
-    
-    .gallery-list-item {
-        min-height: 150px;
-    }
-    
-    .gallery-item-tooltip {
-        padding: 10px;
-        font-size: 0.85rem;
     }
     
     .name {
@@ -2060,15 +1866,6 @@ section {
         font-size: 2rem;
     }
     
-    .home-buttons {
-        flex-direction: column;
-    }
-    
-    .interests-grid,
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
-    
     .tech-images-grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 25px 15px;
@@ -2079,44 +1876,23 @@ section {
         height: 70px;
         padding: 12px;
     }
-    
-    .tech-tooltip {
-        font-size: 0.7rem;
-        padding: 5px 10px;
-        bottom: -38px;
-    }
-    
-    .tech-image-item:hover .tech-tooltip {
-        bottom: -42px;
-    }
-    
-    .contact-item {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .contact-item i {
-        margin-bottom: 5px;
-    }
 }
 
 @media (max-width: 480px) {
-    .logo {
-        font-size: 1.4rem;
+    .close-modal {
+        top: 10px;
+        right: 10px;
+        width: 32px;
+        height: 32px;
+        font-size: 22px;
     }
     
-    .nav-controls {
-        gap: 5px;
-    }
-    
-    .theme-btn {
-        width: 35px;
-        height: 35px;
-        font-size: 1rem;
-    }
-    
-    .lang-btn {
-        padding: 6px;
+    .close-image-viewer {
+        top: 10px;
+        right: 10px;
+        width: 36px;
+        height: 36px;
+        font-size: 24px;
     }
     
     .portfolio-item {
@@ -2125,30 +1901,10 @@ section {
     
     .portfolio-overlay h3 {
         font-size: 1.1rem;
-        margin-bottom: 10px;
     }
     
     .btn-more-info {
         padding: 6px 12px;
-        font-size: 0.8rem;
-        gap: 5px;
-    }
-    
-    .modal-header h2 {
-        font-size: 1.3rem;
-    }
-    
-    .modal-tech-tags span {
-        padding: 4px 10px;
-        font-size: 0.8rem;
-    }
-    
-    .gallery-list-item {
-        min-height: 120px;
-    }
-    
-    .gallery-item-tooltip {
-        padding: 8px;
         font-size: 0.8rem;
     }
     
@@ -2169,14 +1925,6 @@ section {
         padding: 15px;
     }
     
-    .profile-image-caption h4 {
-        font-size: 1.2rem;
-    }
-    
-    .profile-image-caption p {
-        font-size: 0.85rem;
-    }
-    
     .tech-images-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px 10px;
@@ -2187,99 +1935,4 @@ section {
         height: 65px;
         padding: 10px;
     }
-    
-    .service-card {
-        padding: 30px 20px;
-    }
-    
-    .service-card h3 {
-        font-size: 1.3rem;
-    }
-    
-    .service-icon {
-        width: 60px;
-        height: 60px;
-    }
-    
-    .service-icon i {
-        font-size: 2rem;
-    }
-    
-    .contact-info h3 {
-        font-size: 1.4rem;
-    }
-    
-    .btn-submit {
-        padding: 10px 15px;
-    }
-}
-
-/* Ajustes para pantallas muy pequeñas */
-@media (max-width: 360px) {
-    .tech-images-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .tech-image-item {
-        width: 55px;
-        height: 55px;
-        padding: 8px;
-    }
-    
-    .portfolio-overlay h3 {
-        font-size: 1rem;
-    }
-    
-    .btn-more-info {
-        padding: 5px 10px;
-        font-size: 0.75rem;
-    }
-    
-    .gallery-list-item {
-        min-height: 100px;
-    }
-}
-
-/* Ajustes para pantallas muy grandes */
-@media (min-width: 1600px) {
-    .home-content,
-    .about-content,
-    .services-grid,
-    .portfolio-grid,
-    .contact-container {
-        max-width: 1400px;
-    }
-    
-    .tech-images-grid {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    }
-    
-    .tech-image-item {
-        width: 100px;
-        height: 100px;
-        padding: 20px;
-    }
-}
-
-
-/* ===== CORRECCIÓN ADICIONAL PARA BOTONES DE CERRAR ===== */
-.close-modal,
-.close-image-viewer {
-    font-size: 0 !important; /* Oculta cualquier texto */
-    text-indent: -9999px; /* Alternativa para ocultar texto */
-    overflow: hidden;
-}
-
-.close-modal::before,
-.close-modal::after,
-.close-image-viewer::before,
-.close-image-viewer::after {
-    content: '' !important; /* Aseguramos que los pseudo-elementos se muestren */
-    display: block;
-}
-
-/* Aseguramos que no haya herencia de estilos no deseados */
-.close-modal span,
-.close-image-viewer span {
-    display: none !important;
 }
