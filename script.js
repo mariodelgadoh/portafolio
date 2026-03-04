@@ -409,7 +409,6 @@ window.addEventListener('scroll', () => {
 function downloadCV() {
     const currentLang = localStorage.getItem('language') || 'es';
     
-    // Nombres de los archivos
     const cvFiles = {
         es: 'Mario-Delgado-CV.pdf',
         en: 'Mario-Delgado-CV-English.pdf'
@@ -417,25 +416,39 @@ function downloadCV() {
     
     const fileName = cvFiles[currentLang];
     
-    // Crear un enlace temporal
     const link = document.createElement('a');
     link.href = fileName;
-    link.download = fileName; // ¡Esto fuerza la descarga!
-    link.target = '_blank'; // Backup por si acaso
+    link.download = fileName;
+    link.target = '_blank';
     
-    // Agregar al DOM, hacer clic y remover
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
     
-    // Mostrar notificación
     const message = currentLang === 'es' 
         ? 'CV descargado exitosamente' 
         : 'CV downloaded successfully';
     showNotification(message);
 }
 
-// ===== CONTACT FORM HANDLING =====
+function showNotification(message) {
+    let notification = document.querySelector('.download-notification');
+    
+    if (!notification) {
+        notification = document.createElement('div');
+        notification.className = 'download-notification';
+        document.body.appendChild(notification);
+    }
+    
+    notification.textContent = message;
+    notification.classList.add('show');
+    
+    setTimeout(() => {
+        notification.classList.remove('show');
+    }, 3000);
+}
+
+// ===== CONTACT FORM HANDLING - MÉTODO TRADICIONAL =====
 const contactForm = document.getElementById('contactForm');
 const formMessage = document.getElementById('formMessage');
 const submitBtn = document.getElementById('submitBtn');
@@ -452,7 +465,7 @@ submitBtn.addEventListener('mouseleave', () => {
 if (contactForm) {
     contactForm.setAttribute('novalidate', '');
     
-    contactForm.addEventListener('submit', async (e) => {
+    contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
         const currentLang = localStorage.getItem('language') || 'es';
@@ -472,44 +485,43 @@ if (contactForm) {
             return;
         }
         
+        // Mostrar mensaje de "enviando"
         submitBtn.disabled = true;
         paperPlaneIcon.className = 'fas fa-spinner fa-spin';
         submitBtn.innerHTML = `<span>${translations[currentLang].sending}</span> `;
         submitBtn.appendChild(paperPlaneIcon);
         
-        try {
-            const formData = new FormData(contactForm);
+        // Crear un iframe oculto para recibir la respuesta
+        const iframe = document.createElement('iframe');
+        iframe.name = 'hiddenIframe';
+        iframe.style.display = 'none';
+        document.body.appendChild(iframe);
+        
+        // Configurar el formulario para enviar al iframe
+        contactForm.target = 'hiddenIframe';
+        
+        // Enviar el formulario
+        contactForm.submit();
+        
+        // Mostrar mensaje de éxito inmediatamente
+        showFormMessage(translations[currentLang].success_message, 'success');
+        showNotification(translations[currentLang].email_sent);
+        
+        // Resetear formulario después de un breve momento
+        setTimeout(() => {
+            contactForm.reset();
             
-            const response = await fetch('https://formsubmit.co/ajax/49eae735beb5145fc6f8bd87547daa3c', {
-                method: 'POST',
-                body: formData
-            });
+            // Restaurar el comportamiento normal del formulario
+            contactForm.target = '_self';
+            document.body.removeChild(iframe);
             
-            const result = await response.json();
-            
-            if (response.ok && result.success) {
-                showFormMessage(translations[currentLang].success_message, 'success');
-                contactForm.reset();
-                showNotification(translations[currentLang].email_sent);
-                
-                paperPlaneIcon.className = 'fas fa-paper-plane fly-away';
-                setTimeout(() => {
-                    paperPlaneIcon.className = 'fas fa-paper-plane';
-                }, 1000);
-            } else {
-                showFormMessage(translations[currentLang].error_message, 'error');
-                paperPlaneIcon.className = 'fas fa-paper-plane';
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            showFormMessage(translations[currentLang].connection_error, 'error');
-            paperPlaneIcon.className = 'fas fa-paper-plane';
-        } finally {
+            // Restaurar botón
             submitBtn.disabled = false;
             const sendMessageText = translations[currentLang].send_message || 'Send Message';
             submitBtn.innerHTML = `<span>${sendMessageText}</span> `;
             submitBtn.appendChild(paperPlaneIcon);
-        }
+            paperPlaneIcon.className = 'fas fa-paper-plane';
+        }, 1000);
     });
 }
 
@@ -526,6 +538,23 @@ function showFormMessage(text, type) {
         formMessage.textContent = '';
         formMessage.className = 'form-message';
     }, 5000);
+}
+
+function showNotification(message) {
+    let notification = document.querySelector('.download-notification');
+    
+    if (!notification) {
+        notification = document.createElement('div');
+        notification.className = 'download-notification';
+        document.body.appendChild(notification);
+    }
+    
+    notification.textContent = message;
+    notification.classList.add('show');
+    
+    setTimeout(() => {
+        notification.classList.remove('show');
+    }, 3000);
 }
 
 // ===== FUNCIONES PARA MODALES DE PROYECTOS =====

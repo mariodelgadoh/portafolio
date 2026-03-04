@@ -78,14 +78,14 @@
     border: 2px solid var(--scrollbar-track);
 }
 
-/* ===== BOTONES DE CERRAR MEJORADOS ===== */
+/* ===== BOTONES DE CERRAR - SIEMPRE FIJOS ===== */
 .close-modal {
-    position: fixed;
-    top: 30px;
-    right: 30px;
-    width: 50px;
-    height: 50px;
-    background: rgba(0, 0, 0, 0.5);
+    position: fixed !important;
+    top: 25px !important;
+    right: 25px !important;
+    width: 48px;
+    height: 48px;
+    background: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(8px);
     border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: 50%;
@@ -93,16 +93,18 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 10010;
+    transition: all 0.3s ease;
+    z-index: 100000 !important;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    padding: 0;
+    margin: 0;
 }
 
 .close-modal::before,
 .close-modal::after {
     content: '';
     position: absolute;
-    width: 25px;
+    width: 24px;
     height: 2px;
     background: white;
     border-radius: 2px;
@@ -120,28 +122,22 @@
 .close-modal:hover {
     background: var(--gradient);
     border-color: rgba(255, 255, 255, 0.8);
-    transform: rotate(90deg) scale(1.1);
+    transform: scale(1.1);
     box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
 }
 
-.close-modal:hover::before,
-.close-modal:hover::after {
-    background: white;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-}
-
 .close-modal:active {
-    transform: rotate(90deg) scale(0.95);
+    transform: scale(0.95);
 }
 
 /* Botón de cerrar para el visor de imágenes */
 .close-image-viewer {
-    position: fixed;
-    top: 30px;
-    right: 30px;
-    width: 50px;
-    height: 50px;
-    background: rgba(0, 0, 0, 0.5);
+    position: fixed !important;
+    top: 25px !important;
+    right: 25px !important;
+    width: 48px;
+    height: 48px;
+    background: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(8px);
     border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: 50%;
@@ -149,16 +145,18 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 11010;
+    transition: all 0.3s ease;
+    z-index: 110000 !important;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    padding: 0;
+    margin: 0;
 }
 
 .close-image-viewer::before,
 .close-image-viewer::after {
     content: '';
     position: absolute;
-    width: 25px;
+    width: 24px;
     height: 2px;
     background: white;
     border-radius: 2px;
@@ -176,22 +174,22 @@
 .close-image-viewer:hover {
     background: var(--gradient);
     border-color: rgba(255, 255, 255, 0.8);
-    transform: rotate(90deg) scale(1.1);
+    transform: scale(1.1);
     box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
 }
 
 .close-image-viewer:active {
-    transform: rotate(90deg) scale(0.95);
+    transform: scale(0.95);
 }
 
 /* Responsive para botones de cerrar */
 @media (max-width: 768px) {
     .close-modal,
     .close-image-viewer {
-        top: 20px;
-        right: 20px;
-        width: 45px;
-        height: 45px;
+        top: 15px !important;
+        right: 15px !important;
+        width: 42px;
+        height: 42px;
     }
     
     .close-modal::before,
@@ -205,10 +203,10 @@
 @media (max-width: 480px) {
     .close-modal,
     .close-image-viewer {
-        top: 15px;
-        right: 15px;
-        width: 40px;
-        height: 40px;
+        top: 12px !important;
+        right: 12px !important;
+        width: 38px;
+        height: 38px;
     }
     
     .close-modal::before,
@@ -217,6 +215,18 @@
     .close-image-viewer::after {
         width: 20px;
     }
+}
+
+/* Ocultar cualquier texto residual */
+.close-modal span,
+.close-image-viewer span {
+    display: none !important;
+}
+
+.close-modal,
+.close-image-viewer {
+    border: none;
+    outline: none;
 }
 
 /* ===== VISOR DE IMÁGENES MEJORADO ===== */
@@ -1311,6 +1321,7 @@ section {
     border: 1px solid var(--border-color);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
     animation: slideUp 0.3s ease;
+    margin: 0 auto;
 }
 
 .project-modal .modal-content::-webkit-scrollbar {
