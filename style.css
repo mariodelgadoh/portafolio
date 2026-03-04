@@ -2399,3 +2399,76 @@ section {
 .nav-menu.active a::after {
     width: 100%;
 }
+
+
+
+/* ===== AJUSTES PARA MODALES CON MUCHO CONTENIDO ===== */
+.project-modal .modal-content {
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-body {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    max-height: calc(90vh - 150px);
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+@media (min-width: 992px) {
+    .modal-body {
+        grid-template-columns: 1.5fr 1fr;
+    }
+}
+
+.modal-description {
+    overflow-y: auto;
+    max-height: 100%;
+    padding-right: 15px;
+}
+
+.modal-gallery {
+    overflow-y: auto;
+    max-height: 100%;
+}
+
+.gallery-list {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+@media (min-width: 768px) {
+    .gallery-list {
+        max-height: 600px;
+    }
+}
+
+/* Asegurar que las listas de características no se desborden */
+.features-list {
+    max-width: 100%;
+    overflow-wrap: break-word;
+}
+
+.features-list li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+/* Código de instalación con scroll horizontal si es necesario */
+pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    max-width: 100%;
+    overflow-x: auto;
+    background: var(--bg-color);
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+}
+
+code {
+    font-family: monospace;
+    font-size: 0.9rem;
+}
