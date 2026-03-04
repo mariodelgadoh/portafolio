@@ -1305,7 +1305,7 @@ section {
     align-items: center;
     justify-content: center;
     animation: fadeIn 0.3s ease;
-    overflow-y: auto; /* ÚNICO SCROLL - aquí está todo el scroll necesario */
+    overflow-y: auto;
     padding: 20px;
 }
 
@@ -1313,20 +1313,20 @@ section {
     position: relative;
     width: 95%;
     max-width: 1300px;
-    margin: auto; /* Centrado automático */
+    margin: auto;
     background: var(--card-bg);
     border-radius: 30px;
     padding: 30px;
     border: 1px solid var(--border-color);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
     animation: slideUp 0.3s ease;
-    /* SIN overflow-y aquí */
 }
 
 .modal-header {
     margin-bottom: 30px;
     padding-bottom: 20px;
     border-bottom: 2px solid var(--border-color);
+    flex-shrink: 0;
 }
 
 .modal-header h2 {
@@ -1362,7 +1362,6 @@ section {
     display: grid;
     grid-template-columns: 1fr;
     gap: 30px;
-    /* SIN overflow */
 }
 
 @media (min-width: 992px) {
@@ -1372,7 +1371,6 @@ section {
 }
 
 .modal-description {
-    /* SIN overflow */
     padding-right: 10px;
 }
 
@@ -1397,6 +1395,8 @@ section {
 .features-list {
     list-style: none;
     padding: 0;
+    max-width: 100%;
+    overflow-wrap: break-word;
 }
 
 .features-list li {
@@ -1406,6 +1406,7 @@ section {
     line-height: 1.6;
     font-size: 1rem;
     border-bottom: 1px solid var(--border-color);
+    margin-bottom: 5px;
 }
 
 .features-list li:last-child {
@@ -1497,7 +1498,7 @@ section {
     font-size: 1.5rem;
 }
 
-/* ===== GALERÍA SIN SCROLL PROPIO ===== */
+/* ===== GALERÍA - SIEMPRE VISIBLE EN MÓVILES ===== */
 .modal-gallery {
     background: var(--bg-color);
     border-radius: 20px;
@@ -1528,9 +1529,7 @@ section {
     background: var(--bg-color);
     border-radius: 15px;
     border: 1px solid var(--border-color);
-    scroll-behavior: smooth;
     width: 100%;
-    /* SIN max-height y SIN overflow-y - todo el scroll está en el modal padre */
 }
 
 @media (min-width: 768px) {
@@ -1605,6 +1604,26 @@ section {
 
 .gallery-list-item:hover .gallery-item-tooltip {
     transform: translateY(0);
+}
+
+/* ===== SIEMPRE VISIBLE EN MÓVILES ===== */
+@media (max-width: 768px) {
+    .gallery-list-item .gallery-item-tooltip {
+        transform: translateY(0) !important;
+        opacity: 1 !important;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.8));
+        padding: 12px;
+        font-size: 0.9rem;
+        border-top: 3px solid var(--primary-color);
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-list-item .gallery-item-tooltip {
+        padding: 8px;
+        font-size: 0.8rem;
+        border-top-width: 2px;
+    }
 }
 
 /* ===== CONTACT SECTION ===== */
