@@ -391,9 +391,8 @@
 
     <!-- Modal para Proyecto ERP -->
     <div id="erpModal" class="project-modal">
+        <button class="close-modal" onclick="closeProjectModal('erp')" aria-label="Cerrar"></button>
         <div class="modal-content">
-            <button class="close-modal" onclick="closeProjectModal('erp')" aria-label="Cerrar">×</button>
-            
             <div class="modal-header">
                 <h2 data-i18n="erp_etn">ERP Enlaces Terrestres Nacionales (ETN)</h2>
                 <div class="modal-tech-tags">
@@ -508,9 +507,8 @@
 
     <!-- Modal para Proyecto FITODEX -->
     <div id="fitodexModal" class="project-modal">
+        <button class="close-modal" onclick="closeProjectModal('fitodex')" aria-label="Cerrar"></button>
         <div class="modal-content">
-            <button class="close-modal" onclick="closeProjectModal('fitodex')" aria-label="Cerrar">×</button>
-            
             <div class="modal-header">
                 <h2 data-i18n="fitodex">FITODEX - Plataforma Agrícola</h2>
                 <div class="modal-tech-tags">
@@ -641,7 +639,7 @@
     <!-- Modal para Visor de Imágenes -->
     <div id="imageViewerModal" class="image-viewer-modal">
         <div class="image-viewer-content">
-            <button class="close-image-viewer" onclick="closeImageViewer()" aria-label="Cerrar">×</button>
+            <button class="close-image-viewer" onclick="closeImageViewer()" aria-label="Cerrar"></button>
             <div class="image-viewer-container">
                 <img id="viewerImage" src="" alt="Imagen ampliada">
                 <p id="viewerCaption" class="viewer-caption"></p>
