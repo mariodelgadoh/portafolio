@@ -24,10 +24,7 @@
     <!-- Navegación -->
     <nav class="navbar">
         <div class="nav-container">
-            <!-- Logo a la izquierda -->
             <div class="logo">ING. DELGADO</div>
-            
-            <!-- Menú centrado -->
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#home" class="active" data-i18n="home">Inicio</a></li>
                 <li><a href="#about" data-i18n="about">Sobre Mí</a></li>
@@ -36,7 +33,6 @@
                 <li><a href="#contact" data-i18n="contact">Contacto</a></li>
             </ul>
             
-            <!-- Controles a la derecha -->
             <div class="nav-controls">
                 <button id="themeToggle" class="theme-btn" title="Cambiar tema">
                     <i class="fas fa-moon"></i>
@@ -59,7 +55,6 @@
                     </div>
                 </div>
                 
-                <!-- Menu toggle (solo móvil) -->
                 <div class="menu-toggle" id="menuToggle">
                     <i class="fas fa-bars"></i>
                 </div>
@@ -67,7 +62,7 @@
         </div>
     </nav>
 
-    <!-- Home Section - CON TEXTO CENTRADO -->
+    <!-- Home Section -->
     <section id="home" class="home">
         <div class="home-content">
             <p class="greeting" data-i18n="hello">Hola, soy</p>
@@ -81,7 +76,6 @@
                 <a href="#contact" class="btn-contact" data-i18n="contact_me">Contáctame</a>
             </div>
             
-            <!-- REDES SOCIALES COMPLETAS -->
             <div class="social-links">
                 <a href="https://www.facebook.com/mario.delgado.26749/" target="_blank" title="Facebook">
                     <i class="fab fa-facebook-f"></i>
@@ -108,12 +102,11 @@
         </div>
     </section>
 
-    <!-- About Section - CON UNA SOLA IMAGEN GRANDE Y CENTRADA -->
+    <!-- About Section -->
     <section id="about" class="about">
         <h2 class="section-title" data-i18n="about_me">Sobre Mí</h2>
         <div class="about-content">
             <div class="about-grid">
-                <!-- COLUMNA DE IMAGEN ÚNICA GRANDE CENTRADA VERTICALMENTE -->
                 <div class="about-image-large">
                     <div class="profile-image-card">
                         <div class="profile-image-wrapper">
@@ -127,7 +120,6 @@
                     </div>
                 </div>
 
-                <!-- COLUMNA DE TEXTO -->
                 <div class="about-text">
                     <h3 data-i18n="about_title">Ingeniero en Sistemas Computacionales</h3>
                     <p data-i18n="about_text1">
@@ -137,7 +129,6 @@
                         Mi enfoque se centra en crear aplicaciones funcionales y eficientes que resuelvan problemas reales, con especial atención a la experiencia del usuario y la calidad del código. Me caracterizo por ser una persona proactiva, con capacidad de trabajo en equipo y aprendizaje continuo.
                     </p>
                     
-                    <!-- Intereses Profesionales -->
                     <div class="interests-section">
                         <h4 data-i18n="professional_interests">Intereses Profesionales</h4>
                         <div class="interests-grid">
@@ -164,7 +155,6 @@
                         </div>
                     </div>
                     
-                    <!-- Habilidades -->
                     <div class="skills-section">
                         <h4 data-i18n="skills_title">Habilidades</h4>
                         <div class="skills-grid">
@@ -191,7 +181,7 @@
                         </div>
                     </div>
                     
-                    <!-- Tecnologías CON IMÁGENES -->
+                    <!-- Tecnologías CON NUEVAS INCORPORACIONES -->
                     <div class="tech-section">
                         <h4 data-i18n="technologies">Tecnologías</h4>
                         <div class="tech-images-grid">
@@ -290,6 +280,24 @@
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
                                 <span class="tech-tooltip">Docker</span>
                             </div>
+
+                            <!-- MATLAB (NUEVO) -->
+                            <div class="tech-image-item" data-name="MATLAB">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg" alt="MATLAB">
+                                <span class="tech-tooltip">MATLAB</span>
+                            </div>
+
+                            <!-- Bootstrap (NUEVO) -->
+                            <div class="tech-image-item" data-name="Bootstrap">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap">
+                                <span class="tech-tooltip">Bootstrap</span>
+                            </div>
+
+                            <!-- Visual Studio Code (NUEVO) -->
+                            <div class="tech-image-item" data-name="VS Code">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="Visual Studio Code">
+                                <span class="tech-tooltip">VS Code</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -351,7 +359,7 @@
         </div>
     </section>
 
-    <!-- Portfolio Section - CON BOTÓN "CLIC PARA SABER MÁS" TRADUCIBLE -->
+    <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio">
         <h2 class="section-title" data-i18n="my_portfolio">Mi Portafolio</h2>
         <div class="portfolio-grid">
@@ -366,7 +374,7 @@
                 </div>
             </div>
 
-            <!-- PROYECTO 2: FITODEX - ACTUALIZADO -->
+            <!-- PROYECTO 2: FITODEX -->
             <div class="portfolio-item" onclick="openProjectModal('fitodex')">
                 <img src="assets/fito.png" alt="FITODEX">
                 <div class="portfolio-overlay">
@@ -378,44 +386,44 @@
             </div>
             
             <!-- PROYECTO 3: App Flutter -->
-            <div class="portfolio-item">
+            <div class="portfolio-item" onclick="openProjectModal('flutter')">
                 <img src="https://via.placeholder.com/600x400/764ba2/ffffff?text=App+Flutter" alt="App Flutter">
                 <div class="portfolio-overlay">
                     <h3 data-i18n="flutter_app">App Móvil Flutter</h3>
-                    <button class="btn-more-info">
+                    <button class="btn-more-info" onclick="openProjectModal('flutter'); event.stopPropagation();">
                         <i class="fas fa-info-circle"></i> <span data-i18n="click_for_more">CLIC PARA SABER MÁS</span>
                     </button>
                 </div>
             </div>
             
             <!-- PROYECTO 4: API REST -->
-            <div class="portfolio-item">
+            <div class="portfolio-item" onclick="openProjectModal('api')">
                 <img src="https://via.placeholder.com/600x400/667eea/ffffff?text=API+REST" alt="API REST">
                 <div class="portfolio-overlay">
                     <h3 data-i18n="api_rest">API REST</h3>
-                    <button class="btn-more-info">
+                    <button class="btn-more-info" onclick="openProjectModal('api'); event.stopPropagation();">
                         <i class="fas fa-info-circle"></i> <span data-i18n="click_for_more">CLIC PARA SABER MÁS</span>
                     </button>
                 </div>
             </div>
             
             <!-- PROYECTO 5: UX/UI Design -->
-            <div class="portfolio-item">
+            <div class="portfolio-item" onclick="openProjectModal('uxui')">
                 <img src="https://via.placeholder.com/600x400/764ba2/ffffff?text=UX+UI+Design" alt="UX UI Design">
                 <div class="portfolio-overlay">
                     <h3 data-i18n="uxui_project">Diseño UX/UI</h3>
-                    <button class="btn-more-info">
+                    <button class="btn-more-info" onclick="openProjectModal('uxui'); event.stopPropagation();">
                         <i class="fas fa-info-circle"></i> <span data-i18n="click_for_more">CLIC PARA SABER MÁS</span>
                     </button>
                 </div>
             </div>
             
             <!-- PROYECTO 6: Diseño de BD -->
-            <div class="portfolio-item">
+            <div class="portfolio-item" onclick="openProjectModal('db')">
                 <img src="https://via.placeholder.com/600x400/667eea/ffffff?text=DB+Design" alt="Database Design">
                 <div class="portfolio-overlay">
                     <h3 data-i18n="db_project">Diseño de BD</h3>
-                    <button class="btn-more-info">
+                    <button class="btn-more-info" onclick="openProjectModal('db'); event.stopPropagation();">
                         <i class="fas fa-info-circle"></i> <span data-i18n="click_for_more">CLIC PARA SABER MÁS</span>
                     </button>
                 </div>
@@ -494,61 +502,42 @@
                 <div class="modal-gallery">
                     <h3 data-i18n="project_gallery">Galería del Proyecto</h3>
                     <div class="gallery-list" id="erpGalleryList">
-                        <!-- Login -->
                         <div class="gallery-list-item" onclick="openImageViewer('assets/erp-login.png', 'gallery_login', 'erp')">
                             <img src="assets/erp-login.png" alt="Login">
                             <span class="gallery-item-tooltip" data-i18n="gallery_login">Pantalla de Login</span>
                         </div>
-                        
-                        <!-- Admin -->
                         <div class="gallery-list-item" onclick="openImageViewer('assets/admin.png', 'gallery_admin', 'erp')">
                             <img src="assets/admin.png" alt="Admin">
                             <span class="gallery-item-tooltip" data-i18n="gallery_admin">Pantalla de Admin</span>
                         </div>
-                        
-                        <!-- RH Contratar -->
                         <div class="gallery-list-item" onclick="openImageViewer('assets/rh.png', 'gallery_rrhh', 'erp')">
                             <img src="assets/rh.png" alt="RH Contratar">
                             <span class="gallery-item-tooltip" data-i18n="gallery_rrhh">RH - Contratación</span>
                         </div>
-                        
-                        <!-- Finanzas Gráficas -->
                         <div class="gallery-list-item" onclick="openImageViewer('assets/finanzas.png', 'gallery_finanzas', 'erp')">
                             <img src="assets/finanzas.png" alt="Finanzas">
                             <span class="gallery-item-tooltip" data-i18n="gallery_finanzas">Finanzas - Gráficas</span>
                         </div>
-                        
-                        <!-- Inventario General -->
                         <div class="gallery-list-item" onclick="openImageViewer('assets/inventario.png', 'gallery_inventario', 'erp')">
                             <img src="assets/inventario.png" alt="Inventario">
                             <span class="gallery-item-tooltip" data-i18n="gallery_inventario">Inventario General</span>
                         </div>
-                        
-                        <!-- Compras Formulario -->
                         <div class="gallery-list-item" onclick="openImageViewer('assets/compras.png', 'gallery_compras', 'erp')">
                             <img src="assets/compras.png" alt="Compras">
                             <span class="gallery-item-tooltip" data-i18n="gallery_compras">Compras - Formulario</span>
                         </div>
-                        
-                        <!-- Proveedores Lista -->
                         <div class="gallery-list-item" onclick="openImageViewer('assets/proveedores.png', 'gallery_proveedores', 'erp')">
                             <img src="assets/proveedores.png" alt="Proveedores">
                             <span class="gallery-item-tooltip" data-i18n="gallery_proveedores">Lista de Proveedores</span>
                         </div>
-                        
-                        <!-- Ventas Boletos -->
                         <div class="gallery-list-item" onclick="openImageViewer('assets/venta.png', 'gallery_ventas', 'erp')">
                             <img src="assets/venta.png" alt="Ventas">
                             <span class="gallery-item-tooltip" data-i18n="gallery_ventas">Ventas de Boletos</span>
                         </div>
-                        
-                        <!-- Logística Rutas -->
                         <div class="gallery-list-item" onclick="openImageViewer('assets/logistica.png', 'gallery_logistica', 'erp')">
                             <img src="assets/logistica.png" alt="Logística">
                             <span class="gallery-item-tooltip" data-i18n="gallery_logistica">Logística - Rutas</span>
                         </div>
-                        
-                        <!-- Reportes -->
                         <div class="gallery-list-item" onclick="openImageViewer('assets/reporte.png', 'gallery_reportes', 'erp')">
                             <img src="assets/reporte.png" alt="Reportes">
                             <span class="gallery-item-tooltip" data-i18n="gallery_reportes">Módulo de Reportes</span>
@@ -559,7 +548,7 @@
         </div>
     </div>
 
-    <!-- Modal para Proyecto FITODEX - CON DESCRIPCIÓN AMPLIADA -->
+    <!-- Modal para Proyecto FITODEX -->
     <div id="fitodexModal" class="project-modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closeProjectModal('fitodex')">&times;</span>
@@ -645,61 +634,42 @@
                 <div class="modal-gallery">
                     <h3 data-i18n="project_gallery">Galería del Proyecto</h3>
                     <div class="gallery-list" id="fitodexGalleryList">
-                        <!-- Inicio -->
                         <div class="gallery-list-item" onclick="openImageViewer('assets/inicio.png', 'fitodex_inicio', 'fitodex')">
                             <img src="assets/inicio.png" alt="Inicio">
                             <span class="gallery-item-tooltip" data-i18n="fitodex_inicio">Página de Inicio</span>
                         </div>
-                        
-                        <!-- Cultivos -->
                         <div class="gallery-list-item" onclick="openImageViewer('assets/cultivos.png', 'fitodex_cultivos', 'fitodex')">
                             <img src="assets/cultivos.png" alt="Cultivos">
                             <span class="gallery-item-tooltip" data-i18n="fitodex_cultivos">Base de Cultivos</span>
                         </div>
-                        
-                        <!-- Insecticidas -->
                         <div class="gallery-list-item" onclick="openImageViewer('assets/insecticidas.png', 'fitodex_insecticidas', 'fitodex')">
                             <img src="assets/insecticidas.png" alt="Insecticidas">
                             <span class="gallery-item-tooltip" data-i18n="fitodex_insecticidas">Base de Insecticidas</span>
                         </div>
-                        
-                        <!-- Plagas -->
                         <div class="gallery-list-item" onclick="openImageViewer('assets/ug.png', 'fitodex_plagas', 'fitodex')">
                             <img src="assets/ug.png" alt="Plagas">
                             <span class="gallery-item-tooltip" data-i18n="fitodex_plagas">Universidad de Guanajuato</span>
                         </div>
-                        
-                        <!-- Búsqueda -->
                         <div class="gallery-list-item" onclick="openImageViewer('assets/busqueda.png', 'fitodex_busqueda', 'fitodex')">
                             <img src="assets/busqueda.png" alt="Búsqueda">
                             <span class="gallery-item-tooltip" data-i18n="fitodex_busqueda">Sistema de Búsqueda</span>
                         </div>
-                        
-                        <!-- Detalles -->
                         <div class="gallery-list-item" onclick="openImageViewer('assets/detalles.png', 'fitodex_detalle_cultivo', 'fitodex')">
                             <img src="assets/detalles.png" alt="Detalle Cultivo">
                             <span class="gallery-item-tooltip" data-i18n="fitodex_detalle_cultivo">Detalles</span>
                         </div>
-                        
-                        <!-- Ubicación -->
                         <div class="gallery-list-item" onclick="openImageViewer('assets/ubicacion.png', 'fitodex_detalle_insecticida', 'fitodex')">
                             <img src="assets/ubicacion.png" alt="Ubicación">
                             <span class="gallery-item-tooltip" data-i18n="fitodex_detalle_insecticida">Ubicación</span>
                         </div>
-                        
-                        <!-- Editar Usuario -->
                         <div class="gallery-list-item" onclick="openImageViewer('assets/editar.png', 'fitodex_detalle_plaga', 'fitodex')">
                             <img src="assets/editar.png" alt="Editar Usuario">
                             <span class="gallery-item-tooltip" data-i18n="fitodex_detalle_plaga">Editar Usuario</span>
                         </div>
-                        
-                        <!-- Usuarios -->
                         <div class="gallery-list-item" onclick="openImageViewer('assets/usuarios.png', 'fitodex_admin', 'fitodex')">
                             <img src="assets/usuarios.png" alt="Usuarios">
                             <span class="gallery-item-tooltip" data-i18n="fitodex_admin">Panel de Usuarios</span>
                         </div>
-                        
-                        <!-- Login -->
                         <div class="gallery-list-item" onclick="openImageViewer('assets/login.png', 'fitodex_estadisticas', 'fitodex')">
                             <img src="assets/login.png" alt="Login">
                             <span class="gallery-item-tooltip" data-i18n="fitodex_estadisticas">Iniciar Sesión</span>

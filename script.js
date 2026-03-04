@@ -1,4 +1,4 @@
-// ===== TYPING EFFECT - CON TIEMPOS AJUSTADOS =====
+// ===== TYPING EFFECT =====
 const professions = {
     es: ['Ingeniero en Sistemas', 'Desarrollador Frontend', 'Desarrollador Backend', 'Desarrollador Móvil', 'Especialista en BD', 'Diseñador UX/UI', 'Asesor Académico'],
     en: ['Systems Engineer', 'Frontend Developer', 'Backend Developer', 'Mobile Developer', 'Database Specialist', 'UX/UI Designer', 'Academic Tutor']
@@ -9,7 +9,6 @@ let charIndex = 0;
 let isDeleting = false;
 let typingElement = document.querySelector('.typing');
 
-// Velocidades ajustadas para mejor lectura
 const typingSpeed = 150;
 const deletingSpeed = 80;
 const pauseBetween = 4000;
@@ -101,19 +100,11 @@ const translations = {
         tutoring_desc: "Asesorías personalizadas en matemáticas y programación.",
         my_portfolio: "Mi Portafolio",
         erp_etn: "ERP Enlaces Terrestres Nacionales (ETN)",
-        erp_etn_short: "Sistema ERP para gestión integral de empresa de transporte con 7 departamentos.",
         fitodex: "FITODEX - Plataforma Agrícola",
-        fitodex_short: "Plataforma agrícola con Vue.js, Node.js y MongoDB",
-        vue_app: "App con Vue.js",
-        vue_app_desc: "Aplicación web desarrollada con Vue.js y Node.js",
         flutter_app: "App Móvil Flutter",
-        flutter_app_desc: "Aplicación móvil multiplataforma con Flutter",
         api_rest: "API REST",
-        api_rest_desc: "API desarrollada con Node.js y Express",
         uxui_project: "Diseño UX/UI",
-        uxui_project_desc: "Diseño de interfaz para aplicación móvil",
         db_project: "Diseño de BD",
-        db_project_desc: "Modelado y optimización de base de datos",
         get_in_touch: "Contacto",
         work_together: "Trabajemos juntos",
         contact_desc: "¿Tienes un proyecto en mente? Estoy interesado en nuevas oportunidades y colaboraciones.",
@@ -124,10 +115,8 @@ const translations = {
         message_placeholder: "Tu mensaje",
         send_message: "Enviar Mensaje",
         all_rights: "Todos los derechos reservados.",
-        // TRADUCCIONES PARA LA FOTO
         profile_title: "Ingeniero en Sistemas Computacionales",
         profile_university: "Universidad de Guanajuato",
-        // TRADUCCIONES PARA EL MODAL DEL PROYECTO
         project_description: "Descripción del Proyecto",
         erp_description: "Sistema ERP desarrollado para la empresa de transporte Enlaces Terrestres Nacionales (ETN) que integra y gestiona eficientemente las operaciones internas a través de siete departamentos principales: Recursos Humanos, Finanzas, Inventarios, Compras, Proveedores, Ventas y Logística. El sistema cuenta con un usuario Admin con acceso total, así como usuarios generales y responsables para cada área.",
         key_features: "Características Principales",
@@ -136,10 +125,8 @@ const translations = {
         github_repos: "Repositorios GitHub",
         web_link: "Sitio Web",
         project_gallery: "Galería del Proyecto",
-        // TRADUCCIONES PARA FITODEX
         fitodex_description: "Conoce más sobre Fitodex, nuestra misión y visión. Somos una empresa agrícola dedicada a la producción y venta de cultivos, insecticidas y otros productos relacionados. Nuestra misión es ofrecer soluciones efectivas y sostenibles para el manejo de plagas y la mejora de los cultivos, garantizando la calidad y eficacia de nuestros productos. Nuestra visión es ser líderes en el sector agrícola, proporcionando innovaciones que promuevan prácticas agrícolas responsables y sostenibles, contribuyendo al crecimiento y éxito de nuestros clientes.",
         fitodex_description2: "Fitodex ha sido desarrollada para facilitar el acceso a información técnica sobre pesticidas y fertilizantes, dirigida a productores agrícolas, técnicos y profesionales del sector agropecuario. Su función principal es permitir una búsqueda ágil y precisa de productos mediante el nombre comercial o el ingrediente activo, brindando apoyo en la toma de decisiones relacionadas con el manejo fitosanitario de los cultivos.",
-        // TRADUCCIONES PARA LA GALERÍA DE ERP
         gallery_login: "Pantalla de Login",
         gallery_admin: "Pantalla de Admin",
         gallery_rrhh: "RH - Contratación",
@@ -150,7 +137,6 @@ const translations = {
         gallery_ventas: "Ventas de Boletos",
         gallery_logistica: "Logística - Rutas",
         gallery_reportes: "Módulo de Reportes",
-        // TRADUCCIONES PARA LA GALERÍA DE FITODEX
         fitodex_inicio: "Página de Inicio",
         fitodex_cultivos: "Base de Cultivos",
         fitodex_insecticidas: "Base de Insecticidas",
@@ -161,8 +147,15 @@ const translations = {
         fitodex_detalle_plaga: "Editar Usuario",
         fitodex_admin: "Panel de Usuarios",
         fitodex_estadisticas: "Iniciar Sesión",
-        // TRADUCCIÓN PARA EL BOTÓN
-        click_for_more: "CLIC PARA SABER MÁS"
+        click_for_more: "CLIC PARA SABER MÁS",
+        // Mensajes del formulario
+        fill_all_fields: "Por favor completa todos los campos",
+        invalid_email: "Por favor ingresa un correo electrónico válido",
+        sending: "Enviando...",
+        success_message: "¡Mensaje enviado con éxito! Te contactaré pronto.",
+        error_message: "Error al enviar el mensaje. Por favor intenta de nuevo.",
+        connection_error: "Error de conexión. Por favor verifica tu internet e intenta de nuevo.",
+        email_sent: "Correo enviado correctamente"
     },
     en: {
         home: "Home",
@@ -207,19 +200,11 @@ const translations = {
         tutoring_desc: "Personalized tutoring in mathematics and programming.",
         my_portfolio: "My Portfolio",
         erp_etn: "ERP Enlaces Terrestres Nacionales (ETN)",
-        erp_etn_short: "ERP system for comprehensive management of a transportation company with 7 departments.",
         fitodex: "FITODEX - Agricultural Platform",
-        fitodex_short: "Agricultural platform with Vue.js, Node.js and MongoDB",
-        vue_app: "Vue.js App",
-        vue_app_desc: "Web application developed with Vue.js and Node.js",
         flutter_app: "Flutter Mobile App",
-        flutter_app_desc: "Cross-platform mobile application with Flutter",
         api_rest: "REST API",
-        api_rest_desc: "API developed with Node.js and Express",
         uxui_project: "UX/UI Design",
-        uxui_project_desc: "Interface design for mobile application",
         db_project: "Database Design",
-        db_project_desc: "Database modeling and optimization",
         get_in_touch: "Get In Touch",
         work_together: "Let's work together",
         contact_desc: "Do you have a project in mind? I'm interested in new opportunities and collaborations.",
@@ -230,10 +215,8 @@ const translations = {
         message_placeholder: "Your message",
         send_message: "Send Message",
         all_rights: "All rights reserved.",
-        // TRANSLATIONS FOR PHOTO
         profile_title: "Computer Systems Engineer",
         profile_university: "University of Guanajuato",
-        // TRANSLATIONS FOR PROJECT MODAL
         project_description: "Project Description",
         erp_description: "ERP system developed for the transportation company Enlaces Terrestres Nacionales (ETN) that integrates and efficiently manages internal operations through seven main departments: Human Resources, Finance, Inventory, Purchasing, Suppliers, Sales, and Logistics. The system has an Admin user with full access, as well as general users and managers for each area.",
         key_features: "Key Features",
@@ -242,10 +225,8 @@ const translations = {
         github_repos: "GitHub Repositories",
         web_link: "Website",
         project_gallery: "Project Gallery",
-        // TRANSLATIONS FOR FITODEX
         fitodex_description: "Learn more about Fitodex, our mission and vision. We are an agricultural company dedicated to the production and sale of crops, insecticides and other related products. Our mission is to offer effective and sustainable solutions for pest management and crop improvement, guaranteeing the quality and effectiveness of our products. Our vision is to be leaders in the agricultural sector, providing innovations that promote responsible and sustainable agricultural practices, contributing to the growth and success of our clients.",
         fitodex_description2: "Fitodex has been developed to facilitate access to technical information on pesticides and fertilizers, aimed at agricultural producers, technicians and professionals in the agricultural sector. Its main function is to allow agile and precise product search by trade name or active ingredient, providing support in decision-making related to crop phytosanitary management.",
-        // TRANSLATIONS FOR ERP GALLERY
         gallery_login: "Login Screen",
         gallery_admin: "Admin Screen",
         gallery_rrhh: "HR - Hiring",
@@ -256,7 +237,6 @@ const translations = {
         gallery_ventas: "Ticket Sales",
         gallery_logistica: "Logistics - Routes",
         gallery_reportes: "Reports Module",
-        // TRANSLATIONS FOR FITODEX GALLERY
         fitodex_inicio: "Home Page",
         fitodex_cultivos: "Crops Database",
         fitodex_insecticidas: "Insecticides Database",
@@ -267,8 +247,15 @@ const translations = {
         fitodex_detalle_plaga: "Edit User",
         fitodex_admin: "User Panel",
         fitodex_estadisticas: "Log In",
-        // TRANSLATION FOR THE BUTTON
-        click_for_more: "CLICK FOR MORE INFO"
+        click_for_more: "CLICK FOR MORE INFO",
+        // Form messages
+        fill_all_fields: "Please fill in all fields",
+        invalid_email: "Please enter a valid email address",
+        sending: "Sending...",
+        success_message: "Message sent successfully! I'll contact you soon.",
+        error_message: "Error sending message. Please try again.",
+        connection_error: "Connection error. Please check your internet and try again.",
+        email_sent: "Email sent successfully"
     }
 };
 
@@ -312,7 +299,6 @@ langOptions.forEach(option => {
         isDeleting = false;
         typeEffect();
         
-        // Actualizar textos de los modales si están abiertos
         updateModalTexts('erp', lang);
         updateModalTexts('fitodex', lang);
         updateViewerCaption(lang);
@@ -334,7 +320,6 @@ function updateLanguage(lang) {
         }
     });
     
-    // Actualizar tooltips de la galería
     document.querySelectorAll('.gallery-item-tooltip[data-i18n]').forEach(element => {
         const key = element.dataset.i18n;
         if (translations[lang][key]) {
@@ -414,12 +399,9 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// ===== DOWNLOAD CV FUNCTION - BILINGÜE =====
-// ===== DOWNLOAD CV FUNCTION - VERSIÓN PARA VERCEL =====
+// ===== DOWNLOAD CV FUNCTION =====
 function downloadCV() {
     const currentLang = localStorage.getItem('language') || 'es';
-    
-    // URL absoluta basada en el dominio actual
     const baseUrl = window.location.origin;
     const cvUrl = currentLang === 'es' 
         ? `${baseUrl}/Mario-Delgado-CV.pdf`
@@ -468,24 +450,26 @@ if (contactForm) {
     contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         
+        const currentLang = localStorage.getItem('language') || 'es';
+        
         const name = document.getElementById('name').value.trim();
         const email = document.getElementById('email').value.trim();
         const subject = document.getElementById('subject').value.trim();
         const message = document.getElementById('message').value.trim();
         
         if (!name || !email || !subject || !message) {
-            showFormMessage('Por favor completa todos los campos', 'error');
+            showFormMessage(translations[currentLang].fill_all_fields, 'error', currentLang);
             return;
         }
         
         if (!isValidEmail(email)) {
-            showFormMessage('Por favor ingresa un correo electrónico válido', 'error');
+            showFormMessage(translations[currentLang].invalid_email, 'error', currentLang);
             return;
         }
         
         submitBtn.disabled = true;
         paperPlaneIcon.className = 'fas fa-spinner fa-spin';
-        submitBtn.innerHTML = '<span>Enviando...</span> ';
+        submitBtn.innerHTML = `<span>${translations[currentLang].sending}</span> `;
         submitBtn.appendChild(paperPlaneIcon);
         
         try {
@@ -499,25 +483,25 @@ if (contactForm) {
             const result = await response.json();
             
             if (response.ok && result.success) {
-                showFormMessage('¡Mensaje enviado con éxito! Te contactaré pronto.', 'success');
+                showFormMessage(translations[currentLang].success_message, 'success', currentLang);
                 contactForm.reset();
-                showNotification('Correo enviado correctamente');
+                showNotification(translations[currentLang].email_sent);
                 
                 paperPlaneIcon.className = 'fas fa-paper-plane fly-away';
                 setTimeout(() => {
                     paperPlaneIcon.className = 'fas fa-paper-plane';
                 }, 1000);
             } else {
-                showFormMessage('Error al enviar el mensaje. Por favor intenta de nuevo.', 'error');
+                showFormMessage(translations[currentLang].error_message, 'error', currentLang);
                 paperPlaneIcon.className = 'fas fa-paper-plane';
             }
         } catch (error) {
             console.error('Error:', error);
-            showFormMessage('Error de conexión. Por favor verifica tu internet e intenta de nuevo.', 'error');
+            showFormMessage(translations[currentLang].connection_error, 'error', currentLang);
             paperPlaneIcon.className = 'fas fa-paper-plane';
         } finally {
             submitBtn.disabled = false;
-            submitBtn.innerHTML = '<span data-i18n="send_message">Enviar Mensaje</span> ';
+            submitBtn.innerHTML = `<span data-i18n="send_message">${translations[currentLang].send_message}</span> `;
             submitBtn.appendChild(paperPlaneIcon);
         }
     });
@@ -528,7 +512,7 @@ function isValidEmail(email) {
     return re.test(email);
 }
 
-function showFormMessage(text, type) {
+function showFormMessage(text, type, lang) {
     formMessage.textContent = text;
     formMessage.className = `form-message ${type}`;
     
@@ -543,11 +527,9 @@ let currentProject = null;
 let currentImageIndex = 0;
 let galleryImages = [];
 
-// Abrir modal del proyecto
 function openProjectModal(projectId) {
     const modal = document.getElementById(projectId + 'Modal');
     if (modal) {
-        // Cerrar cualquier otro modal abierto
         if (currentProject && currentProject !== projectId) {
             closeProjectModal(currentProject);
         }
@@ -556,23 +538,14 @@ function openProjectModal(projectId) {
         document.body.style.overflow = 'hidden';
         currentProject = projectId;
         
-        // Reinicializar la galería cuando se abre el modal
         setTimeout(() => {
             initGalleryImages(projectId);
-            console.log('Galería reinicializada al abrir modal:', projectId);
         }, 100);
         
-        // Actualizar textos del modal según el idioma actual
         updateModalTexts(projectId, localStorage.getItem('language') || 'es');
     }
 }
 
-// Función específica para abrir FITODEX (por compatibilidad)
-function openFitodexModal() {
-    openProjectModal('fitodex');
-}
-
-// Cerrar modal del proyecto
 function closeProjectModal(projectId) {
     const modal = document.getElementById(projectId + 'Modal');
     if (modal) {
@@ -584,7 +557,6 @@ function closeProjectModal(projectId) {
     }
 }
 
-// Actualizar textos del modal cuando cambia el idioma
 function updateModalTexts(projectId, lang) {
     const modal = document.getElementById(projectId + 'Modal');
     if (modal) {
@@ -605,7 +577,6 @@ function updateModalTexts(projectId, lang) {
 }
 
 // ===== VISOR DE IMÁGENES =====
-// Inicializar el array de imágenes de la galería
 function initGalleryImages(projectId) {
     const galleryList = document.getElementById(projectId + 'GalleryList');
     if (!galleryList) return [];
@@ -631,31 +602,22 @@ function initGalleryImages(projectId) {
         }
     });
     
-    console.log('Galería inicializada:', projectId, galleryImages.length, 'imágenes');
     return galleryImages;
 }
 
-// Abrir visor de imagen
 function openImageViewer(imageSrc, captionKey, projectId) {
-    console.log('Abriendo imagen:', imageSrc);
-    console.log('Caption key:', captionKey);
-    console.log('Proyecto:', projectId);
-    
     const modal = document.getElementById('imageViewerModal');
     const viewerImage = document.getElementById('viewerImage');
     const viewerCaption = document.getElementById('viewerCaption');
     const imageCounter = document.getElementById('imageCounter');
     const currentLang = localStorage.getItem('language') || 'es';
     
-    // Reinicializar el array de imágenes del proyecto actual
     const images = initGalleryImages(projectId);
     
     if (images.length === 0) {
-        console.error('No hay imágenes en la galería');
         return;
     }
     
-    // Buscar la imagen por su src exacto
     let foundIndex = -1;
     
     for (let i = 0; i < images.length; i++) {
@@ -665,7 +627,6 @@ function openImageViewer(imageSrc, captionKey, projectId) {
         }
     }
     
-    // Si no encuentra, intentar con el nombre del archivo
     if (foundIndex === -1) {
         const imageName = imageSrc.split('/').pop();
         for (let i = 0; i < images.length; i++) {
@@ -676,7 +637,6 @@ function openImageViewer(imageSrc, captionKey, projectId) {
         }
     }
     
-    // Si aún no encuentra, usar el índice basado en captionKey
     if (foundIndex === -1 && captionKey) {
         for (let i = 0; i < images.length; i++) {
             if (images[i].captionKey === captionKey) {
@@ -688,38 +648,30 @@ function openImageViewer(imageSrc, captionKey, projectId) {
     
     if (foundIndex !== -1) {
         currentImageIndex = foundIndex;
-        console.log('Imagen encontrada en índice:', currentImageIndex);
     } else {
-        console.error('No se encontró la imagen, usando índice 0');
         currentImageIndex = 0;
     }
     
-    // Actualizar la imagen en el visor
     viewerImage.src = images[currentImageIndex].src;
     
-    // Actualizar el caption
     if (translations[currentLang] && translations[currentLang][images[currentImageIndex].captionKey]) {
         viewerCaption.textContent = translations[currentLang][images[currentImageIndex].captionKey];
     } else {
         viewerCaption.textContent = images[currentImageIndex].caption;
     }
     
-    // Actualizar el contador
     imageCounter.textContent = `${currentImageIndex + 1}/${images.length}`;
     
-    // Mostrar el modal
     modal.style.display = 'flex';
     document.body.style.overflow = 'hidden';
 }
 
-// Cerrar visor de imagen
 function closeImageViewer() {
     const modal = document.getElementById('imageViewerModal');
     modal.style.display = 'none';
     document.body.style.overflow = 'auto';
 }
 
-// Navegar entre imágenes
 function navigateImage(direction) {
     if (!currentProject) return;
     
@@ -745,7 +697,6 @@ function navigateImage(direction) {
     imageCounter.textContent = `${currentImageIndex + 1}/${images.length}`;
 }
 
-// Actualizar caption del visor cuando cambia el idioma
 function updateViewerCaption(lang) {
     const viewerCaption = document.getElementById('viewerCaption');
     const modal = document.getElementById('imageViewerModal');
@@ -757,7 +708,6 @@ function updateViewerCaption(lang) {
     }
 }
 
-// Cerrar modales con tecla Escape
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
         if (currentProject) {
@@ -771,7 +721,6 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
-// Cerrar modales haciendo clic fuera
 window.addEventListener('click', function(e) {
     if (currentProject) {
         const modal = document.getElementById(currentProject + 'Modal');
