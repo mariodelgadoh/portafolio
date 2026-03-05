@@ -229,13 +229,13 @@ const translations = {
         music_main: "Pantalla principal",
         music_player: "Reproductor de música",
         music_artists: "Lista de artistas",
-        music_albums: "Vista de álbumes",
+        music_albums: "Vista de artista",
         music_admin: "Panel de administración",
         music_stats: "Dashboard con estadísticas",
         music_crud: "Gestión de contenido",
         music_login: "Pantalla de inicio de sesión",
-        music_playlists: "Listas de reproducción",
-        music_responsive: "Diseño responsive móvil"
+        music_playlists: "Pantalla de registro",
+        music_responsive: "Vista del albúm"
     },
     en: {
         home: "Home",
@@ -409,13 +409,13 @@ const translations = {
         music_main: "Main screen",
         music_player: "Music player",
         music_artists: "Artists list",
-        music_albums: "Albums view",
+        music_albums: "Artist's view",
         music_admin: "Admin panel",
         music_stats: "Dashboard with statistics",
         music_crud: "Content management",
         music_login: "Login screen",
-        music_playlists: "Playlists",
-        music_responsive: "Mobile responsive design"
+        music_playlists: "Sign up screen",
+        music_responsive: "Album view"
     }
 };
 
