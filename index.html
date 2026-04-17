@@ -273,6 +273,10 @@
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
                                 <span class="tech-tooltip">React</span>
                             </div>
+                            <div class="tech-image-item" data-name="React">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg" style="filter: invert(1);" width="40" />
+                                <span class="tech-tooltip">Vercel</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -394,6 +398,17 @@
                 <div class="portfolio-overlay">
                     <h3 data-i18n="music_app">MusicArtists</h3>
                     <button class="btn-more-info" onclick="openProjectModal('music'); event.stopPropagation();">
+                        <i class="fas fa-info-circle"></i> <span data-i18n="click_for_more">CLIC PARA SABER MÁS</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- PROYECTO 7: Pokédex Web App -->
+            <div class="portfolio-item" onclick="openProjectModal('pokedex')">
+                <img src="assets/pokedex.jpg" alt="Pokédex Web App">
+                <div class="portfolio-overlay">
+                    <h3 data-i18n="pokedex_app">Pokédex Web App</h3>
+                    <button class="btn-more-info" onclick="openProjectModal('pokedex'); event.stopPropagation();">
                         <i class="fas fa-info-circle"></i> <span data-i18n="click_for_more">CLIC PARA SABER MÁS</span>
                     </button>
                 </div>
@@ -1168,6 +1183,148 @@
             </div>
         </div>
     </div>
+
+
+<!-- Modal para Proyecto Pokédex Web App -->
+<div id="pokedexModal" class="project-modal">
+    <button class="close-modal" onclick="closeProjectModal('pokedex')" aria-label="Cerrar"></button>
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 data-i18n="pokedex_app">Pokédex Web App</h2>
+            <div class="modal-tech-tags">
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript</span>
+                <span>Fetch API</span>
+                <span>PokéAPI</span>
+                <span>Vercel</span>
+                <span>GitHub</span>
+                <span>React</span>
+            </div>
+        </div>
+        
+        <div class="modal-body">
+            <div class="modal-description">
+                <h3 data-i18n="project_description">Descripción del Proyecto</h3>
+                <p data-i18n="pokedex_description">
+                    Este proyecto es una aplicación web interactiva tipo Pokédex, que permite consultar información detallada de distintos Pokémon de manera dinámica. La aplicación consume datos desde una API externa (PokéAPI) para mostrar información como nombre, imagen, habilidades, tipos y otras características relevantes de cada Pokémon. Este tipo de proyectos es común para practicar consumo de APIs y manejo de interfaces dinámicas en el frontend.
+                </p>
+                
+                <h3 data-i18n="key_features">Características Principales</h3>
+                <ul class="features-list">
+                    <li><span data-i18n="pokedex_feature1">Búsqueda de Pokémon:</span> <span data-i18n="pokedex_feature1_desc">Permite buscar Pokémon por nombre o ID de manera rápida y precisa.</span></li>
+                    <li><span data-i18n="pokedex_feature2">Visualización de datos:</span> <span data-i18n="pokedex_feature2_desc">Muestra información detallada como imagen, tipos, habilidades, estadísticas base y peso.</span></li>
+                    <li><span data-i18n="pokedex_feature3">Consumo de API:</span> <span data-i18n="pokedex_feature3_desc">Utiliza Fetch API para consumir datos en tiempo real desde PokéAPI.</span></li>
+                    <li><span data-i18n="pokedex_feature4">Interfaz responsiva:</span> <span data-i18n="pokedex_feature4_desc">Diseño adaptado a móviles, tablets y desktop con transiciones suaves.</span></li>
+                    <li><span data-i18n="pokedex_feature5">Despliegue en la nube:</span> <span data-i18n="pokedex_feature5_desc">Aplicación desplegada y accesible en Vercel para demostración en línea.</span></li>
+                </ul>
+                
+                <h3 data-i18n="technologies_used">Tecnologías Utilizadas</h3>
+                <div class="modal-tech-icons">
+                    <div class="tech-icon-large">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+                        <span>HTML5</span>
+                    </div>
+                    <div class="tech-icon-large">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+                        <span>CSS3</span>
+                    </div>
+                    <div class="tech-icon-large">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="tech-icon-large">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+                        <span>React</span>
+                    </div>
+                    <div class="tech-icon-large">
+                        <i class="fas fa-code-branch" style="font-size: 3rem; color: var(--primary-color);"></i>
+                        <span>Fetch API</span>
+                    </div>
+                    <div class="tech-icon-large">
+                        <i class="fas fa-database" style="font-size: 3rem; color: var(--primary-color);"></i>
+                        <span>PokéAPI</span>
+                    </div>
+                    <div class="tech-icon-large">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg" 
+     style="filter: invert(1);" width="40" />
+                        <span>Vercel</span>
+                    </div>
+                    <div class="tech-icon-large">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+                        <span>GitHub</span>
+                    </div>
+                </div>
+
+                <h3 data-i18n="web_link">Sitio Web</h3>
+                <a href="https://mi-pokedex-mario-delgado.vercel.app/" target="_blank" class="github-link">
+                    <i class="fas fa-globe"></i> mi-pokedex-mario-delgado.vercel.app
+                </a>
+
+                <h3 data-i18n="github_repo">Repositorio GitHub</h3>
+                <a href="https://github.com/mariodelgadoh/pokedex.git" target="_blank" class="github-link">
+                    <i class="fab fa-github"></i> github.com/mariodelgadoh/pokedex
+                </a>
+            </div>
+            
+            <div class="modal-gallery">
+                <h3 data-i18n="project_gallery">Galería del Proyecto</h3>
+                <div class="gallery-list" id="pokedexGalleryList">
+                    <!-- Imagen 1: Pantalla principal -->
+                    <div class="gallery-list-item" onclick="openImageViewer('assets/pokedex-main.jpg', 'pokedex_main', 'pokedex')">
+                        <img src="assets/pokedex-main.jpg" alt="Pantalla principal">
+                        <span class="gallery-item-tooltip" data-i18n="pokedex_main">Pantalla principal</span>
+                    </div>
+                    <!-- Imagen 2: Búsqueda de Pokémon -->
+                    <div class="gallery-list-item" onclick="openImageViewer('assets/pokedex-search.jpg', 'pokedex_search', 'pokedex')">
+                        <img src="assets/pokedex-search.jpg" alt="Búsqueda">
+                        <span class="gallery-item-tooltip" data-i18n="pokedex_search">Búsqueda de Pokémon</span>
+                    </div>
+                    <!-- Imagen 3: Resultados de búsqueda -->
+                    <div class="gallery-list-item" onclick="openImageViewer('assets/pokedex-results.jpg', 'pokedex_results', 'pokedex')">
+                        <img src="assets/pokedex-results.jpg" alt="Resultados">
+                        <span class="gallery-item-tooltip" data-i18n="pokedex_results">Resultados de búsqueda</span>
+                    </div>
+                    <!-- Imagen 4: Detalles del Pokémon -->
+                    <div class="gallery-list-item" onclick="openImageViewer('assets/pokedex-details.jpg', 'pokedex_details', 'pokedex')">
+                        <img src="assets/pokedex-details.jpg" alt="Detalles">
+                        <span class="gallery-item-tooltip" data-i18n="pokedex_details">Detalles del Pokémon</span>
+                    </div>
+                    <!-- Imagen 5: Lista de Pokémon -->
+                    <div class="gallery-list-item" onclick="openImageViewer('assets/pokedex-list.jpg', 'pokedex_list', 'pokedex')">
+                        <img src="assets/pokedex-list.jpg" alt="Lista">
+                        <span class="gallery-item-tooltip" data-i18n="pokedex_list">Lista de Pokémon</span>
+                    </div>
+                    <!-- Imagen 6: Menu juegos -->
+                    <div class="gallery-list-item" onclick="openImageViewer('assets/pokedex-menu-games.jpg', 'pokedex_mobile', 'pokedex')">
+                        <img src="assets/pokedex-menu-games.jpg" alt="Vista móvil">
+                        <span class="gallery-item-tooltip" data-i18n="pokedex_menu_games">Menú de Juegos</span>
+                    </div>
+                    <!-- Imagen 7: Generación del pokemon -->
+                    <div class="gallery-list-item" onclick="openImageViewer('assets/pokedex-generation.jpg', 'pokedex_code', 'pokedex')">
+                        <img src="assets/pokedex-generation.jpg" alt="Código">
+                        <span class="gallery-item-tooltip" data-i18n="pokedex_generation">Selecciona una Generación</span>
+                    </div>
+                    <!-- Imagen 8: Quien es ese pokemon -->
+                    <div class="gallery-list-item" onclick="openImageViewer('assets/pokedex-Who-is-that-Pokémon.jpg', 'pokedex_api', 'pokedex')">
+                        <img src="assets/pokedex-Who-is-that-Pokémon.jpg" alt="API">
+                        <span class="gallery-item-tooltip" data-i18n="pokedex_who_is_that_pokemon">¿Quien es ese Pokemon?</span>
+                    </div>
+                    <!-- Imagen 9: Memorama -->
+                    <div class="gallery-list-item" onclick="openImageViewer('assets/pokedex-Memory-Game.jpg', 'pokedex_vercel', 'pokedex')">
+                        <img src="assets/pokedex-Memory-Game.jpg" alt="Vercel">
+                        <span class="gallery-item-tooltip" data-i18n="pokedex_memory_game">Memorama</span>
+                    </div>
+                    <!-- Imagen 10: Fin de la partidab -->
+                    <div class="gallery-list-item" onclick="openImageViewer('assets/pokedex-end-game.jpg', 'pokedex_github', 'pokedex')">
+                        <img src="assets/pokedex-end-game.jpg" alt="GitHub">
+                        <span class="gallery-item-tooltip" data-i18n="pokedex_end_game">Fin de la Partida</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
     <!-- Modal para Visor de Imágenes -->
     <div id="imageViewerModal" class="image-viewer-modal">

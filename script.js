@@ -235,7 +235,29 @@ const translations = {
         music_crud: "Gestión de contenido",
         music_login: "Pantalla de inicio de sesión",
         music_playlists: "Pantalla de registro",
-        music_responsive: "Vista del albúm"
+        music_responsive: "Vista del albúm",
+        pokedex_app: "Pokédex Web App",
+        pokedex_description: "Este proyecto es una aplicación web interactiva tipo Pokédex, que permite consultar información detallada de distintos Pokémon de manera dinámica. La aplicación consume datos desde una API externa (PokéAPI) para mostrar información como nombre, imagen, habilidades, tipos y otras características relevantes de cada Pokémon. El objetivo principal del proyecto es demostrar habilidades en desarrollo frontend, manejo de datos asíncronos y diseño de interfaces amigables para el usuario.",
+        pokedex_feature1: "Búsqueda de Pokémon:",
+        pokedex_feature1_desc: "Permite buscar Pokémon por nombre o número de ID, mostrando resultados instantáneos.",
+        pokedex_feature2: "Visualización de datos:",
+        pokedex_feature2_desc: "Muestra información detallada como imagen, tipos, habilidades, peso, altura y estadísticas base.",
+        pokedex_feature3: "Consumo de API:",
+        pokedex_feature3_desc: "Utiliza Fetch API para consumir datos en tiempo real desde PokéAPI, la fuente oficial de datos de Pokémon.",
+        pokedex_feature4: "Interfaz responsiva:",
+        pokedex_feature4_desc: "Diseño completamente adaptable a dispositivos móviles, tablets y desktop.",
+        pokedex_feature5: "Despliegue en la nube:",
+        pokedex_feature5_desc: "Aplicación desplegada en Vercel, accesible desde cualquier lugar con conexión a internet.",
+        pokedex_main: "Pantalla principal",
+        pokedex_search: "Búsqueda de Pokémon",
+        pokedex_results: "Resultados de búsqueda",
+        pokedex_details: "Detalles del Pokémon",
+        pokedex_list: "Lista de Pokémon",
+        pokedex_menu_games: "Menú de Juegos",
+        pokedex_generation: "Selecciona una Generación",
+        pokedex_who_is_that_pokemon: "¿Quién es ese Pokemon?",
+        pokedex_memory_game: "Memorama",
+        pokedex_end_game: "Fin de la partida",
     },
     en: {
         home: "Home",
@@ -415,7 +437,29 @@ const translations = {
         music_crud: "Content management",
         music_login: "Login screen",
         music_playlists: "Sign up screen",
-        music_responsive: "Album view"
+        music_responsive: "Album view",
+        pokedex_app: "Pokédex Web App",
+        pokedex_description: "This project is an interactive Pokédex-style web application that allows querying detailed information about different Pokémon dynamically. The application consumes data from an external API (PokéAPI) to display information such as name, image, abilities, types, and other relevant characteristics of each Pokémon. The main objective of the project is to demonstrate skills in frontend development, asynchronous data handling, and user-friendly interface design.",
+        pokedex_feature1: "Pokémon search:",
+        pokedex_feature1_desc: "Allows searching for Pokémon by name or ID number, displaying instant results.",
+        pokedex_feature2: "Data visualization:",
+        pokedex_feature2_desc: "Shows detailed information such as image, types, abilities, weight, height, and base stats.",
+        pokedex_feature3: "API consumption:",
+        pokedex_feature3_desc: "Uses Fetch API to consume real-time data from PokéAPI, the official Pokémon data source.",
+        pokedex_feature4: "Responsive interface:",
+        pokedex_feature4_desc: "Fully adaptable design for mobile devices, tablets, and desktop.",
+        pokedex_feature5: "Cloud deployment:",
+        pokedex_feature5_desc: "Application deployed on Vercel, accessible from anywhere with an internet connection.",
+        pokedex_main: "Main screen",
+        pokedex_search: "Pokémon search",
+        pokedex_results: "Search results",
+        pokedex_details: "Pokémon details",
+        pokedex_list: "List of Pokémon",
+        pokedex_menu_games: "Games Menu",
+        pokedex_generation: "Select a Generation",
+        pokedex_who_is_that_pokemon: "Who is that Pokémon?",
+        pokedex_memory_game: "Memory Game",
+        pokedex_end_game: "Game Over"
     }
 };
 
@@ -465,6 +509,7 @@ langOptions.forEach(option => {
         updateModalTexts('orbitas', lang);
         updateModalTexts('digitos', lang);
         updateModalTexts('music', lang);
+        updateModalTexts('pokedex', lang);
         updateViewerCaption(lang);
     });
 });
