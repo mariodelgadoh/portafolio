@@ -258,6 +258,28 @@ const translations = {
         pokedex_who_is_that_pokemon: "¿Quién es ese Pokemon?",
         pokedex_memory_game: "Memorama",
         pokedex_end_game: "Fin de la partida",
+        banderas_app: "Banderas del Mundo - Aplicación Web Interactiva",
+        banderas_description: "Esta aplicación web interactiva permite explorar y visualizar banderas de distintos países del mundo. La aplicación consume una API externa (REST Countries API) para obtener información actualizada sobre los países, incluyendo sus banderas, capitales, poblaciones, idiomas y otras características relevantes. El objetivo principal del proyecto es ofrecer una experiencia visual atractiva y dinámica, donde el usuario pueda interactuar con los datos en tiempo real. Sirve como práctica para el consumo de APIs, manipulación del DOM y desarrollo de interfaces modernas en el frontend.",
+        banderas_feature1: "Exploración de países:",
+        banderas_feature1_desc: "Visualiza todos los países del mundo con sus respectivas banderas e información relevante.",
+        banderas_feature2: "Búsqueda en tiempo real:",
+        banderas_feature2_desc: "Filtra países por nombre de forma rápida y precisa mientras escribes.",
+        banderas_feature3: "Filtrado por región:",
+        banderas_feature3_desc: "Filtra países por continente (África, América, Asia, Europa, Oceanía).",
+        banderas_feature4: "Información detallada:",
+        banderas_feature4_desc: "Muestra capital, población, región, idiomas, monedas y dominio del país.",
+        banderas_feature5: "Diseño responsivo:",
+        banderas_feature5_desc: "Interfaz completamente adaptable a dispositivos móviles, tablets y desktop.",
+        banderas_main: "Pantalla principal",
+        banderas_search: "Búsqueda de países",
+        banderas_filter: "Filtrado por región",
+        banderas_details: "Información detallada",
+        banderas_mobile: "Diseño responsivo",
+        banderas_api: "Consumo de API REST",
+        banderas_code: "Estructura del código",
+        banderas_vercel: "Despliegue en Vercel",
+        banderas_github: "Repositorio GitHub",
+        banderas_interactive: "Interactividad y experiencia de usuario",
     },
     en: {
         home: "Home",
@@ -459,7 +481,29 @@ const translations = {
         pokedex_generation: "Select a Generation",
         pokedex_who_is_that_pokemon: "Who is that Pokémon?",
         pokedex_memory_game: "Memory Game",
-        pokedex_end_game: "Game Over"
+        pokedex_end_game: "Game Over",
+        banderas_app: "World Flags - Interactive Web Application",
+        banderas_description: "This interactive web application allows you to explore and view flags from different countries around the world. The application consumes an external API (REST Countries API) to obtain up-to-date information about countries, including their flags, capitals, populations, languages, and other relevant characteristics. The main objective of the project is to offer an attractive and dynamic visual experience, where the user can interact with data in real time. It serves as practice for API consumption, DOM manipulation, and modern frontend interface development.",
+        banderas_feature1: "Country exploration:",
+        banderas_feature1_desc: "View all countries of the world with their respective flags and relevant information.",
+        banderas_feature2: "Real-time search:",
+        banderas_feature2_desc: "Filter countries by name quickly and accurately as you type.",
+        banderas_feature3: "Region filtering:",
+        banderas_feature3_desc: "Filter countries by continent (Africa, Americas, Asia, Europe, Oceania).",
+        banderas_feature4: "Detailed information:",
+        banderas_feature4_desc: "Shows capital, population, region, languages, currencies, and country domain.",
+        banderas_feature5: "Responsive design:",
+        banderas_feature5_desc: "Fully adaptable interface for mobile devices, tablets, and desktop.",
+        banderas_main: "Main screen",
+        banderas_search: "Country search",
+        banderas_filter: "Region filtering",
+        banderas_details: "Detailed information",
+        banderas_mobile: "Responsive design",
+        banderas_api: "REST API consumption",
+        banderas_code: "Code structure",
+        banderas_vercel: "Vercel deployment",
+        banderas_github: "GitHub repository",
+        banderas_interactive: "Interactivity and user experience",
     }
 };
 
@@ -510,6 +554,7 @@ langOptions.forEach(option => {
         updateModalTexts('digitos', lang);
         updateModalTexts('music', lang);
         updateModalTexts('pokedex', lang);
+        updateModalTexts('banderas', lang);
         updateViewerCaption(lang);
     });
 });

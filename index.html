@@ -413,6 +413,17 @@
                     </button>
                 </div>
             </div>
+
+                    <!-- PROYECTO 8: Banderas del Mundo -->
+            <div class="portfolio-item" onclick="openProjectModal('banderas')">
+                <img src="assets/banderas.jpg" alt="Banderas del Mundo">
+                <div class="portfolio-overlay">
+                    <h3 data-i18n="banderas_app">Banderas del Mundo - App Web</h3>
+                    <button class="btn-more-info" onclick="openProjectModal('banderas'); event.stopPropagation();">
+                        <i class="fas fa-info-circle"></i> <span data-i18n="click_for_more">CLIC PARA SABER MÁS</span>
+                    </button>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1319,6 +1330,131 @@
                     <div class="gallery-list-item" onclick="openImageViewer('assets/pokedex-end-game.jpg', 'pokedex_github', 'pokedex')">
                         <img src="assets/pokedex-end-game.jpg" alt="GitHub">
                         <span class="gallery-item-tooltip" data-i18n="pokedex_end_game">Fin de la Partida</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal para Proyecto Banderas del Mundo -->
+<div id="banderasModal" class="project-modal">
+    <button class="close-modal" onclick="closeProjectModal('banderas')" aria-label="Cerrar"></button>
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 data-i18n="banderas_app">Banderas del Mundo - Aplicación Web Interactiva</h2>
+            <div class="modal-tech-tags">
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript</span>
+                <span>API REST</span>
+                <span>Vercel</span>
+                <span>GitHub</span>
+            </div>
+        </div>
+        
+        <div class="modal-body">
+            <div class="modal-description">
+                <h3 data-i18n="project_description">Descripción del Proyecto</h3>
+                <p data-i18n="banderas_description">
+                    Esta aplicación web interactiva permite explorar y visualizar banderas de distintos países del mundo. 
+                    La aplicación consume una API externa (REST Countries API) para obtener información actualizada sobre 
+                    los países, incluyendo sus banderas, capitales, poblaciones, idiomas y otras características relevantes.
+                    El objetivo principal del proyecto es ofrecer una experiencia visual atractiva y dinámica, donde el 
+                    usuario pueda interactuar con los datos en tiempo real. Sirve como práctica para el consumo de APIs, 
+                    manipulación del DOM y desarrollo de interfaces modernas en el frontend.
+                </p>
+                
+                <h3 data-i18n="key_features">Características Principales</h3>
+                <ul class="features-list">
+                    <li><span data-i18n="banderas_feature1">Exploración de países:</span> <span data-i18n="banderas_feature1_desc">Visualiza todos los países del mundo con sus respectivas banderas e información relevante.</span></li>
+                    <li><span data-i18n="banderas_feature2">Búsqueda en tiempo real:</span> <span data-i18n="banderas_feature2_desc">Filtra países por nombre de forma rápida y precisa mientras escribes.</span></li>
+                    <li><span data-i18n="banderas_feature3">Filtrado por región:</span> <span data-i18n="banderas_feature3_desc">Filtra países por continente (África, América, Asia, Europa, Oceanía).</span></li>
+                    <li><span data-i18n="banderas_feature4">Información detallada:</span> <span data-i18n="banderas_feature4_desc">Muestra capital, población, región, idiomas, monedas y dominio del país.</span></li>
+                    <li><span data-i18n="banderas_feature5">Diseño responsivo:</span> <span data-i18n="banderas_feature5_desc">Interfaz completamente adaptable a dispositivos móviles, tablets y desktop.</span></li>
+                </ul>
+                
+                <h3 data-i18n="technologies_used">Tecnologías Utilizadas</h3>
+                <div class="modal-tech-icons">
+                    <div class="tech-icon-large">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+                        <span>HTML5</span>
+                    </div>
+                    <div class="tech-icon-large">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+                        <span>CSS3</span>
+                    </div>
+                    <div class="tech-icon-large">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="tech-icon-large">
+                        <i class="fas fa-code-branch" style="font-size: 3rem; color: var(--primary-color);"></i>
+                        <span>API REST</span>
+                    </div>
+                    <div class="tech-icon-large">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg" style="filter: invert(1);" width="40">
+                        <span>Vercel</span>
+                    </div>
+                    <div class="tech-icon-large">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+                        <span>GitHub</span>
+                    </div>
+                </div>
+
+                <h3 data-i18n="web_link">Sitio Web</h3>
+                <a href="https://banderamaestra.vercel.app/" target="_blank" class="github-link">
+                    <i class="fas fa-globe"></i> banderamaestra.vercel.app/
+                </a>
+
+                <h3 data-i18n="github_repo">Repositorio GitHub</h3>
+                <a href="https://github.com/mariodelgadoh/banderas.git" target="_blank" class="github-link">
+                    <i class="fab fa-github"></i> github.com/mariodelgadoh/banderas
+                </a>
+            </div>
+            
+            <div class="modal-gallery">
+                <h3 data-i18n="project_gallery">Galería del Proyecto</h3>
+                <div class="gallery-list" id="banderasGalleryList">
+                    <div class="gallery-list-item" onclick="openImageViewer('assets/banderas1.jpg', 'banderas_main', 'banderas')">
+                        <img src="assets/banderas1.jpg" alt="Pantalla principal">
+                        <span class="gallery-item-tooltip" data-i18n="banderas_main">Pantalla principal</span>
+                    </div>
+                    <div class="gallery-list-item" onclick="openImageViewer('assets/banderas2.jpg', 'banderas_search', 'banderas')">
+                        <img src="assets/banderas2.jpg" alt="Búsqueda">
+                        <span class="gallery-item-tooltip" data-i18n="banderas_search">Búsqueda de países</span>
+                    </div>
+                    <div class="gallery-list-item" onclick="openImageViewer('assets/banderas3.jpg', 'banderas_filter', 'banderas')">
+                        <img src="assets/banderas3.jpg" alt="Filtrado">
+                        <span class="gallery-item-tooltip" data-i18n="banderas_filter">Filtrado por región</span>
+                    </div>
+                    <div class="gallery-list-item" onclick="openImageViewer('assets/banderas4.jpg', 'banderas_details', 'banderas')">
+                        <img src="assets/banderas4.jpg" alt="Detalles">
+                        <span class="gallery-item-tooltip" data-i18n="banderas_details">Información detallada</span>
+                    </div>
+                    <div class="gallery-list-item" onclick="openImageViewer('assets/banderas5.jpg', 'banderas_mobile', 'banderas')">
+                        <img src="assets/banderas5.jpg" alt="Vista móvil">
+                        <span class="gallery-item-tooltip" data-i18n="banderas_mobile">Diseño responsivo</span>
+                    </div>
+                    <div class="gallery-list-item" onclick="openImageViewer('assets/banderas6.jpg', 'banderas_api', 'banderas')">
+                        <img src="assets/banderas6.jpg" alt="API">
+                        <span class="gallery-item-tooltip" data-i18n="banderas_api">Consumo de API</span>
+                    </div>
+                    <div class="gallery-list-item" onclick="openImageViewer('assets/banderas7.jpg', 'banderas_code', 'banderas')">
+                        <img src="assets/banderas7.jpg" alt="Código">
+                        <span class="gallery-item-tooltip" data-i18n="banderas_code">Estructura del código</span>
+                    </div>
+                    <div class="gallery-list-item" onclick="openImageViewer('assets/banderas8.jpg', 'banderas_vercel', 'banderas')">
+                        <img src="assets/banderas8.jpg" alt="Vercel">
+                        <span class="gallery-item-tooltip" data-i18n="banderas_vercel">Despliegue en Vercel</span>
+                    </div>
+                    <div class="gallery-list-item" onclick="openImageViewer('assets/banderas9.jpg', 'banderas_github', 'banderas')">
+                        <img src="assets/banderas9.jpg" alt="GitHub">
+                        <span class="gallery-item-tooltip" data-i18n="banderas_github">Repositorio GitHub</span>
+                    </div>
+                    <div class="gallery-list-item" onclick="openImageViewer('assets/banderas10.jpg', 'banderas_interactive', 'banderas')">
+                        <img src="assets/banderas10.jpg" alt="Interactividad">
+                        <span class="gallery-item-tooltip" data-i18n="banderas_interactive">Interactividad</span>
                     </div>
                 </div>
             </div>
