@@ -297,11 +297,11 @@ const translations = {
         eventos_details: "Detalles del evento",
         eventos_admin: "Panel de Ingresar",
         eventos_mobile: "Panel de Registro",
-        eventos_database: "Base de datos MongoDB",
-        eventos_code: "Código TypeScript",
-        eventos_netlify: "Despliegue en Netlify",
-        eventos_render: "Backend en Render",
-        eventos_github: "Repositorio GitHub",
+        eventos_database: "Panel de Administrador",
+        eventos_code: "Panel Favoritos",
+        eventos_netlify: "Panel Crear un Evento",
+        eventos_render: "Carrusel de Eventos",
+        eventos_github: "Panel de calificar y comentar evento",
     },
     en: {
         home: "Home",
@@ -543,11 +543,11 @@ const translations = {
         eventos_details: "Event details",
         eventos_admin: "Login panel",
         eventos_mobile: "Sign up panel",
-        eventos_database: "MongoDB database",
-        eventos_code: "TypeScript code",
-        eventos_netlify: "Netlify deployment",
-        eventos_render: "Backend on Render",
-        eventos_github: "GitHub repository",
+        eventos_database: "Administrator Panel",
+        eventos_code: "Favorites Panel",
+        eventos_netlify: "Create an Event Panel",
+        eventos_render: "Event Carousel",
+        eventos_github: "Event rating and comment panel",
     }
 };
 
