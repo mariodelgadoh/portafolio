@@ -280,6 +280,28 @@ const translations = {
         banderas_vercel: "Juego Nuevo",
         banderas_github: "Vida Perdida",
         banderas_interactive: "Bandera Mexicana",
+        eventos_app: "Eventos San Miguel de Allende - Plataforma Web",
+        eventos_description: "Esta plataforma web está enfocada en la visualización y gestión de eventos culturales y sociales en San Miguel de Allende. Su objetivo principal es ofrecer a los usuarios un espacio donde puedan consultar información actualizada sobre actividades, festividades y eventos relevantes de la ciudad. La aplicación permite mostrar eventos de forma dinámica, utilizando una arquitectura moderna que combina frontend y backend. Además, integra una base de datos para almacenar y gestionar la información de los eventos, lo que facilita su actualización y escalabilidad. El proyecto también destaca por el uso de despliegues en la nube, utilizando diferentes plataformas para frontend y backend, lo que refleja buenas prácticas de desarrollo moderno y separación de responsabilidades.",
+        eventos_feature1: "Visualización de eventos:",
+        eventos_feature1_desc: "Muestra eventos culturales y sociales de San Miguel de Allende de forma dinámica y organizada.",
+        eventos_feature2: "Gestión de contenido:",
+        eventos_feature2_desc: "Permite administrar y actualizar la información de eventos mediante una base de datos centralizada.",
+        eventos_feature3: "Arquitectura moderna:",
+        eventos_feature3_desc: "Implementa separación clara entre frontend y backend para mayor escalabilidad y mantenibilidad.",
+        eventos_feature4: "Tipado estático:",
+        eventos_feature4_desc: "Utiliza TypeScript para mejorar la calidad del código y facilitar el desarrollo.",
+        eventos_feature5: "Despliegue en la nube:",
+        eventos_feature5_desc: "Frontend desplegado en Netlify y backend en Render, demostrando prácticas modernas de DevOps.",
+        eventos_main: "Pantalla principal",
+        eventos_list: "Lista de eventos",
+        eventos_details: "Detalles del evento",
+        eventos_admin: "Panel de Ingresar",
+        eventos_mobile: "Panel de Registro",
+        eventos_database: "Base de datos MongoDB",
+        eventos_code: "Código TypeScript",
+        eventos_netlify: "Despliegue en Netlify",
+        eventos_render: "Backend en Render",
+        eventos_github: "Repositorio GitHub",
     },
     en: {
         home: "Home",
@@ -504,6 +526,28 @@ const translations = {
         banderas_vercel: "New Game",
         banderas_github: "Lost Life",
         banderas_interactive: "Mexican Flag",
+        eventos_app: "San Miguel de Allende Events - Web Platform",
+        eventos_description: "This web platform focuses on the visualization and management of cultural and social events in San Miguel de Allende. Its main objective is to offer users a space where they can access updated information about activities, festivities, and relevant events in the city. The application allows dynamic display of events using a modern architecture that combines frontend and backend. It also integrates a database to store and manage event information, facilitating updates and scalability. The project also stands out for its cloud deployments, using different platforms for frontend and backend, reflecting modern development best practices and separation of concerns.",
+        eventos_feature1: "Event visualization:",
+        eventos_feature1_desc: "Displays cultural and social events from San Miguel de Allende in a dynamic and organized manner.",
+        eventos_feature2: "Content management:",
+        eventos_feature2_desc: "Allows managing and updating event information through a centralized database.",
+        eventos_feature3: "Modern architecture:",
+        eventos_feature3_desc: "Implements clear separation between frontend and backend for greater scalability and maintainability.",
+        eventos_feature4: "Static typing:",
+        eventos_feature4_desc: "Uses TypeScript to improve code quality and facilitate development.",
+        eventos_feature5: "Cloud deployment:",
+        eventos_feature5_desc: "Frontend deployed on Netlify and backend on Render, demonstrating modern DevOps practices.",
+        eventos_main: "Main screen",
+        eventos_list: "Events list",
+        eventos_details: "Event details",
+        eventos_admin: "Login panel",
+        eventos_mobile: "Sign up panel",
+        eventos_database: "MongoDB database",
+        eventos_code: "TypeScript code",
+        eventos_netlify: "Netlify deployment",
+        eventos_render: "Backend on Render",
+        eventos_github: "GitHub repository",
     }
 };
 
@@ -555,6 +599,7 @@ langOptions.forEach(option => {
         updateModalTexts('music', lang);
         updateModalTexts('pokedex', lang);
         updateModalTexts('banderas', lang);
+        updateModalTexts('eventos', lang);
         updateViewerCaption(lang);
     });
 });

@@ -2413,3 +2413,98 @@ code {
     font-family: 'Courier New', monospace;
     font-size: 0.9rem;
 }
+
+
+
+/* ===== LOGOS PROBLEMÁTICOS ===== */
+
+/* GitHub */
+.tech-image-item[data-name="GitHub"] img {
+    filter: brightness(0); /* negro en claro */
+}
+
+.dark-theme .tech-image-item[data-name="GitHub"] img {
+    filter: brightness(10); /* blanco en oscuro */
+}
+
+/* Vercel */
+.tech-image-item[data-name="Vercel"] img {
+    filter: brightness(0); /* negro en claro */
+}
+
+/* MODO CLARO → negro */
+.tech-image-item[data-name="Vercel"] img {
+    filter: brightness(0);
+}
+
+/* MODO OSCURO → blanco */
+.dark-theme .tech-image-item[data-name="Vercel"] img {
+    filter: brightness(0) invert(1);
+}
+
+
+/* Netlify más brillante */
+.tech-image-item[data-name="Netlify"] img {
+    filter: brightness(1.3) saturate(1.4);
+}
+
+/* En modo oscuro aún más brillante */
+.dark-theme .tech-image-item[data-name="Netlify"] img {
+    filter: brightness(1.6) saturate(1.6);
+}
+
+/* Render modo claro */
+.tech-image-item[data-name="Render"] svg {
+    color: #000; /* negro */
+}
+
+/* Render modo oscuro */
+.dark-theme .tech-image-item[data-name="Render"] svg {
+    color: #fff; /* blanco */
+}
+
+
+/* GitHub */
+.tech-icon-large img[alt="GitHub"] {
+    filter: invert(0); /* negro en claro */
+}
+
+.dark-theme .tech-icon-large img[alt="GitHub"] {
+    filter: invert(1); /* blanco en oscuro */
+}
+
+
+.tech-icon-large[data-name="Vercel"] img {
+    filter: invert(0);
+}
+
+.dark-theme .tech-icon-large[data-name="Vercel"] img {
+    filter: invert(1);
+}
+
+.tech-image-item[data-name="Render"] {
+    color: black;
+}
+
+.dark-theme .tech-image-item[data-name="Render"] {
+    color: white !important;
+}
+
+.tech-image-item svg {
+    fill: currentColor !important;
+}
+
+/* Render SVG en modal - modo claro */
+.tech-icon-large[data-name="Render"] svg path {
+    fill: #333333;
+}
+
+/* Render SVG en modal - modo oscuro */
+.dark-theme .tech-icon-large[data-name="Render"] svg path {
+    fill: #ffffff;
+}
+
+
+.dark-theme .tech-image-item img[alt="Adobe XD"] {
+    filter: grayscale(1) brightness(0) invert(1);
+}
