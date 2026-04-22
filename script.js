@@ -9,10 +9,11 @@ let charIndex = 0;
 let isDeleting = false;
 let typingElement = document.querySelector('.typing');
 
-const typingSpeed = 150;
-const deletingSpeed = 80;
-const pauseBetween = 4000;
-const pauseAfterDelete = 1000;
+// Velocidades ajustadas para mejor lectura
+const typingSpeed = 100;        // Velocidad al escribir (ms por letra)
+const deletingSpeed = 60;       // Velocidad al borrar (ms por letra)
+const pauseBetween = 2500;      // PAUSA DESPUÉS DE COMPLETAR UNA PALABRA (2.5 segundos)
+const pauseAfterDelete = 800;   // PAUSA ANTES DE ESCRIBIR LA SIGUIENTE (0.8 segundos)
 
 function typeEffect() {
     if (!typingElement) return;
@@ -39,16 +40,39 @@ function typeEffect() {
     
     if (!isDeleting && charIndex === currentProfession.length) {
         isDeleting = true;
+        // Pausa larga para que se pueda leer la palabra completa
         setTimeout(typeEffect, pauseBetween);
     } else if (isDeleting && charIndex === 0) {
         isDeleting = false;
         professionIndex = (professionIndex + 1) % professions[currentLang].length;
+        // Pequeña pausa antes de escribir la siguiente palabra
         setTimeout(typeEffect, pauseAfterDelete);
     } else {
         const speed = isDeleting ? deletingSpeed : typingSpeed;
         setTimeout(typeEffect, speed);
     }
 }
+
+// Inicializar con altura fija
+document.addEventListener('DOMContentLoaded', () => {
+    const typingContainer = document.querySelector('.typing');
+    if (typingContainer && typingContainer.parentElement) {
+        const container = typingContainer.parentElement;
+        const minHeight = window.innerWidth <= 768 ? '60px' : '80px';
+        container.style.minHeight = minHeight;
+    }
+    setTimeout(typeEffect, 1000);
+});
+
+// Ajustar altura al cambiar orientación o redimensionar
+window.addEventListener('resize', () => {
+    const typingContainer = document.querySelector('.typing');
+    if (typingContainer && typingContainer.parentElement) {
+        const container = typingContainer.parentElement;
+        const minHeight = window.innerWidth <= 768 ? '60px' : '80px';
+        container.style.minHeight = minHeight;
+    }
+});
 
 // Inicializar con altura fija
 document.addEventListener('DOMContentLoaded', () => {
