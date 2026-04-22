@@ -1,4 +1,4 @@
-// ===== TYPING EFFECT MEJORADO - SIN MOVIMIENTO =====
+// ===== TYPING EFFECT CORREGIDO - VELOCIDADES SUAVES =====
 const professions = {
     es: ['Ingeniero en Sistemas', 'Desarrollador Frontend', 'Desarrollador Backend', 'Desarrollador Móvil', 'Especialista en BD', 'Diseñador UX/UI', 'Asesor Académico'],
     en: ['Systems Engineer', 'Frontend Developer', 'Backend Developer', 'Mobile Developer', 'Database Specialist', 'UX/UI Designer', 'Academic Tutor']
@@ -8,67 +8,96 @@ let professionIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
 let typingElement = document.querySelector('.typing');
+let timeoutId = null;
+let isWaiting = false; // Bandera para saber si está en pausa
 
-// Velocidades ajustadas para mejor lectura
-const typingSpeed = 100;        // Velocidad al escribir (ms por letra)
-const deletingSpeed = 60;       // Velocidad al borrar (ms por letra)
-const pauseBetween = 10000;      // PAUSA DESPUÉS DE COMPLETAR UNA PALABRA (2.5 segundos)
-const pauseAfterDelete = 1000;   // PAUSA ANTES DE ESCRIBIR LA SIGUIENTE (0.8 segundos)
+// CONFIGURACIÓN DE TIEMPOS MÁS LENTOS (en milisegundos)
+const TYPING_SPEED = 120;         // Más lento al escribir (120ms por letra)
+const DELETING_SPEED = 80;        // Más lento al borrar (80ms por letra)
+const PAUSE_AFTER_COMPLETE = 2500; // Pausa de 2.5 segundos después de terminar
+const PAUSE_BEFORE_NEXT = 600;     // Pausa antes de siguiente palabra
 
 function typeEffect() {
     if (!typingElement) return;
     
+    // Si está en pausa, no hacer nada
+    if (isWaiting) return;
+    
     const currentLang = localStorage.getItem('language') || 'es';
     const currentProfession = professions[currentLang][professionIndex];
     
-    // Guardar la altura actual antes de cambiar
-    const container = typingElement.parentElement;
-    const originalHeight = container ? container.offsetHeight : null;
-    
     if (isDeleting) {
-        typingElement.textContent = currentProfession.substring(0, charIndex - 1);
-        charIndex--;
+        // Borrando caracteres (más lento)
+        if (charIndex > 0) {
+            typingElement.textContent = currentProfession.substring(0, charIndex - 1);
+            charIndex--;
+            timeoutId = setTimeout(typeEffect, DELETING_SPEED);
+        } else {
+            // Terminó de borrar
+            isDeleting = false;
+            professionIndex = (professionIndex + 1) % professions[currentLang].length;
+            // Pausa antes de siguiente palabra
+            isWaiting = true;
+            timeoutId = setTimeout(() => {
+                isWaiting = false;
+                typeEffect();
+            }, PAUSE_BEFORE_NEXT);
+        }
     } else {
-        typingElement.textContent = currentProfession.substring(0, charIndex + 1);
-        charIndex++;
-    }
-    
-    // Restaurar altura si es necesario (evita saltos)
-    if (container && originalHeight) {
-        container.style.minHeight = originalHeight + 'px';
-    }
-    
-    if (!isDeleting && charIndex === currentProfession.length) {
-        isDeleting = true;
-        // Pausa larga para que se pueda leer la palabra completa
-        setTimeout(typeEffect, pauseBetween);
-    } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        professionIndex = (professionIndex + 1) % professions[currentLang].length;
-        // Pequeña pausa antes de escribir la siguiente palabra
-        setTimeout(typeEffect, pauseAfterDelete);
-    } else {
-        const speed = isDeleting ? deletingSpeed : typingSpeed;
-        setTimeout(typeEffect, speed);
+        // Escribiendo caracteres (más lento)
+        if (charIndex < currentProfession.length) {
+            typingElement.textContent = currentProfession.substring(0, charIndex + 1);
+            charIndex++;
+            timeoutId = setTimeout(typeEffect, TYPING_SPEED);
+        } else {
+            // Terminó de escribir - PAUSA LARGA (se queda quieto)
+            isDeleting = true;
+            isWaiting = true;
+            timeoutId = setTimeout(() => {
+                isWaiting = false;
+                typeEffect();
+            }, PAUSE_AFTER_COMPLETE);
+        }
     }
 }
 
-// Inicializar con altura fija
+// Detener el efecto
+function stopTypingEffect() {
+    if (timeoutId) {
+        clearTimeout(timeoutId);
+        timeoutId = null;
+    }
+    isWaiting = false;
+}
+
+// Reiniciar el efecto
+function restartTypingEffect() {
+    stopTypingEffect();
+    professionIndex = 0;
+    charIndex = 0;
+    isDeleting = false;
+    isWaiting = false;
+    if (typingElement) {
+        typingElement.textContent = '';
+    }
+    setTimeout(typeEffect, 500);
+}
+
+// Inicializar
 document.addEventListener('DOMContentLoaded', () => {
-    const typingContainer = document.querySelector('.typing');
-    if (typingContainer && typingContainer.parentElement) {
-        const container = typingContainer.parentElement;
+    typingElement = document.querySelector('.typing');
+    if (typingElement && typingElement.parentElement) {
+        const container = typingElement.parentElement;
         const minHeight = window.innerWidth <= 768 ? '60px' : '80px';
         container.style.minHeight = minHeight;
     }
     setTimeout(typeEffect, 1000);
 });
 
-// Ajustar altura al cambiar orientación o redimensionar
+// Ajustar altura al redimensionar
 window.addEventListener('resize', () => {
-    const typingContainer = document.querySelector('.typing');
-    if (typingContainer && typingContainer.parentElement) {
-        const container = typingContainer.parentElement;
+    if (typingElement && typingElement.parentElement) {
+        const container = typingElement.parentElement;
         const minHeight = window.innerWidth <= 768 ? '60px' : '80px';
         container.style.minHeight = minHeight;
     }
