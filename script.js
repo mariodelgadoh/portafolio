@@ -1,97 +1,129 @@
-// ===== TYPING EFFECT CORREGIDO - VELOCIDADES SUAVES =====
+// ===== TYPING EFFECT - VERSIÓN ESTABLE Y SUAVE =====
 const professions = {
     es: ['Ingeniero en Sistemas', 'Desarrollador Frontend', 'Desarrollador Backend', 'Desarrollador Móvil', 'Especialista en BD', 'Diseñador UX/UI', 'Asesor Académico'],
     en: ['Systems Engineer', 'Frontend Developer', 'Backend Developer', 'Mobile Developer', 'Database Specialist', 'UX/UI Designer', 'Academic Tutor']
 };
 
+// Variables globales
 let professionIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
-let typingElement = document.querySelector('.typing');
+let typingElement = null;
 let timeoutId = null;
-let isWaiting = false; // Bandera para saber si está en pausa
+let isRunning = false;
+let currentLang = 'es';
 
-// CONFIGURACIÓN DE TIEMPOS MÁS LENTOS (en milisegundos)
-const TYPING_SPEED = 120;         // Más lento al escribir (120ms por letra)
-const DELETING_SPEED = 80;        // Más lento al borrar (80ms por letra)
-const PAUSE_AFTER_COMPLETE = 2500; // Pausa de 2.5 segundos después de terminar
-const PAUSE_BEFORE_NEXT = 600;     // Pausa antes de siguiente palabra
+// CONFIGURACIÓN DE TIEMPOS (ajusta a tu gusto)
+const CONFIG = {
+    typingSpeed: 130,        // Velocidad al escribir (ms por letra)
+    deletingSpeed: 90,       // Velocidad al borrar (ms por letra)
+    pauseAfterComplete: 2500, // Pausa después de terminar (2.5 segundos)
+    pauseBeforeNext: 600      // Pausa antes de siguiente palabra
+};
 
+// Función principal del efecto
 function typeEffect() {
-    if (!typingElement) return;
+    if (!typingElement || !isRunning) return;
     
-    // Si está en pausa, no hacer nada
-    if (isWaiting) return;
-    
-    const currentLang = localStorage.getItem('language') || 'es';
     const currentProfession = professions[currentLang][professionIndex];
     
     if (isDeleting) {
-        // Borrando caracteres (más lento)
+        // Borrando caracteres
         if (charIndex > 0) {
-            typingElement.textContent = currentProfession.substring(0, charIndex - 1);
             charIndex--;
-            timeoutId = setTimeout(typeEffect, DELETING_SPEED);
+            typingElement.textContent = currentProfession.substring(0, charIndex);
+            timeoutId = setTimeout(typeEffect, CONFIG.deletingSpeed);
         } else {
-            // Terminó de borrar
+            // Terminó de borrar, pasar a siguiente palabra
             isDeleting = false;
             professionIndex = (professionIndex + 1) % professions[currentLang].length;
-            // Pausa antes de siguiente palabra
-            isWaiting = true;
-            timeoutId = setTimeout(() => {
-                isWaiting = false;
-                typeEffect();
-            }, PAUSE_BEFORE_NEXT);
+            timeoutId = setTimeout(typeEffect, CONFIG.pauseBeforeNext);
         }
     } else {
-        // Escribiendo caracteres (más lento)
+        // Escribiendo caracteres
         if (charIndex < currentProfession.length) {
-            typingElement.textContent = currentProfession.substring(0, charIndex + 1);
             charIndex++;
-            timeoutId = setTimeout(typeEffect, TYPING_SPEED);
+            typingElement.textContent = currentProfession.substring(0, charIndex);
+            timeoutId = setTimeout(typeEffect, CONFIG.typingSpeed);
         } else {
-            // Terminó de escribir - PAUSA LARGA (se queda quieto)
+            // Terminó de escribir, pausa antes de borrar
             isDeleting = true;
-            isWaiting = true;
-            timeoutId = setTimeout(() => {
-                isWaiting = false;
-                typeEffect();
-            }, PAUSE_AFTER_COMPLETE);
+            timeoutId = setTimeout(typeEffect, CONFIG.pauseAfterComplete);
         }
     }
 }
 
-// Detener el efecto
-function stopTypingEffect() {
+// Iniciar el efecto (limpia cualquier instancia anterior)
+function startTypingEffect() {
+    // Detener cualquier efecto anterior
     if (timeoutId) {
         clearTimeout(timeoutId);
         timeoutId = null;
     }
-    isWaiting = false;
-}
-
-// Reiniciar el efecto
-function restartTypingEffect() {
-    stopTypingEffect();
+    
+    // Reiniciar variables
     professionIndex = 0;
     charIndex = 0;
     isDeleting = false;
-    isWaiting = false;
+    isRunning = true;
+    
+    // Limpiar el texto
     if (typingElement) {
         typingElement.textContent = '';
     }
+    
+    // Iniciar el efecto
     setTimeout(typeEffect, 500);
 }
 
-// Inicializar
+// Detener el efecto completamente
+function stopTypingEffect() {
+    isRunning = false;
+    if (timeoutId) {
+        clearTimeout(timeoutId);
+        timeoutId = null;
+    }
+}
+
+// Cambiar idioma y reiniciar efecto
+function updateTypingLanguage(lang) {
+    currentLang = lang;
+    
+    // Guardar si estaba corriendo
+    const wasRunning = isRunning;
+    
+    // Detener efecto actual
+    stopTypingEffect();
+    
+    // Reiniciar variables
+    professionIndex = 0;
+    charIndex = 0;
+    isDeleting = false;
+    
+    // Limpiar texto
+    if (typingElement) {
+        typingElement.textContent = '';
+    }
+    
+    // Reiniciar si estaba corriendo
+    if (wasRunning) {
+        isRunning = true;
+        setTimeout(typeEffect, 500);
+    }
+}
+
+// Inicializar cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', () => {
     typingElement = document.querySelector('.typing');
+    currentLang = localStorage.getItem('language') || 'es';
+    
     if (typingElement && typingElement.parentElement) {
         const container = typingElement.parentElement;
         const minHeight = window.innerWidth <= 768 ? '60px' : '80px';
         container.style.minHeight = minHeight;
     }
-    setTimeout(typeEffect, 1000);
+    
+    startTypingEffect();
 });
 
 // Ajustar altura al redimensionar
@@ -102,6 +134,9 @@ window.addEventListener('resize', () => {
         container.style.minHeight = minHeight;
     }
 });
+
+// Exponer función para cambiar idioma desde el selector
+window.updateTypingLanguage = updateTypingLanguage;
 
 // Inicializar con altura fija
 document.addEventListener('DOMContentLoaded', () => {
@@ -739,6 +774,10 @@ function updateLanguage(lang) {
     }
     
     document.documentElement.lang = lang;
+
+    if (window.updateTypingLanguage) {
+        window.updateTypingLanguage(lang);
+    }
 }
 
 function updateFlag(lang) {
