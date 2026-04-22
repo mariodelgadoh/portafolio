@@ -12,8 +12,8 @@ let typingElement = document.querySelector('.typing');
 // Velocidades ajustadas para mejor lectura
 const typingSpeed = 100;        // Velocidad al escribir (ms por letra)
 const deletingSpeed = 60;       // Velocidad al borrar (ms por letra)
-const pauseBetween = 3500;      // PAUSA DESPUÉS DE COMPLETAR UNA PALABRA (2.5 segundos)
-const pauseAfterDelete = 800;   // PAUSA ANTES DE ESCRIBIR LA SIGUIENTE (0.8 segundos)
+const pauseBetween = 10000;      // PAUSA DESPUÉS DE COMPLETAR UNA PALABRA (2.5 segundos)
+const pauseAfterDelete = 1000;   // PAUSA ANTES DE ESCRIBIR LA SIGUIENTE (0.8 segundos)
 
 function typeEffect() {
     if (!typingElement) return;
