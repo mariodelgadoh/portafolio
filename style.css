@@ -2508,3 +2508,100 @@ code {
 .dark-theme .tech-image-item img[alt="Adobe XD"] {
     filter: grayscale(1) brightness(0) invert(1);
 }
+
+
+/* ===== SOLUCIÓN PARA TYPING EFFECT SIN MOVIMIENTO ===== */
+.profession {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--text-color);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.profession span {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.typing-container {
+    display: inline-block;
+    min-width: 220px;
+    text-align: left;
+}
+
+.typing {
+    color: var(--primary-color);
+    border-right: 3px solid var(--primary-color);
+    padding-right: 8px;
+    animation: blink 1s infinite;
+    font-weight: 600;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+/* Responsive para el efecto de escritura */
+@media (max-width: 768px) {
+    .profession {
+        font-size: 1.5rem;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+    
+    .profession span {
+        white-space: normal;
+    }
+    
+    .typing-container {
+        min-width: 200px;
+    }
+    
+    .typing {
+        white-space: normal;
+        word-break: keep-all;
+        display: inline-block;
+        min-height: 2.5rem;
+        line-height: 1.4;
+    }
+}
+
+@media (max-width: 480px) {
+    .profession {
+        font-size: 1.2rem;
+    }
+    
+    .typing-container {
+        min-width: 180px;
+    }
+    
+    .typing {
+        font-size: 1.2rem;
+        min-height: 2rem;
+    }
+}
+
+/* Opción alternativa: altura fija para el contenedor */
+.profession-fixed {
+    min-height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+@media (max-width: 768px) {
+    .profession-fixed {
+        min-height: 70px;
+    }
+}
+
+@media (max-width: 480px) {
+    .profession-fixed {
+        min-height: 60px;
+    }
+}

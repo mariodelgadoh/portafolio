@@ -1,4 +1,4 @@
-// ===== TYPING EFFECT =====
+// ===== TYPING EFFECT MEJORADO - SIN MOVIMIENTO =====
 const professions = {
     es: ['Ingeniero en Sistemas', 'Desarrollador Frontend', 'Desarrollador Backend', 'Desarrollador Móvil', 'Especialista en BD', 'Diseñador UX/UI', 'Asesor Académico'],
     en: ['Systems Engineer', 'Frontend Developer', 'Backend Developer', 'Mobile Developer', 'Database Specialist', 'UX/UI Designer', 'Academic Tutor']
@@ -20,12 +20,21 @@ function typeEffect() {
     const currentLang = localStorage.getItem('language') || 'es';
     const currentProfession = professions[currentLang][professionIndex];
     
+    // Guardar la altura actual antes de cambiar
+    const container = typingElement.parentElement;
+    const originalHeight = container ? container.offsetHeight : null;
+    
     if (isDeleting) {
         typingElement.textContent = currentProfession.substring(0, charIndex - 1);
         charIndex--;
     } else {
         typingElement.textContent = currentProfession.substring(0, charIndex + 1);
         charIndex++;
+    }
+    
+    // Restaurar altura si es necesario (evita saltos)
+    if (container && originalHeight) {
+        container.style.minHeight = originalHeight + 'px';
     }
     
     if (!isDeleting && charIndex === currentProfession.length) {
@@ -40,6 +49,27 @@ function typeEffect() {
         setTimeout(typeEffect, speed);
     }
 }
+
+// Inicializar con altura fija
+document.addEventListener('DOMContentLoaded', () => {
+    const typingContainer = document.querySelector('.typing');
+    if (typingContainer && typingContainer.parentElement) {
+        const container = typingContainer.parentElement;
+        const minHeight = window.innerWidth <= 768 ? '60px' : '80px';
+        container.style.minHeight = minHeight;
+    }
+    setTimeout(typeEffect, 1000);
+});
+
+// Ajustar altura al cambiar orientación o redimensionar
+window.addEventListener('resize', () => {
+    const typingContainer = document.querySelector('.typing');
+    if (typingContainer && typingContainer.parentElement) {
+        const container = typingContainer.parentElement;
+        const minHeight = window.innerWidth <= 768 ? '60px' : '80px';
+        container.style.minHeight = minHeight;
+    }
+});
 
 // ===== MODO OSCURO =====
 const themeToggle = document.getElementById('themeToggle');
