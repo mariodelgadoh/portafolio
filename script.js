@@ -385,6 +385,11 @@ const translations = {
         eventos_netlify: "Panel Crear un Evento",
         eventos_render: "Carrusel de Eventos",
         eventos_github: "Panel de calificar y comentar evento",
+        // Dentro de translations.es
+in_production: "En Producción",
+coming_soon: "PRÓXIMAMENTE",
+production_message: "Próximamente disponible",
+new_project_title: "Tramites Burocraticos",
     },
     en: {
         home: "Home",
@@ -631,6 +636,11 @@ const translations = {
         eventos_netlify: "Create an Event Panel",
         eventos_render: "Event Carousel",
         eventos_github: "Event rating and comment panel",
+        // Dentro de translations.en
+in_production: "In Production",
+coming_soon: "COMING SOON",
+production_message: "Coming soon",
+new_project_title: "Bureaucratic Procedures",
     }
 };
 
