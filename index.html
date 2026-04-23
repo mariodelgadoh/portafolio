@@ -480,14 +480,13 @@
                     </button>
                 </div>
             </div>
-            <!-- PROYECTO 10: [NOMBRE DEL PROYECTO] - EN PRODUCCIÓN -->
-            <div class="portfolio-item production" onclick="openProjectModal('nuevo-proyecto')">
-                <img src="assets/proximamente.jpg" alt="Próximamente">
+            <!-- PROYECTO 10: Trámites Burócratas MX -->
+            <div class="portfolio-item" onclick="openProjectModal('tramites')">
+                <img src="assets/tramites.jpg" alt="Trámites Burócratas MX">
                 <div class="portfolio-overlay">
-                    <h3 data-i18n="new_project_title">Tramites Burocraticos</h3>
-                    <p class="production-message" data-i18n="production_message">Próximamente disponible</p>
-                    <button class="btn-more-info disabled" disabled>
-                        <i class="fas fa-hourglass-half"></i> <span data-i18n="coming_soon">PRÓXIMAMENTE</span>
+                    <h3 data-i18n="tramites_app">Trámites Burócratas MX</h3>
+                    <button class="btn-more-info" onclick="openProjectModal('tramites'); event.stopPropagation();">
+                        <i class="fas fa-info-circle"></i> <span data-i18n="click_for_more">CLIC PARA SABER MÁS</span>
                     </button>
                 </div>
             </div>
@@ -1668,6 +1667,136 @@
                     <div class="gallery-list-item" onclick="openImageViewer('assets/eventos10.jpg', 'eventos_github', 'eventos')">
                         <img src="assets/eventos10.jpg" alt="GitHub">
                         <span class="gallery-item-tooltip" data-i18n="eventos_github">Panel de calificar y comentar evento</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal para Proyecto Trámites Burócratas MX -->
+<div id="tramitesModal" class="project-modal">
+    <button class="close-modal" onclick="closeProjectModal('tramites')" aria-label="Cerrar"></button>
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 data-i18n="tramites_app">Trámites Burócratas MX</h2>
+            <div class="modal-tech-tags">
+                <span>Vue.js</span>
+                <span>JavaScript</span>
+                <span>Supabase</span>
+                <span>Netlify</span>
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>GitHub</span>
+            </div>
+        </div>
+        
+        <div class="modal-body">
+            <div class="modal-description">
+                <h3 data-i18n="project_description">Descripción del Proyecto</h3>
+                <p data-i18n="tramites_description">
+                    Trámites Burócratas MX es una plataforma web diseñada para facilitar el acceso a información sobre trámites gubernamentales en México. 
+                    El sistema permite a los usuarios consultar requisitos, procesos y detalles relacionados con distintos trámites burocráticos de manera 
+                    rápida y organizada. El objetivo principal del proyecto es reducir la dificultad que enfrentan muchas personas al buscar información 
+                    dispersa o confusa sobre procedimientos administrativos, ofreciendo una interfaz intuitiva y accesible desde cualquier dispositivo. 
+                    La aplicación utiliza una base de datos en la nube para gestionar la información de los trámites y está desplegada en una plataforma 
+                    de hosting para garantizar disponibilidad en línea.
+                </p>
+                
+                <h3 data-i18n="key_features">Características Principales</h3>
+                <ul class="features-list">
+                    <li><span data-i18n="tramites_feature1">Consulta de trámites:</span> <span data-i18n="tramites_feature1_desc">Permite buscar y visualizar información detallada sobre trámites gubernamentales en México.</span></li>
+                    <li><span data-i18n="tramites_feature2">Interfaz amigable:</span> <span data-i18n="tramites_feature2_desc">Diseño intuitivo y responsive que se adapta a cualquier dispositivo.</span></li>
+                    <li><span data-i18n="tramites_feature3">Base de datos en tiempo real:</span> <span data-i18n="tramites_feature3_desc">Conexión con Supabase para gestionar la información de trámites de forma dinámica.</span></li>
+                    <li><span data-i18n="tramites_feature4">Acceso rápido:</span> <span data-i18n="tramites_feature4_desc">Visualización inmediata de requisitos y procedimientos necesarios.</span></li>
+                    <li><span data-i18n="tramites_feature5">Disponibilidad 24/7:</span> <span data-i18n="tramites_feature5_desc">Plataforma en línea accesible en cualquier momento y lugar.</span></li>
+                </ul>
+                
+                <h3 data-i18n="technologies_used">Tecnologías Utilizadas</h3>
+                <div class="modal-tech-icons">
+                    <div class="tech-icon-large">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue.js">
+                        <span>Vue.js</span>
+                    </div>
+                    <div class="tech-icon-large">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="tech-icon-large">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+                        <span>HTML5</span>
+                    </div>
+                    <div class="tech-icon-large">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+                        <span>CSS3</span>
+                    </div>
+                    <div class="tech-icon-large">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" style="filter: brightness(0) invert(1);">
+                        <span>GitHub</span>
+                    </div>
+                    <div class="tech-icon-large">
+                        <i class="fas fa-database" style="font-size: 3rem; color: var(--primary-color);"></i>
+                        <span>Supabase</span>
+                    </div>
+                    <div class="tech-icon-large">
+                        <i class="fas fa-cloud-upload-alt" style="font-size: 3rem; color: var(--primary-color);"></i>
+                        <span>Netlify</span>
+                    </div>
+                </div>
+
+                <h3 data-i18n="web_link">Sitio Web</h3>
+                <a href="https://tramites-burocratas.netlify.app/" target="_blank" class="github-link">
+                    <i class="fas fa-globe"></i> tramites-burocratas.netlify.app
+                </a>
+
+                <h3 data-i18n="github_repo">Repositorio GitHub</h3>
+                <a href="https://github.com/mariodelgadoh/Tramites-Burocratas-MX.git" target="_blank" class="github-link">
+                    <i class="fab fa-github"></i> github.com/mariodelgadoh/Tramites-Burocratas-MX
+                </a>
+            </div>
+            
+            <div class="modal-gallery">
+                <h3 data-i18n="project_gallery">Galería del Proyecto</h3>
+                <div class="gallery-list" id="tramitesGalleryList">
+                    <div class="gallery-list-item" onclick="openImageViewer('assets/tramites1.jpg', 'tramites_main', 'tramites')">
+                        <img src="assets/tramites1.jpg" alt="Pantalla principal">
+                        <span class="gallery-item-tooltip" data-i18n="tramites_main">Pantalla principal</span>
+                    </div>
+                    <div class="gallery-list-item" onclick="openImageViewer('assets/tramites2.jpg', 'tramites_search', 'tramites')">
+                        <img src="assets/tramites2.jpg" alt="Búsqueda">
+                        <span class="gallery-item-tooltip" data-i18n="tramites_search">Búsqueda de trámites</span>
+                    </div>
+                    <div class="gallery-list-item" onclick="openImageViewer('assets/tramites3.jpg', 'tramites_details', 'tramites')">
+                        <img src="assets/tramites3.jpg" alt="Detalles">
+                        <span class="gallery-item-tooltip" data-i18n="tramites_details">Detalles del trámite</span>
+                    </div>
+                    <div class="gallery-list-item" onclick="openImageViewer('assets/tramites4.jpg', 'tramites_categories', 'tramites')">
+                        <img src="assets/tramites4.jpg" alt="Categorías">
+                        <span class="gallery-item-tooltip" data-i18n="tramites_categories">Categorías de trámites</span>
+                    </div>
+                    <div class="gallery-list-item" onclick="openImageViewer('assets/tramites5.jpg', 'tramites_mobile', 'tramites')">
+                        <img src="assets/tramites5.jpg" alt="Vista móvil">
+                        <span class="gallery-item-tooltip" data-i18n="tramites_mobile">Diseño responsivo</span>
+                    </div>
+                    <div class="gallery-list-item" onclick="openImageViewer('assets/tramites6.jpg', 'tramites_supabase', 'tramites')">
+                        <img src="assets/tramites6.jpg" alt="Supabase">
+                        <span class="gallery-item-tooltip" data-i18n="tramites_supabase">Base de datos Supabase</span>
+                    </div>
+                    <div class="gallery-list-item" onclick="openImageViewer('assets/tramites7.jpg', 'tramites_code', 'tramites')">
+                        <img src="assets/tramites7.jpg" alt="Código Vue.js">
+                        <span class="gallery-item-tooltip" data-i18n="tramites_code">Código Vue.js</span>
+                    </div>
+                    <div class="gallery-list-item" onclick="openImageViewer('assets/tramites8.jpg', 'tramites_netlify', 'tramites')">
+                        <img src="assets/tramites8.jpg" alt="Netlify">
+                        <span class="gallery-item-tooltip" data-i18n="tramites_netlify">Despliegue en Netlify</span>
+                    </div>
+                    <div class="gallery-list-item" onclick="openImageViewer('assets/tramites9.jpg', 'tramites_requirements', 'tramites')">
+                        <img src="assets/tramites9.jpg" alt="Requisitos">
+                        <span class="gallery-item-tooltip" data-i18n="tramites_requirements">Visualización de requisitos</span>
+                    </div>
+                    <div class="gallery-list-item" onclick="openImageViewer('assets/tramites10.jpg', 'tramites_github', 'tramites')">
+                        <img src="assets/tramites10.jpg" alt="GitHub">
+                        <span class="gallery-item-tooltip" data-i18n="tramites_github">Repositorio GitHub</span>
                     </div>
                 </div>
             </div>

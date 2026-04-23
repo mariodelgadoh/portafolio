@@ -385,11 +385,28 @@ const translations = {
         eventos_netlify: "Panel Crear un Evento",
         eventos_render: "Carrusel de Eventos",
         eventos_github: "Panel de calificar y comentar evento",
-        // Dentro de translations.es
-in_production: "En Producción",
-coming_soon: "PRÓXIMAMENTE",
-production_message: "Próximamente disponible",
-new_project_title: "Tramites Burocraticos",
+        tramites_app: "Trámites Burócratas MX",
+        tramites_description: "Trámites Burócratas MX es una plataforma web diseñada para facilitar el acceso a información sobre trámites gubernamentales en México. El sistema permite a los usuarios consultar requisitos, procesos y detalles relacionados con distintos trámites burocráticos de manera rápida y organizada. El objetivo principal del proyecto es reducir la dificultad que enfrentan muchas personas al buscar información dispersa o confusa sobre procedimientos administrativos, ofreciendo una interfaz intuitiva y accesible desde cualquier dispositivo. La aplicación utiliza una base de datos en la nube para gestionar la información de los trámites y está desplegada en una plataforma de hosting para garantizar disponibilidad en línea.",
+        tramites_feature1: "Consulta de trámites:",
+        tramites_feature1_desc: "Permite buscar y visualizar información detallada sobre trámites gubernamentales en México.",
+        tramites_feature2: "Interfaz amigable:",
+        tramites_feature2_desc: "Diseño intuitivo y responsive que se adapta a cualquier dispositivo.",
+        tramites_feature3: "Base de datos en tiempo real:",
+        tramites_feature3_desc: "Conexión con Supabase para gestionar la información de trámites de forma dinámica.",
+        tramites_feature4: "Acceso rápido:",
+        tramites_feature4_desc: "Visualización inmediata de requisitos y procedimientos necesarios.",
+        tramites_feature5: "Disponibilidad 24/7:",
+        tramites_feature5_desc: "Plataforma en línea accesible en cualquier momento y lugar.",
+        tramites_main: "Pantalla principal",
+        tramites_search: "Búsqueda de trámites",
+        tramites_details: "Detalles del trámite",
+        tramites_categories: "Categorías de trámites",
+        tramites_mobile: "Diseño responsivo",
+        tramites_supabase: "Base de datos Supabase",
+        tramites_code: "Código Vue.js",
+        tramites_netlify: "Despliegue en Netlify",
+        tramites_requirements: "Visualización de requisitos",
+        tramites_github: "Repositorio GitHub",
     },
     en: {
         home: "Home",
@@ -636,11 +653,28 @@ new_project_title: "Tramites Burocraticos",
         eventos_netlify: "Create an Event Panel",
         eventos_render: "Event Carousel",
         eventos_github: "Event rating and comment panel",
-        // Dentro de translations.en
-in_production: "In Production",
-coming_soon: "COMING SOON",
-production_message: "Coming soon",
-new_project_title: "Bureaucratic Procedures",
+        tramites_app: "Bureaucratic Procedures MX",
+        tramites_description: "Trámites Burócratas MX is a web platform designed to facilitate access to information about government procedures in Mexico. The system allows users to quickly and organizedly consult requirements, processes, and details related to different bureaucratic procedures. The main objective of the project is to reduce the difficulty many people face when searching for scattered or confusing information about administrative procedures, offering an intuitive interface accessible from any device. The application uses a cloud database to manage procedure information and is deployed on a hosting platform to ensure online availability.",
+        tramites_feature1: "Procedure consultation:",
+        tramites_feature1_desc: "Allows searching and viewing detailed information about government procedures in Mexico.",
+        tramites_feature2: "User-friendly interface:",
+        tramites_feature2_desc: "Intuitive and responsive design that adapts to any device.",
+        tramites_feature3: "Real-time database:",
+        tramites_feature3_desc: "Connection with Supabase to dynamically manage procedure information.",
+        tramites_feature4: "Quick access:",
+        tramites_feature4_desc: "Immediate visualization of requirements and necessary procedures.",
+        tramites_feature5: "24/7 availability:",
+        tramites_feature5_desc: "Online platform accessible anytime, anywhere.",
+        tramites_main: "Main screen",
+        tramites_search: "Procedure search",
+        tramites_details: "Procedure details",
+        tramites_categories: "Procedure categories",
+        tramites_mobile: "Responsive design",
+        tramites_supabase: "Supabase database",
+        tramites_code: "Vue.js code",
+        tramites_netlify: "Netlify deployment",
+        tramites_requirements: "Requirements visualization",
+        tramites_github: "GitHub repository",
     }
 };
 
@@ -693,6 +727,7 @@ langOptions.forEach(option => {
         updateModalTexts('pokedex', lang);
         updateModalTexts('banderas', lang);
         updateModalTexts('eventos', lang);
+        updateModalTexts('tramites', lang);
         updateViewerCaption(lang);
     });
 });
