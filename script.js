@@ -19,13 +19,13 @@ const PAUSE_BEFORE_NEXT = 600;     // Pausa antes de siguiente palabra
 
 function typeEffect() {
     if (!typingElement) return;
-    
+
     // Si está en pausa, no hacer nada
     if (isWaiting) return;
-    
+
     const currentLang = localStorage.getItem('language') || 'es';
     const currentProfession = professions[currentLang][professionIndex];
-    
+
     if (isDeleting) {
         // Borrando caracteres (más lento)
         if (charIndex > 0) {
@@ -152,7 +152,7 @@ const translations = {
         download_cv: "Descargar CV",
         contact_me: "Contáctame",
         about_me: "Sobre Mí",
-        about_title: "Ingeniero en Sistemas Computacionales",
+        about_title: "¡Hola Mundo! Soy Mario Delgado:",
         about_text1: "Recién egresado de Ingeniería en Sistemas Computacionales por la Universidad de Guanajuato, apasionado por el desarrollo de software y la creación de soluciones tecnológicas innovadoras. Cuento con conocimientos en desarrollo frontend, backend y aplicaciones móviles, buscando siempre aplicar las mejores prácticas y mantenerme actualizado con las últimas tecnologías.",
         about_text2: "Mi enfoque se centra en crear aplicaciones funcionales y eficientes que resuelvan problemas reales, con especial atención a la experiencia del usuario y la calidad del código. Me caracterizo por ser una persona proactiva, con capacidad de trabajo en equipo y aprendizaje continuo.",
         professional_interests: "Intereses Profesionales",
@@ -429,7 +429,7 @@ const translations = {
         download_cv: "Download CV",
         contact_me: "Contact Me",
         about_me: "About Me",
-        about_title: "Computer Systems Engineer",
+        about_title: "Hello World! I'm Mario Delgado:",
         about_text1: "Recent graduate in Computer Systems Engineering from the Universidad de Guanajuato, passionate about software development and creating innovative technological solutions. I have knowledge in frontend, backend, and mobile development, always seeking to apply best practices and stay updated with the latest technologies.",
         about_text2: "My focus is on creating functional and efficient applications that solve real problems, with special attention to user experience and code quality. I am proactive, with teamwork skills and continuous learning.",
         professional_interests: "Professional Interests",
@@ -729,12 +729,12 @@ langOptions.forEach(option => {
         updateFlag(lang);
         localStorage.setItem('language', lang);
         langDropdown.classList.remove('show');
-        
+
         professionIndex = 0;
         charIndex = 0;
         isDeleting = false;
         typeEffect();
-        
+
         updateModalTexts('erp', lang);
         updateModalTexts('fitodex', lang);
         updateModalTexts('flutter', lang);
@@ -756,21 +756,21 @@ function updateLanguage(lang) {
             element.textContent = translations[lang][key];
         }
     });
-    
+
     document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
         const key = element.dataset.i18nPlaceholder;
         if (translations[lang][key]) {
             element.placeholder = translations[lang][key];
         }
     });
-    
+
     document.querySelectorAll('.gallery-item-tooltip[data-i18n]').forEach(element => {
         const key = element.dataset.i18n;
         if (translations[lang][key]) {
             element.textContent = translations[lang][key];
         }
     });
-    
+
     const submitBtn = document.getElementById('submitBtn');
     if (submitBtn) {
         const sendMessageSpan = submitBtn.querySelector('span');
@@ -778,12 +778,12 @@ function updateLanguage(lang) {
             sendMessageSpan.textContent = translations[lang].send_message;
         }
     }
-    
+
     document.documentElement.lang = lang;
 }
 
 function updateFlag(lang) {
-    const flagUrl = lang === 'es' 
+    const flagUrl = lang === 'es'
         ? 'https://flagcdn.com/w40/mx.png'
         : 'https://flagcdn.com/w40/us.png';
     currentFlag.src = flagUrl;
@@ -796,7 +796,7 @@ const navMenu = document.getElementById('navMenu');
 if (menuToggle && navMenu) {
     menuToggle.addEventListener('click', () => {
         navMenu.classList.toggle('active');
-        menuToggle.innerHTML = navMenu.classList.contains('active') ? 
+        menuToggle.innerHTML = navMenu.classList.contains('active') ?
             '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
     });
 
@@ -827,13 +827,13 @@ window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.nav-menu a');
-    
+
     if (window.scrollY > 100) {
         navbar.classList.add('scrolled');
     } else {
         navbar.classList.remove('scrolled');
     }
-    
+
     let current = '';
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
@@ -854,41 +854,41 @@ window.addEventListener('scroll', () => {
 // Función mejorada para descargar CV
 function downloadCV() {
     const currentLang = localStorage.getItem('language') || 'es';
-    
+
     const cvFiles = {
         es: 'Mario-Delgado-CV.pdf',
         en: 'Mario-Delgado-CV-English.pdf'
     };
-    
+
     const fileName = cvFiles[currentLang];
-    
+
     const link = document.createElement('a');
     link.href = fileName;
     link.download = fileName;
     link.target = '_blank';
-    
+
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-    
-    const message = currentLang === 'es' 
-        ? 'CV descargado exitosamente' 
+
+    const message = currentLang === 'es'
+        ? 'CV descargado exitosamente'
         : 'CV downloaded successfully';
     showNotification(message);
 }
 
 function showNotification(message) {
     let notification = document.querySelector('.download-notification');
-    
+
     if (!notification) {
         notification = document.createElement('div');
         notification.className = 'download-notification';
         document.body.appendChild(notification);
     }
-    
+
     notification.textContent = message;
     notification.classList.add('show');
-    
+
     setTimeout(() => {
         notification.classList.remove('show');
     }, 3000);
@@ -910,57 +910,57 @@ submitBtn.addEventListener('mouseleave', () => {
 
 if (contactForm) {
     contactForm.setAttribute('novalidate', '');
-    
-    contactForm.addEventListener('submit', function(e) {
+
+    contactForm.addEventListener('submit', function (e) {
         e.preventDefault();
-        
+
         const currentLang = localStorage.getItem('language') || 'es';
-        
+
         const name = document.getElementById('name').value.trim();
         const email = document.getElementById('email').value.trim();
         const subject = document.getElementById('subject').value.trim();
         const message = document.getElementById('message').value.trim();
-        
+
         if (!name || !email || !subject || !message) {
             showFormMessage(translations[currentLang].fill_all_fields, 'error');
             return;
         }
-        
+
         if (!isValidEmail(email)) {
             showFormMessage(translations[currentLang].invalid_email, 'error');
             return;
         }
-        
+
         // Mostrar mensaje de "enviando"
         submitBtn.disabled = true;
         paperPlaneIcon.className = 'fas fa-spinner fa-spin';
         submitBtn.innerHTML = `<span>${translations[currentLang].sending}</span> `;
         submitBtn.appendChild(paperPlaneIcon);
-        
+
         // Crear un iframe oculto para recibir la respuesta
         const iframe = document.createElement('iframe');
         iframe.name = 'hiddenIframe';
         iframe.style.display = 'none';
         document.body.appendChild(iframe);
-        
+
         // Configurar el formulario para enviar al iframe
         contactForm.target = 'hiddenIframe';
-        
+
         // Enviar el formulario
         contactForm.submit();
-        
+
         // Mostrar mensaje de éxito inmediatamente
         showFormMessage(translations[currentLang].success_message, 'success');
         showNotification(translations[currentLang].email_sent);
-        
+
         // Resetear formulario después de un breve momento
         setTimeout(() => {
             contactForm.reset();
-            
+
             // Restaurar el comportamiento normal del formulario
             contactForm.target = '_self';
             document.body.removeChild(iframe);
-            
+
             // Restaurar botón
             submitBtn.disabled = false;
             const sendMessageText = translations[currentLang].send_message || 'Send Message';
@@ -979,7 +979,7 @@ function isValidEmail(email) {
 function showFormMessage(text, type) {
     formMessage.textContent = text;
     formMessage.className = `form-message ${type}`;
-    
+
     setTimeout(() => {
         formMessage.textContent = '';
         formMessage.className = 'form-message';
@@ -997,15 +997,15 @@ function openProjectModal(projectId) {
         if (currentProject && currentProject !== projectId) {
             closeProjectModal(currentProject);
         }
-        
+
         modal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
         currentProject = projectId;
-        
+
         setTimeout(() => {
             initGalleryImages(projectId);
         }, 100);
-        
+
         updateModalTexts(projectId, localStorage.getItem('language') || 'es');
     }
 }
@@ -1030,7 +1030,7 @@ function updateModalTexts(projectId, lang) {
                 element.textContent = translations[lang][key];
             }
         });
-        
+
         modal.querySelectorAll('.gallery-item-tooltip[data-i18n]').forEach(element => {
             const key = element.dataset.i18n;
             if (translations[lang] && translations[lang][key]) {
@@ -1044,17 +1044,17 @@ function updateModalTexts(projectId, lang) {
 function initGalleryImages(projectId) {
     const galleryList = document.getElementById(projectId + 'GalleryList');
     if (!galleryList) return [];
-    
+
     const galleryItems = galleryList.querySelectorAll('.gallery-list-item');
     galleryImages = [];
-    
+
     galleryItems.forEach((item, index) => {
         const img = item.querySelector('img');
         const tooltip = item.querySelector('.gallery-item-tooltip');
-        
+
         if (img && tooltip) {
             const imgSrc = img.getAttribute('src');
-            
+
             galleryImages.push({
                 id: index,
                 src: imgSrc,
@@ -1065,7 +1065,7 @@ function initGalleryImages(projectId) {
             });
         }
     });
-    
+
     return galleryImages;
 }
 
@@ -1075,22 +1075,22 @@ function openImageViewer(imageSrc, captionKey, projectId) {
     const viewerCaption = document.getElementById('viewerCaption');
     const imageCounter = document.getElementById('imageCounter');
     const currentLang = localStorage.getItem('language') || 'es';
-    
+
     const images = initGalleryImages(projectId);
-    
+
     if (images.length === 0) {
         return;
     }
-    
+
     let foundIndex = -1;
-    
+
     for (let i = 0; i < images.length; i++) {
         if (images[i].src === imageSrc) {
             foundIndex = i;
             break;
         }
     }
-    
+
     if (foundIndex === -1) {
         const imageName = imageSrc.split('/').pop();
         for (let i = 0; i < images.length; i++) {
@@ -1100,7 +1100,7 @@ function openImageViewer(imageSrc, captionKey, projectId) {
             }
         }
     }
-    
+
     if (foundIndex === -1 && captionKey) {
         for (let i = 0; i < images.length; i++) {
             if (images[i].captionKey === captionKey) {
@@ -1109,23 +1109,23 @@ function openImageViewer(imageSrc, captionKey, projectId) {
             }
         }
     }
-    
+
     if (foundIndex !== -1) {
         currentImageIndex = foundIndex;
     } else {
         currentImageIndex = 0;
     }
-    
+
     viewerImage.src = images[currentImageIndex].src;
-    
+
     if (translations[currentLang] && translations[currentLang][images[currentImageIndex].captionKey]) {
         viewerCaption.textContent = translations[currentLang][images[currentImageIndex].captionKey];
     } else {
         viewerCaption.textContent = images[currentImageIndex].caption;
     }
-    
+
     imageCounter.textContent = `${currentImageIndex + 1}/${images.length}`;
-    
+
     modal.style.display = 'flex';
     document.body.style.overflow = 'hidden';
 }
@@ -1138,33 +1138,33 @@ function closeImageViewer() {
 
 function navigateImage(direction) {
     if (!currentProject) return;
-    
+
     const images = initGalleryImages(currentProject);
-    
+
     if (images.length === 0) return;
-    
+
     currentImageIndex = (currentImageIndex + direction + images.length) % images.length;
-    
+
     const viewerImage = document.getElementById('viewerImage');
     const viewerCaption = document.getElementById('viewerCaption');
     const imageCounter = document.getElementById('imageCounter');
     const currentLang = localStorage.getItem('language') || 'es';
-    
+
     viewerImage.src = images[currentImageIndex].src;
-    
+
     if (translations[currentLang] && translations[currentLang][images[currentImageIndex].captionKey]) {
         viewerCaption.textContent = translations[currentLang][images[currentImageIndex].captionKey];
     } else {
         viewerCaption.textContent = images[currentImageIndex].caption;
     }
-    
+
     imageCounter.textContent = `${currentImageIndex + 1}/${images.length}`;
 }
 
 function updateViewerCaption(lang) {
     const viewerCaption = document.getElementById('viewerCaption');
     const modal = document.getElementById('imageViewerModal');
-    
+
     if (modal.style.display === 'flex' && galleryImages.length > 0 && currentImageIndex >= 0) {
         if (translations[lang] && translations[lang][galleryImages[currentImageIndex].captionKey]) {
             viewerCaption.textContent = translations[lang][galleryImages[currentImageIndex].captionKey];
@@ -1176,15 +1176,15 @@ function updateViewerCaption(lang) {
 document.addEventListener('DOMContentLoaded', () => {
     const copyBtn = document.getElementById('copyCedulaBtn');
     const cedulaNumber = document.getElementById('cedulaNumber');
-    
+
     if (copyBtn && cedulaNumber) {
         copyBtn.addEventListener('click', async () => {
             const number = cedulaNumber.textContent.trim();
             const currentLang = localStorage.getItem('language') || 'es';
-            
+
             try {
                 await navigator.clipboard.writeText(number);
-                
+
                 // Cambiar texto temporalmente
                 const originalHTML = copyBtn.innerHTML;
                 const copiedText = translations[currentLang]?.cedula_copied || '¡Copiado!';
@@ -1192,10 +1192,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 copyBtn.style.background = '#10b981';
                 copyBtn.style.borderColor = '#10b981';
                 copyBtn.style.color = 'white';
-                
+
                 // Mostrar notificación
                 showNotification(copiedText);
-                
+
                 setTimeout(() => {
                     copyBtn.innerHTML = originalHTML;
                     copyBtn.style.background = '';
@@ -1211,7 +1211,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-document.addEventListener('keydown', function(e) {
+document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') {
         if (currentProject) {
             closeProjectModal(currentProject);
@@ -1224,14 +1224,14 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
-window.addEventListener('click', function(e) {
+window.addEventListener('click', function (e) {
     if (currentProject) {
         const modal = document.getElementById(currentProject + 'Modal');
         if (e.target === modal) {
             closeProjectModal(currentProject);
         }
     }
-    
+
     const imageViewerModal = document.getElementById('imageViewerModal');
     if (e.target === imageViewerModal) {
         closeImageViewer();
