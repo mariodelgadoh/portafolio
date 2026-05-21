@@ -2605,3 +2605,332 @@ code {
         min-height: 60px;
     }
 }
+
+/* ===== PROFILE CAPTION ===== */
+.profile-image-caption h4 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.profile-image-caption > p {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    opacity: 0.8;
+    margin-bottom: 0;
+}
+
+/* ===== SEPARADOR CON ÍCONO ===== */
+.section-separator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 16px 0;
+}
+
+.section-separator span {
+    width: 50px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+}
+
+.section-separator i {
+    font-size: 0.8rem;
+    color: var(--primary-color);
+    opacity: 0.5;
+}
+
+/* ===== TARJETA UNIVERSIDAD ===== */
+.university-card {
+    margin: 5px 0;
+}
+
+.university-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.12), rgba(118, 75, 162, 0.08));
+    color: var(--primary-color);
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(102, 126, 234, 0.25);
+    width: auto;
+    min-width: 220px;
+}
+
+.university-link i:first-child {
+    font-size: 1rem;
+    color: var(--primary-color);
+}
+
+.university-link i:last-child {
+    font-size: 0.7rem;
+    opacity: 0.6;
+    transition: transform 0.2s ease;
+}
+
+.university-link:hover {
+    background: var(--gradient);
+    color: white;
+    transform: translateY(-3px);
+    border-color: transparent;
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+.university-link:hover i:first-child {
+    color: white;
+}
+
+.university-link:hover i:last-child {
+    transform: translateX(3px);
+    opacity: 1;
+}
+
+/* ===== CÉDULA CARD ===== */
+.cedula-card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 18px 16px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.cedula-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -10px var(--shadow-color);
+}
+
+/* Badge */
+.cedula-badge {
+    display: inline-block;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #10b981;
+    background: rgba(16, 185, 129, 0.12);
+    padding: 4px 14px;
+    border-radius: 30px;
+    margin-bottom: 12px;
+}
+
+/* Título */
+.cedula-title {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    color: var(--text-color);
+    opacity: 0.5;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed var(--border-color);
+    display: inline-block;
+}
+
+/* Número - CENTRADO (lo único que ajusté) */
+.cedula-number-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 8px 0;
+}
+
+.cedula-number {
+    font-size: 1.25rem;
+    font-weight: 800;
+    font-family: 'Courier New', 'SF Mono', monospace;
+    letter-spacing: 2px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+
+/* Botón copiar */
+.cedula-copy-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    font-size: 0.65rem;
+    font-weight: 500;
+    padding: 5px 12px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    margin: 8px 0;
+}
+
+.cedula-copy-btn i {
+    font-size: 0.65rem;
+    color: var(--primary-color);
+}
+
+.cedula-copy-btn:hover {
+    background: var(--gradient);
+    border-color: transparent;
+    color: white;
+}
+
+.cedula-copy-btn:hover i {
+    color: white;
+}
+
+.cedula-copy-btn:active {
+    transform: scale(0.96);
+}
+
+/* Estado */
+.cedula-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 12px 0 16px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border-color);
+}
+
+.status-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.65rem;
+    color: var(--text-color);
+    opacity: 0.7;
+}
+
+.status-item i {
+    font-size: 0.65rem;
+    color: #10b981;
+}
+
+.status-dot {
+    width: 3px;
+    height: 3px;
+    background: var(--border-color);
+    border-radius: 50%;
+}
+
+/* Enlace verificar */
+.cedula-verify-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: rgba(102, 126, 234, 0.08);
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 40px;
+    transition: all 0.25s ease;
+    width: 100%;
+}
+
+.cedula-verify-link i {
+    font-size: 0.65rem;
+    transition: transform 0.2s ease;
+}
+
+.cedula-verify-link:hover {
+    background: var(--gradient);
+    color: white;
+    gap: 12px;
+}
+
+.cedula-verify-link:hover i {
+    transform: translateX(3px);
+}
+
+/* Modo oscuro */
+.dark-theme .cedula-card {
+    background: rgba(31, 41, 55, 0.6);
+}
+
+.dark-theme .university-link {
+    background: rgba(129, 140, 248, 0.12);
+}
+
+.dark-theme .cedula-verify-link {
+    background: rgba(129, 140, 248, 0.1);
+}
+
+.dark-theme .section-separator i {
+    color: var(--primary-color);
+    opacity: 0.6;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .profile-image-caption h4 {
+        font-size: 1.1rem;
+    }
+    
+    .profile-image-caption > p {
+        font-size: 0.8rem;
+    }
+    
+    .section-separator {
+        margin: 12px 0;
+        gap: 8px;
+    }
+    
+    .section-separator span {
+        width: 30px;
+    }
+    
+    .section-separator i {
+        font-size: 0.7rem;
+    }
+    
+    .university-link {
+        padding: 8px 16px;
+        font-size: 0.75rem;
+        min-width: 180px;
+    }
+    
+    .cedula-card {
+        padding: 14px 12px;
+    }
+    
+    .cedula-number {
+        font-size: 1rem;
+        letter-spacing: 1px;
+    }
+    
+    .cedula-title {
+        font-size: 0.7rem;
+    }
+    
+    .cedula-badge {
+        font-size: 0.55rem;
+        padding: 3px 12px;
+    }
+    
+    .cedula-copy-btn {
+        padding: 4px 10px;
+        font-size: 0.6rem;
+    }
+    
+    .status-item {
+        font-size: 0.6rem;
+    }
+    
+    .cedula-verify-link {
+        padding: 6px 14px;
+        font-size: 0.65rem;
+    }
+}

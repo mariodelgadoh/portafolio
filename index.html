@@ -122,10 +122,68 @@
                             <img src="assets/mario.jpg" alt="Mario Jesús Delgado Hernández">
                         </div>
                         <div class="profile-image-caption">
-                            <h4>Mario Jesús Delgado Hernández</h4>
-                            <p data-i18n="profile_title">Ingeniero en Sistemas Computacionales</p>
-                            <p class="profile-university"><a href="https://www.ugto.mx/" target="_blank" rel="noopener noreferrer" data-i18n="profile_university">Universidad de Guanajuato</a></p>
-                        </div>
+    <h4>Mario Jesús Delgado Hernández</h4>
+    <p data-i18n="profile_title">Ingeniero en Sistemas Computacionales</p>
+    
+    <!-- Separador con ícono -->
+    <div class="section-separator">
+        <span></span>
+        <i class="fas fa-certificate"></i>
+        <span></span>
+    </div>
+    
+    <!-- Tarjeta Universidad -->
+    <div class="university-card">
+        <a href="https://www.ugto.mx/" target="_blank" rel="noopener noreferrer" class="university-link" data-i18n="profile_university">
+            <i class="fas fa-graduation-cap"></i>
+            <span>Universidad de Guanajuato</span>
+            <i class="fas fa-external-link-alt"></i>
+        </a>
+    </div>
+    
+    <!-- Separador con ícono -->
+    <div class="section-separator">
+        <span></span>
+        <i class="fas fa-certificate"></i>
+        <span></span>
+    </div>
+    
+    <!-- Cédula Profesional COMPLETA -->
+    <div class="cedula-card">
+        <div class="cedula-badge" data-i18n="cedula_registered">REGISTRO OFICIAL</div>
+        
+        <div class="cedula-title" data-i18n="cedula_label">CÉDULA PROFESIONAL</div>
+        
+        <div class="cedula-number-wrapper">
+            <div class="cedula-number" id="cedulaNumber">15646846</div>
+        </div>
+        
+        <button class="cedula-copy-btn" id="copyCedulaBtn">
+            <i class="fas fa-copy"></i>
+            <span data-i18n="cedula_copy">Copiar número</span>
+        </button>
+        
+        <div class="cedula-status">
+            <span class="status-item">
+                <i class="fas fa-balance-scale"></i>
+                <span data-i18n="cedula_sep">SEP México</span>
+            </span>
+            <span class="status-dot"></span>
+            <span class="status-item">
+                <i class="fas fa-check-circle"></i>
+                <span data-i18n="cedula_valid">Vigente</span>
+            </span>
+        </div>
+        
+        <a href="https://www.cedulaprofesional.sep.gob.mx/cedula/presidencia/indexAvanzada.action" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="cedula-verify-link">
+            <span data-i18n="cedula_verify">Verificar autenticidad</span>
+            <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+</div>
                     </div>
                 </div>
 

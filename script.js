@@ -407,6 +407,15 @@ const translations = {
         tramites_netlify: "PDF del Tramite",
         tramites_requirements: "Visualización Tramites en curso",
         tramites_github: "Visualización de Tramites Terminados",
+        cedula_label: "CÉDULA PROFESIONAL",
+        cedula_university: "Universidad de Guanajuato",
+        cedula_registered: "REGISTRO OFICIAL",
+        cedula_copy: "Copiar número",
+        cedula_copied: "¡Cédula copiada!",
+        cedula_sep: "SEP México",
+        cedula_valid: "Vigente",
+        cedula_verify: "Verificar autenticidad",
+
     },
     en: {
         home: "Home",
@@ -416,12 +425,12 @@ const translations = {
         contact: "Contact",
         hello: "Hello, I'm",
         and_im: "and I'm",
-        description: "Recent graduate in Computer Systems Engineering from the University of Guanajuato, with knowledge in software development, frontend, backend, and mobile applications. Experienced in JavaScript, Vue.js, Node.js, Flutter, and relational databases. Interested in creating functional and efficient technological solutions, with a focus on innovation, user experience, and continuous learning.",
+        description: "Recent graduate in Computer Systems Engineering from the Universidad de Guanajuato, with knowledge in software development, frontend, backend, and mobile applications. Experienced in JavaScript, Vue.js, Node.js, Flutter, and relational databases. Interested in creating functional and efficient technological solutions, with a focus on innovation, user experience, and continuous learning.",
         download_cv: "Download CV",
         contact_me: "Contact Me",
         about_me: "About Me",
         about_title: "Computer Systems Engineer",
-        about_text1: "Recent graduate in Computer Systems Engineering from the University of Guanajuato, passionate about software development and creating innovative technological solutions. I have knowledge in frontend, backend, and mobile development, always seeking to apply best practices and stay updated with the latest technologies.",
+        about_text1: "Recent graduate in Computer Systems Engineering from the Universidad de Guanajuato, passionate about software development and creating innovative technological solutions. I have knowledge in frontend, backend, and mobile development, always seeking to apply best practices and stay updated with the latest technologies.",
         about_text2: "My focus is on creating functional and efficient applications that solve real problems, with special attention to user experience and code quality. I am proactive, with teamwork skills and continuous learning.",
         professional_interests: "Professional Interests",
         interest1: "Software development and innovative applications",
@@ -470,7 +479,7 @@ const translations = {
         send_message: "Send Message",
         all_rights: "All rights reserved.",
         profile_title: "Computer Systems Engineer",
-        profile_university: "University of Guanajuato",
+        profile_university: "Universidad de Guanajuato",
         project_description: "Project Description",
         key_features: "Key Features",
         technologies_used: "Technologies Used",
@@ -497,7 +506,7 @@ const translations = {
         fitodex_inicio: "Home Page",
         fitodex_cultivos: "Crops Database",
         fitodex_insecticidas: "Insecticides Database",
-        fitodex_plagas: "University of Guanajuato",
+        fitodex_plagas: "Universidad de Guanajuato",
         fitodex_busqueda: "Search System",
         fitodex_detalle_cultivo: "Details",
         fitodex_detalle_insecticida: "Location",
@@ -521,7 +530,7 @@ const translations = {
         app_busqueda: "Customer Service",
         app_resultados: "We Fitodex",
         app_detalles: "Privacy Notices",
-        app_perfil: "University of Guanajuato",
+        app_perfil: "Universidad de Guanajuato",
         app_configuracion: "Location",
         app_acerca: "Team",
         orbitas_description: "Planetary Orbits Simulation Program and Mean Squared Error Calculation. In the field of astronomy and space exploration, precise understanding of planetary orbits is crucial for various applications, ranging from scientific research to space mission design. This project focuses on developing a program, accessible through a web page, that allows simulating planetary orbits within the solar system. The accuracy of the simulations is evaluated using the mean squared error (MSE). The program employs advanced numerical methods, such as the Newton-Raphson method, for calculating eccentric anomaly and minimizing quadratic error.",
@@ -675,6 +684,14 @@ const translations = {
         tramites_netlify: "PDF of the Procedure",
         tramites_requirements: "Viewing Processes in Progress",
         tramites_github: "Viewing Completed Procedures",
+        cedula_label: "PROFESSIONAL LICENSE",
+        cedula_university: "Universidad de Guanajuato",
+        cedula_registered: "OFFICIAL REGISTRATION",
+        cedula_copy: "Copy number",
+        cedula_copied: "License copied!",
+        cedula_sep: "SEP Mexico",
+        cedula_valid: "Valid",
+        cedula_verify: "Verify authenticity",
     }
 };
 
@@ -1154,6 +1171,45 @@ function updateViewerCaption(lang) {
         }
     }
 }
+
+// ===== BOTÓN COPIAR CÉDULA =====
+document.addEventListener('DOMContentLoaded', () => {
+    const copyBtn = document.getElementById('copyCedulaBtn');
+    const cedulaNumber = document.getElementById('cedulaNumber');
+    
+    if (copyBtn && cedulaNumber) {
+        copyBtn.addEventListener('click', async () => {
+            const number = cedulaNumber.textContent.trim();
+            const currentLang = localStorage.getItem('language') || 'es';
+            
+            try {
+                await navigator.clipboard.writeText(number);
+                
+                // Cambiar texto temporalmente
+                const originalHTML = copyBtn.innerHTML;
+                const copiedText = translations[currentLang]?.cedula_copied || '¡Copiado!';
+                copyBtn.innerHTML = `<i class="fas fa-check"></i><span>${copiedText}</span>`;
+                copyBtn.style.background = '#10b981';
+                copyBtn.style.borderColor = '#10b981';
+                copyBtn.style.color = 'white';
+                
+                // Mostrar notificación
+                showNotification(copiedText);
+                
+                setTimeout(() => {
+                    copyBtn.innerHTML = originalHTML;
+                    copyBtn.style.background = '';
+                    copyBtn.style.borderColor = '';
+                    copyBtn.style.color = '';
+                }, 2000);
+            } catch (err) {
+                console.error('Error al copiar:', err);
+                const errorText = currentLang === 'es' ? 'Error al copiar' : 'Copy failed';
+                showNotification(errorText);
+            }
+        });
+    }
+});
 
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
