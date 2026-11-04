@@ -3299,6 +3299,10 @@ code {
     color: var(--text-color);
     opacity: 0.9;
     text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    overflow-wrap: break-word;
 }
 
 .sym-subtitle {
@@ -3498,10 +3502,6 @@ code {
 
     .sym-text h3 {
         font-size: 1.5rem;
-    }
-
-    .sym-text > p {
-        text-align: left;
     }
 
     .sym-footer {
