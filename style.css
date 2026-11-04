@@ -3076,3 +3076,458 @@ code {
         font-size: 0.65rem;
     }
 }
+
+/* ===== TARJETA EMPRESA ===== */
+.company-card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 22px 16px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.company-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -10px var(--shadow-color);
+}
+
+.company-badge {
+    display: inline-block;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--primary-color);
+    background: rgba(102, 126, 234, 0.12);
+    padding: 4px 14px;
+    border-radius: 30px;
+    margin-bottom: 12px;
+}
+
+.company-logo {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 14px;
+    padding: 10px;
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.company-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.company-card:hover .company-logo {
+    transform: scale(1.05);
+    box-shadow: 0 12px 28px rgba(102, 126, 234, 0.35);
+}
+
+.company-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 4px;
+}
+
+.company-type {
+    font-size: 0.8rem !important;
+    color: var(--text-color);
+    opacity: 0.7;
+    margin-bottom: 10px !important;
+}
+
+.company-role {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #10b981;
+    background: rgba(16, 185, 129, 0.12);
+    padding: 5px 14px;
+    border-radius: 30px;
+    margin-bottom: 14px;
+}
+
+.company-role i {
+    font-size: 0.7rem;
+}
+
+.company-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: rgba(102, 126, 234, 0.08);
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 40px;
+    transition: all 0.25s ease;
+    width: 100%;
+}
+
+.company-link i {
+    font-size: 0.65rem;
+    transition: transform 0.2s ease;
+}
+
+.company-link:hover {
+    background: var(--gradient);
+    color: white;
+    gap: 12px;
+}
+
+.company-link:hover i {
+    transform: translateX(3px);
+}
+
+/* Modo oscuro */
+.dark-theme .company-card {
+    background: rgba(31, 41, 55, 0.6);
+}
+
+.dark-theme .company-badge,
+.dark-theme .company-link {
+    background: rgba(129, 140, 248, 0.12);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .company-card {
+        padding: 14px 12px;
+    }
+
+    .company-name {
+        font-size: 1.05rem;
+    }
+
+    .company-type {
+        font-size: 0.72rem !important;
+    }
+
+    .company-link {
+        font-size: 0.68rem;
+        padding: 6px 14px;
+    }
+        .company-logo {
+        width: 75px;
+        height: 75px;
+        padding: 8px;
+    }
+}
+
+/* ===== SECCIÓN SYMMETRICAL CODE ===== */
+.sym-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px;
+    background: var(--card-bg);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px var(--shadow-color);
+    border: 1px solid var(--border-color);
+    width: 100%;
+}
+
+/* align-items: center centra el logo verticalmente */
+.sym-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.sym-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.sym-logo {
+    width: 180px;
+    height: 180px;
+    padding: 20px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.25);
+}
+
+.sym-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Texto */
+.sym-text h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.sym-text > p {
+    margin-bottom: 15px;
+    color: var(--text-color);
+    opacity: 0.9;
+    text-align: justify;
+}
+
+.sym-subtitle {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin: 30px 0 15px;
+    position: relative;
+    display: inline-block;
+}
+
+.sym-subtitle::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--gradient);
+    border-radius: 3px;
+}
+
+/* Valores */
+.sym-values {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.sym-value {
+    text-align: center;
+    padding: 18px 12px;
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    transition: all 0.3s ease;
+}
+
+.sym-value:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 20px var(--shadow-color);
+}
+
+.sym-value i {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+}
+
+.sym-value h4 {
+    font-size: 1.05rem;
+    color: var(--primary-color);
+    margin-bottom: 4px;
+}
+
+.sym-value p {
+    font-size: 0.85rem;
+    color: var(--text-color);
+    opacity: 0.85;
+    line-height: 1.4;
+}
+
+/* Servicios (solo título) */
+.sym-pillars {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.sym-pillar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.sym-pillar:hover {
+    transform: translateX(5px);
+    border-color: var(--primary-color);
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+.sym-pillar > i {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+    background: var(--gradient);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+}
+
+.sym-pillar h4 {
+    font-size: 0.92rem;
+    color: var(--primary-color);
+    line-height: 1.3;
+}
+
+/* Ubicación */
+.sym-location {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 25px;
+    padding: 8px 18px;
+    border-radius: 30px;
+    background: rgba(16, 185, 129, 0.12);
+    color: #10b981;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Fila ubicación + enlace (siempre en una sola línea) */
+.sym-footer {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.sym-footer .sym-location {
+    margin-top: 0;
+    white-space: nowrap;
+}
+
+.sym-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 18px 6px 8px;
+    border-radius: 30px;
+    background: var(--gradient);
+    color: white;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.sym-link-logo {
+    width: 26px;
+    height: 26px;
+    padding: 0;
+    background: none;
+    border-radius: 0;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
+.sym-link i {
+    font-size: 0.7rem;
+    transition: transform 0.2s ease;
+}
+
+.sym-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+.sym-link:hover i {
+    transform: translateX(3px);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .sym-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .sym-brand {
+        max-width: 320px;
+        margin: 0 auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .sym-content {
+        padding: 25px 20px;
+    }
+
+    .sym-values,
+    .sym-pillars {
+        grid-template-columns: 1fr;
+    }
+
+    .sym-text h3 {
+        font-size: 1.5rem;
+    }
+
+    .sym-footer {
+        justify-content: center;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sym-logo {
+        width: 140px;
+        height: 140px;
+    }
+
+    .sym-footer .sym-location {
+        padding: 6px 10px;
+        font-size: 0.7rem;
+        gap: 6px;
+    }
+
+    .sym-footer .sym-location i {
+        display: none;
+    }
+
+    .sym-link {
+        padding: 5px 12px 5px 6px;
+        font-size: 0.7rem;
+        gap: 6px;
+    }
+
+    .sym-link-logo {
+        width: 22px;
+        height: 22px;
+    }
+
+    .sym-link i {
+        display: none;
+    }
+}

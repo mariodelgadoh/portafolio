@@ -43,6 +43,7 @@
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#home" class="active" data-i18n="home">Inicio</a></li>
                 <li><a href="#about" data-i18n="about">Sobre Mí</a></li>
+                <li><a href="#symmetrical" data-i18n="symmetrical_nav">Symmetrical Code</a></li>
                 <li><a href="#services" data-i18n="services">Servicios</a></li>
                 <li><a href="#portfolio" data-i18n="portfolio">Portafolio</a></li>
                 <li><a href="#contact" data-i18n="contact">Contacto</a></li>
@@ -160,7 +161,35 @@
                                 <i class="fas fa-certificate"></i>
                                 <span></span>
                             </div>
+<!-- Tarjeta Empresa -->
+<div class="company-card">
+    <div class="company-badge" data-i18n="company_label">EMPRESA</div>
 
+    <div class="company-logo">
+        <img src="assets/logo-symmetrical.webp" alt="Symmetrical Code">
+    </div>
+
+    <h5 class="company-name">Symmetrical Code</h5>
+    <p class="company-type" data-i18n="company_type">Estudio de desarrollo de software</p>
+
+    <div class="company-role">
+        <i class="fas fa-user-tie"></i>
+        <span data-i18n="company_role">Co-fundador</span>
+    </div>
+
+    <a href="https://www.symmetricalcode.com/" target="_blank" rel="noopener noreferrer"
+        class="company-link">
+        <span data-i18n="company_visit">Visitar sitio web</span>
+        <i class="fas fa-external-link-alt"></i>
+    </a>
+</div>
+
+<!-- Separador con ícono (NUEVO: separa empresa de cédula) -->
+<div class="section-separator">
+    <span></span>
+    <i class="fas fa-certificate"></i>
+    <span></span>
+</div>
                             <!-- Cédula Profesional COMPLETA -->
                             <div class="cedula-card">
                                 <div class="cedula-badge" data-i18n="cedula_registered">REGISTRO OFICIAL</div>
@@ -453,6 +482,94 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Symmetrical Code Section -->
+    <section id="symmetrical" class="symmetrical">
+        <h2 class="section-title" data-i18n="sym_section_title">Symmetrical Code</h2>
+        <div class="sym-content">
+            <div class="sym-grid">
+
+                <!-- Columna: solo logo -->
+                <div class="sym-brand">
+                    <div class="sym-logo">
+                        <img src="assets/logo-symmetrical.webp" alt="Symmetrical Code">
+                    </div>
+                </div>
+
+                <!-- Columna: información -->
+                <div class="sym-text">
+                    <h3 data-i18n="sym_about_title">¿Quiénes somos?</h3>
+                    <p data-i18n="sym_desc1">
+                        Symmetrical Code es un estudio de desarrollo de software con sede en Guanajuato, México, que trabaja de forma remota. Convertimos ideas claras en productos digitales listos para crecer.
+                    </p>
+
+                    <!-- Valores -->
+                    <div class="sym-values">
+                        <div class="sym-value">
+                            <i class="fas fa-bullseye"></i>
+                            <h4 data-i18n="sym_val1_title">Claridad</h4>
+                            <p data-i18n="sym_val1_desc">Aterrizamos tu idea antes de construir</p>
+                        </div>
+                        <div class="sym-value">
+                            <i class="fas fa-balance-scale"></i>
+                            <h4 data-i18n="sym_val2_title">Balance</h4>
+                            <p data-i18n="sym_val2_desc">Diseño útil + código limpio</p>
+                        </div>
+                        <div class="sym-value">
+                            <i class="fas fa-seedling"></i>
+                            <h4 data-i18n="sym_val3_title">Futuro</h4>
+                            <p data-i18n="sym_val3_desc">Base preparada para crecer</p>
+                        </div>
+                    </div>
+
+                    <!-- Servicios (solo títulos) -->
+                    <h4 class="sym-subtitle" data-i18n="sym_services_title">Nuestros servicios</h4>
+                    <div class="sym-pillars">
+                        <div class="sym-pillar">
+                            <i class="fas fa-building"></i>
+                            <h4 data-i18n="sym_srv1_title">Software Empresarial y Sistemas Internos</h4>
+                        </div>
+                        <div class="sym-pillar">
+                            <i class="fas fa-robot"></i>
+                            <h4 data-i18n="sym_srv2_title">Implementación de IA a tu Negocio</h4>
+                        </div>
+                        <div class="sym-pillar">
+                            <i class="fas fa-mobile-alt"></i>
+                            <h4 data-i18n="sym_srv3_title">Páginas Web y Apps Móviles</h4>
+                        </div>
+                        <div class="sym-pillar">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4 data-i18n="sym_srv4_title">Ciberseguridad y Asesoría</h4>
+                        </div>
+                        <div class="sym-pillar">
+                            <i class="fas fa-pencil-ruler"></i>
+                            <h4 data-i18n="sym_srv5_title">Interfaces y Experiencia de Usuario</h4>
+                        </div>
+                        <div class="sym-pillar">
+                            <i class="fas fa-cogs"></i>
+                            <h4 data-i18n="sym_srv6_title">Automatización, Analítica y Reportes</h4>
+                        </div>
+                    </div>
+
+                    <!-- Ubicación y enlace -->
+                    <div class="sym-footer">
+                        <div class="sym-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span data-i18n="sym_location">Guanajuato, México · Remoto</span>
+                        </div>
+
+                        <a href="https://www.symmetricalcode.com/" target="_blank" rel="noopener noreferrer"
+                            class="sym-link">
+                            <img src="assets/logo-symmetrical.webp" alt="Symmetrical Code" class="sym-link-logo">
+                            <span data-i18n="company_visit">Visitar sitio web</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
