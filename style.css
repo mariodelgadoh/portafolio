@@ -3252,6 +3252,12 @@ code {
     align-items: center;
 }
 
+/* Evita que el contenido ensanche la columna del grid */
+.sym-text,
+.sym-brand {
+    min-width: 0;
+}
+
 .sym-brand {
     display: flex;
     align-items: center;
@@ -3317,7 +3323,7 @@ code {
 /* Valores */
 .sym-values {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 15px;
     margin-top: 20px;
 }
@@ -3359,7 +3365,7 @@ code {
 /* Servicios (solo título) */
 .sym-pillars {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
 }
 
@@ -3413,7 +3419,7 @@ code {
     font-weight: 600;
 }
 
-/* Fila ubicación + enlace (siempre en una sola línea) */
+/* Fila ubicación + enlace (una sola línea) */
 .sym-footer {
     display: flex;
     align-items: center;
@@ -3466,10 +3472,10 @@ code {
     transform: translateX(3px);
 }
 
-/* Responsive */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 992px) {
     .sym-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
         gap: 30px;
     }
 
@@ -3487,11 +3493,15 @@ code {
 
     .sym-values,
     .sym-pillars {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
     }
 
     .sym-text h3 {
         font-size: 1.5rem;
+    }
+
+    .sym-text > p {
+        text-align: left;
     }
 
     .sym-footer {
@@ -3501,15 +3511,29 @@ code {
 }
 
 @media (max-width: 480px) {
+    section.symmetrical {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .sym-content {
+        padding: 20px 14px;
+    }
+
     .sym-logo {
         width: 140px;
         height: 140px;
     }
 
-    .sym-footer .sym-location {
-        padding: 6px 10px;
-        font-size: 0.7rem;
+    .sym-footer {
         gap: 6px;
+    }
+
+    .sym-footer .sym-location {
+        padding: 6px 8px;
+        font-size: 0.62rem;
+        gap: 4px;
+        min-width: 0;
     }
 
     .sym-footer .sym-location i {
@@ -3517,17 +3541,25 @@ code {
     }
 
     .sym-link {
-        padding: 5px 12px 5px 6px;
-        font-size: 0.7rem;
-        gap: 6px;
+        padding: 4px 10px 4px 5px;
+        font-size: 0.62rem;
+        gap: 5px;
+        min-width: 0;
     }
 
     .sym-link-logo {
-        width: 22px;
-        height: 22px;
+        width: 20px;
+        height: 20px;
     }
 
     .sym-link i {
         display: none;
+    }
+}
+
+/* Pantallas muy angostas: si no caben en una línea, el botón baja y se centra */
+@media (max-width: 360px) {
+    .sym-footer {
+        flex-wrap: wrap;
     }
 }
