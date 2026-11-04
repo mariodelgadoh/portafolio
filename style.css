@@ -3404,9 +3404,16 @@ code {
 }
 
 .sym-pillar h4 {
+    flex: 1;
+    min-width: 0;
     font-size: 0.92rem;
     color: var(--primary-color);
     line-height: 1.3;
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    overflow-wrap: break-word;
 }
 
 /* Ubicación */
@@ -3561,5 +3568,28 @@ code {
 @media (max-width: 360px) {
     .sym-footer {
         flex-wrap: wrap;
+    }
+}
+
+/* ===== REDUCIR ESPACIO ENTRE SECCIONES ===== */
+section.symmetrical {
+    min-height: auto;
+    padding-top: 60px;
+    padding-bottom: 30px;
+}
+
+section.services {
+    min-height: auto;
+    padding-top: 30px;
+}
+
+@media (max-width: 768px) {
+    section.symmetrical {
+        padding-top: 50px;
+        padding-bottom: 20px;
+    }
+
+    section.services {
+        padding-top: 20px;
     }
 }
