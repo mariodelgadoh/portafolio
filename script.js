@@ -902,19 +902,35 @@ function downloadCV() {
     };
 
     const fileName = cvFiles[currentLang];
+    // URL absoluta (evita problemas de rutas relativas en móvil)
+    const fileUrl = new URL(fileName, window.location.href).href;
 
-    const link = document.createElement('a');
-    link.href = fileName;
-    link.download = fileName;
-    link.target = '_blank';
+    // Detectar móvil
+    const isMobile = /Android|iPhone|iPad|iPod|Mobile|Opera Mini/i.test(navigator.userAgent);
 
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    if (isMobile) {
+        // En móvil: abrir en nueva pestaña (el visor PDF permite guardar/compartir)
+        const win = window.open(fileUrl, '_blank');
+        if (!win) {
+            // Si el navegador bloqueó el pop-up → navegación directa
+            window.location.href = fileUrl;
+        }
+    } else {
+        // En escritorio: descarga clásica SIN target="_blank"
+        const link = document.createElement('a');
+        link.href = fileUrl;
+        link.download = fileName;
+        link.rel = 'noopener';
+        link.style.display = 'none';
+        document.body.appendChild(link);
+        link.click();
+        // Esperar un poco antes de eliminar (Safari iOS lo necesita)
+        setTimeout(() => document.body.removeChild(link), 200);
+    }
 
     const message = currentLang === 'es'
-        ? 'CV descargado exitosamente'
-        : 'CV downloaded successfully';
+        ? 'Descargando CV...'
+        : 'Downloading CV...';
     showNotification(message);
 }
 
